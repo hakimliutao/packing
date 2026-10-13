@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0e6b52">
+<title>منتجاتي المفضلة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div id="search-bar"></div>
+<div id="site-drawer"></div>
+<header id="site-header"></header>
+
+<section class="page-head">
+  <div class="wrap">
+    <nav class="crumbs"><a href="index.html">الرئيسية</a> <span>/</span> <span id="crumb-here"></span></nav>
+    <h1 style="font-size:clamp(26px,3.6vw,40px)">
+      <span id="fav-title"></span> <span id="fav-n" style="color:var(--hot)"></span>
+    </h1>
+    <p id="fav-sub" style="color:var(--ink-2);font-size:16.5px;margin-top:10px"></p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="toolbar" id="fav-bar" style="display:none">
+      <a class="btn btn-line btn-sm" href="products.html" id="fav-all"></a>
+      <button class="btn btn-line btn-sm" id="fav-clr"></button>
+    </div>
+    <div class="grid-4" id="grid"></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap"><div id="cta-slot"></div></div>
+</section>
+
+<footer id="site-footer"></footer>
+
+<script src="assets/api.js"></script>
+<script src="assets/ui.js"></script>
+<script src="assets/popup.js"></script>
+<script src="assets/seo.js"></script>
+<script src="assets/currency.js"></script>
+<script src="assets/pricing.js"></script>
+<script src="assets/site.js"></script>
+<script>
+async function initFav() {
+  await boot('products');
+  const ui = CTX.tax.ui;
+  document.title = `${ui.myFavAr} — ${CTX.site.brand.nameAr}`;
+  document.getElementById('crumb-here').textContent = ui.myFavAr;
+  document.getElementById('fav-title').textContent = ui.myFavAr;
+  document.getElementById('fav-sub').textContent = ui.myFavSubAr;
+  document.getElementById('fav-all').textContent = ui.browseAllAr;
+  document.getElementById('fav-clr').textContent = ui.clearFavAr;
+
+  async function render() {
+    const ids = favList();
+    document.getElementById('fav-n').textContent = ids.length ? `(${ids.length})` : '';
+    document.getElementById('fav-bar').style.display = ids.length ? '' : 'none';
+
+    if (!ids.length) {
+      document.getElementById('grid').innerHTML = emptyState(ui.emptyFavAr, ui.emptyFavSubAr);
+      return;
+    }
+    const all = await getProducts();
+    const map = {};
+    all.forEach(p => { map[p.id] = p; });
+    const list = ids.map(id => map[id]).filter(Boolean);
+    document.getElementById('grid').innerHTML =
+      list.map(productCard).join('') || emptyState(ui.emptyFavAr, ui.emptyFavSubAr);
+    paintFavs();
+  }
+
+  document.getElementById('fav-clr').onclick = () => {
+    if (!confirm('مسح كل المنتجات المفضلة؟')) return;
+    favWrite([]);
+    render();
+  };
+  document.addEventListener('favchange', render);
+  render();
+}
+initFav().catch(e => console.error('[fav]', e));
+</script>
+</body>
+</html>

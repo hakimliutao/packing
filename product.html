@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0e6b52">
+<title>المنتج</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div id="search-bar"></div>
+<div id="site-drawer"></div>
+<header id="site-header"></header>
+
+<section class="page-head" style="padding-bottom:0">
+  <div class="wrap"><nav class="crumbs" id="crumbs"></nav></div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap"><div class="pd" id="pd"></div></div>
+</section>
+
+<section style="padding-top:0" id="related-sec">
+  <div class="wrap">
+    <div class="sec-head"><h2 style="font-size:25px" id="related-title"></h2></div>
+    <div class="grid-4" id="related"></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap"><div id="cta-slot"></div></div>
+</section>
+
+<footer id="site-footer"></footer>
+
+<script src="assets/api.js"></script>
+<script src="assets/ui.js"></script>
+<script src="assets/popup.js"></script>
+<script src="assets/seo.js"></script>
+<script src="assets/currency.js"></script>
+<script src="assets/pricing.js"></script>
+<script src="assets/site.js"></script>
+<script>
+async function initProduct() {
+  await boot('products');
+  const { tax } = CTX;
+  const ui = tax.ui;
+  const id = new URLSearchParams(location.search).get('id');
+  const p = await getProduct(id);
+
+  if (!p) {
+    document.getElementById('pd').innerHTML = emptyState(ui.noResultAr);
+    document.getElementById('related-sec').style.display = 'none';
+    return;
+  }
+  const c = catOf(p.categoryId);
+  /* 详情页的 SEO 用产品自己的信息，不用通用模板 ——
+     买家搜「كوب ورقي مخصص»点进来的就是这个页，title 里必须带产品名和分类。 */
+  if (window.SEO) {
+    const img0 = (p.images || []).filter(Boolean)[0];
+    try {
+      SEO.apply({
+        key: 'product',
+        title: `${p.nameAr}${c ? ' — ' + c.nameAr : ''} | أسعار وتخصيص | ${CTX.site.brand.nameAr}`,
+        desc: (p.shortAr || p.descAr || '').slice(0, 300),
+        ogType: 'product',
+        image: img0 || '',
+      });
+      /* Product 结构化数据：把阶梯价格写进 priceSpecification，
+         AI 搜「cups price dubai」时能直接读出 100 个多少钱。 */
+      SEO.injectLd(SEO.productLd(p, CTX.site));
+    } catch (e) { console.warn('[seo-product]', e); }
+  } else {
+    document.title = `${p.nameAr} — ${CTX.site.brand.nameAr}`;
+  }
+
+  document.getElementById('crumbs').innerHTML =
+    `<a href="index.html">الرئيسية</a> <span>/</span>
+     <a href="products.html">${esc(ui.allProductsAr)}</a> <span>/</span>
+     <a href="products.html?cat=${encodeURIComponent(c?.id || '')}">${esc(c?.nameAr || '')}</a> <span>/</span>
+     <span>${esc(p.nameAr)}</span>`;
+
+  const imgs = (p.images || []).filter(Boolean);
+  const imgsAll = (p.images || []);
+  const lbAttr = `data-lb='${esc(JSON.stringify(imgs))}' data-lbi="0"`;
+  const mainSrc = imgs[0];
+
+  document.getElementById('pd').innerHTML = `
+    <div class="gallery">
+      <div class="main" id="gmain" ${imgs.length ? lbAttr : ''}>
+        ${mainSrc ? `<img id="gmain-img" src="${esc(mainSrc)}" alt="${esc(p.nameAr)}">`
+                  : `<span class="shape">${esc(c?.emoji || '📦')}</span>`}
+        ${imgs.length ? `<span class="zoom">${ZOOM_ICON}${esc(ui.zoomAr || 'تكبير')}</span>` : ''}
+      </div>
+      ${imgs.length > 1 ? `<div class="thumbs" id="gthumbs">
+        ${imgsAll.map((src, i) => src ? `
+          <div class="thumb ${i === 0 ? 'on' : ''}" data-i="${i}">
+            <img src="${esc(src)}" alt="">
+            <span class="tip">${esc((p.imageLabelsAr || [])[i] || (i + 1))}</span>
+          </div>` : '').join('')}
+      </div>` : ''}
+    </div>
+
+    <div class="pd-body">
+      <span class="pd-cat">${esc(c?.nameAr || '')}</span>
+      <h1>${esc(p.nameAr)}</h1>
+      <p class="pd-short">${esc(p.shortAr || '')}</p>
+
+      <!-- 报价入口放最上面：买家最先找的就是「怎么下单、多少钱」。
+           下面才是说明文字，顺序反了就没人往下看了 -->
+      <div id="pd-quote"></div>
+      <div id="pd-price"></div>
+      <div id="pd-custom"></div>
+
+      <p class="pd-desc">${esc(p.descAr || '')}</p>
+
+      <div class="spec" id="spec"></div>
+
+      <div class="tag-row">
+        ${(p.sectorIds || []).map(s => {
+          const sec = sectorOf(s);
+          return sec ? `<a href="products.html?sec=${encodeURIComponent(s)}">${esc(sec.nameAr)}</a>` : '';
+        }).join('')}
+      </div>
+
+      <div class="pd-actions">
+        ${waOn('waProduct') ? `<a class="btn btn-wa" href="${waProductLink(p)}" target="_blank" rel="noopener">
+          ${WA_ICON} ${esc(ui.whatsappAr || 'واتساب')}</a>` : ''}
+        <button class="favbtn" data-fav="${esc(p.id)}" aria-pressed="false">
+          <span class="ic">${HEART_SVG}</span>
+          <span class="ftx">${esc(ui.addFavAr || 'أضف للمفضلة')}</span>
+        </button>
+      </div>
+    </div>`;
+
+  /* 规格表 */
+  const s = p.specs || {};
+
+  /* 价格 / 可定制项 / 报价。
+     没有价格的产品（比如按尺寸谈的包装盒）只显示定制项 + 报价按钮，
+     不硬编数字 —— 编了反而让买家觉得不专业。 */
+  document.getElementById('pd-quote').innerHTML = quoteBar(p);
+  document.getElementById('pd-price').innerHTML = priceTable(p, {});
+  document.getElementById('pd-custom').innerHTML = customBlock(p);
+
+  /* ---------- 规格表（r19：每一项都能点） ----------
+     用户要求详情页的尺寸、材料这些能点，而且「所有页面要打通」。
+     打通方式按数据实际能支撑的来，不造假链接：
+
+       材料 —— p.materialIds 里才是材料表的 id，这才是能跳筛选的真数据。
+               点一下跳 products.html?mat=<id>，看到同材料的所有产品，能比价。
+       尺寸 / 颜色 / 用途 —— 这些没有对应的分类维度，造一个筛选链接是假的。
+               改成点一下用这个值去产品列表搜索：products.html?q=<值>，
+               同样能把「同尺寸的产品」全找出来，是真打通。
+
+     每一项都带 data-spec-type / data-spec-value，
+     以后要做「选项选择器 + 不同选项不同价格」的时候直接在这个基础上加。 */
+  const matIds = p.materialIds || [];
+
+  /* 材料：按 materialIds 逐个渲染成可点链接。
+     老产品只有 specs.materialAr 文本、没有 materialIds，
+     退回原来的纯文本展示（不然这一行就空了）。 */
+  const specLink = (type, value, href) =>
+    `<a class="spec-v-item" href="${esc(href)}" data-spec-type="${esc(type)}"
+        data-spec-value="${esc(value)}">${esc(value)}</a>`;
+
+  /* r27 修了个老 bug：label（阿语名）在上一行算出来了，传进 specLink 的却是 id ——
+     客户在产品页看到的是「corrugated」「kraft」这种英文 id，很扎眼。
+     现在传 label；材料表里查不到才退回 id。 */
+  const matRow = matIds.length
+    ? matIds.map(id => {
+        const m = materialOf(id);
+        const label = (m && m.nameAr) || id;
+        return specLink('mat', label,
+          'products.html?mat=' + encodeURIComponent(id));
+      }).join('')
+    : (s.materialAr ? `<span>${esc(s.materialAr)}</span>` : '');
+
+  /* 其余三行：点一下 = 用这个值去产品列表搜同名产品 */
+  const qLink = (type, value) => specLink(type, value,
+    'products.html?q=' + encodeURIComponent(value));
+
+  const rowOf = (k, type, v, isArr) => {
+    if (!v || !v.length) return '';
+    const items = isArr
+      ? v.map(x => qLink(type, x)).join('')
+      : qLink(type, v);
+    return `<div class="spec-row">
+      <span class="spec-k">${esc(k)}</span>
+      <span class="spec-v">${items}</span>
+    </div>`;
+  };
+
+  /* 材料那一行：materialIds 和 materialAr 都空就不显示这一行 */
+  const matRowHtml = matRow ? `<div class="spec-row">
+      <span class="spec-k">${esc(ui.specMaterialAr || 'المادة')}</span>
+      <span class="spec-v">${matRow}</span>
+    </div>` : '';
+
+  /* 工艺（r27）：跟材料一样是「有 id 的真数据」，所以点一下能跳工艺页。
+     p.craftIds 里的 id 去 site.crafts.items 查阿语名。
+     比 custom.printAr 那段自由文本强 —— 那个只能读，这个能点进去看详情。 */
+  const craftIds = p.craftIds || [];
+  const craftMap = {};
+  (((CTX.site || {}).crafts || {}).items || [])
+    .forEach(c => { if (c && c.id) craftMap[c.id] = c.nameAr; });
+  const craftRow = craftIds.length ? `<div class="spec-row">
+      <span class="spec-k">${esc(ui.specCraftAr || 'الطباعة')}</span>
+      <span class="spec-v">${craftIds.map(id =>
+        specLink('craft', craftMap[id] || id,
+          'craft.html?c=' + encodeURIComponent(id))).join('')}</span>
+    </div>` : '';
+
+  document.getElementById('spec').innerHTML = [
+    matRowHtml,
+    craftRow,
+    rowOf(ui.specSizesAr || 'الأحجام', 'size', s.sizesAr, true),
+    rowOf(ui.specColorsAr || 'الألوان', 'color', s.colorsAr, true),
+    rowOf(ui.specUsesAr || 'الاستخدامات', 'use', s.usesAr, true),
+  ].filter(Boolean).join('');
+
+  /* 缩略图切换 */
+  const thumbs = document.getElementById('gthumbs');
+  const mainBox = document.getElementById('gmain');
+  if (thumbs && mainBox) {
+    thumbs.addEventListener('click', e => {
+      const el = e.target.closest('.thumb');
+      if (!el) return;
+      thumbs.querySelectorAll('.thumb').forEach(x => x.classList.remove('on'));
+      el.classList.add('on');
+      const i = +el.dataset.i;
+      const src = imgsAll[i];
+      mainBox.innerHTML = src
+        ? `<img id="gmain-img" src="${esc(src)}" alt="${esc(p.nameAr)}">`
+        : `<span class="shape">${esc(c?.emoji || '📦')}</span>`;
+      mainBox.setAttribute('data-lb', JSON.stringify(imgs));
+      mainBox.setAttribute('data-lbi', String(i));
+      if (imgs.length) {
+        const z = document.createElement('span');
+        z.className = 'zoom';
+        z.innerHTML = `${ZOOM_ICON}${esc(ui.zoomAr || 'تكبير')}`;
+        mainBox.appendChild(z);
+      }
+    });
+  }
+
+  /* 相关产品 */
+  const rel = (await getProducts({ categoryId: p.categoryId })).filter(x => x.id !== p.id).slice(0, 3);
+  if (rel.length) {
+    document.getElementById('related-title').textContent =
+      `${ui.relatedAr || 'منتجات مشابهة'} ${c?.nameAr || ''}`;
+    document.getElementById('related').innerHTML = rel.map(productCard).join('');
+    paintFavs();
+  } else {
+    document.getElementById('related-sec').style.display = 'none';
+  }
+  paintFavs();
+}
+initProduct().catch(e => console.error('[product]', e));
+</script>
+</body>
+</html>

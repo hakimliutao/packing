@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>القطاعات</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div id="search-bar"></div>
+<div id="site-drawer"></div>
+<header id="site-header"></header>
+
+<section class="page-head">
+  <div class="wrap">
+    <nav class="crumbs"><a href="index.html">الرئيسية</a> <span>/</span> <span>القطاعات</span></nav>
+    <h1 style="font-size:clamp(28px,3.6vw,42px)">حلول لمختلف القطاعات</h1>
+    <p style="color:var(--ink-2);font-size:17px;margin-top:10px">اختر قطاعك ونعرض لك كل ما يناسبه من منتجات، جاهزة للطباعة بشعارك.</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sector-grid" id="sector-grid"></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 style="font-size:26px">مُصمَّم لكل قطاع</h2>
+    <div id="scene-list-all" style="display:flex;flex-direction:column;gap:18px"></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div id="cta-slot"></div>
+</section>
+
+<footer id="site-footer"></footer>
+
+<script src="assets/api.js"></script>
+<script src="assets/ui.js"></script>
+<script src="assets/popup.js"></script>
+<script src="assets/seo.js"></script>
+<script src="assets/currency.js"></script>
+<script src="assets/pricing.js"></script>
+<script src="assets/site.js"></script>
+<script>
+async function initSectors() {
+  await boot('sectors');
+  const { site, tax } = CTX;
+  const ui = tax.ui;
+  document.title = `القطاعات — ${site.brand.nameAr}`;
+
+  const all = await getProducts();
+  const counts = {};
+  all.forEach(p => (p.sectorIds || []).forEach(s => counts[s] = (counts[s] || 0) + 1));
+
+  const secs = (tax.sectors || []).slice().sort((a, b) => (a.sort || 99) - (b.sort || 99));
+  document.getElementById('sector-grid').innerHTML = secs.map(s => `
+    <a class="sector" href="products.html?sec=${encodeURIComponent(s.id)}" id="${s.id}">
+      <span class="sec-img">
+        ${s.image || s.imageAr
+          ? `<img src="${esc(s.image || s.imageAr)}" alt="${esc(s.nameAr)}" loading="lazy">`
+          : `<span class="is-emoji">${esc(s.emoji)}</span>`}
+      </span>
+      <span class="sec-bd">
+        <h3>${esc(s.nameAr)}</h3>
+        <p>${esc(s.descAr || '')}</p>
+        <span class="more">${esc(ui.browseSectorAr)}
+          <span class="count">${counts[s.id] || 0} ${esc(ui.resultsAr)}</span></span>
+      </span>
+    </a>`).join('');
+
+  document.getElementById('scene-list-all').innerHTML = (site.scenes || []).map(sc => {
+    const s = sectorOf(sc.sectorId);
+    const items = all.filter(p => (p.sectorIds || []).includes(sc.sectorId)).slice(0, 4);
+    const src = s && (s.image || s.imageAr);
+    return `
+      <div class="scene">
+        <div class="scene-img" style="min-height:280px">
+          ${src ? `<img src="${esc(src)}" alt="" loading="lazy">` : ''}
+          <span class="cap">${esc(s?.nameAr || '')}</span>
+        </div>
+        <div class="scene-body">
+          <span class="kicker">${esc(sc.kickerAr)}</span>
+          <h2 style="font-size:26px">${esc(sc.titleAr)}</h2>
+          <p>${esc(sc.bodyAr)}</p>
+          <div class="scene-list">
+            ${items.map(p => `
+              <a href="products.html?cat=${encodeURIComponent(p.categoryId)}">
+                ${esc(catOf(p.categoryId)?.nameAr || '')}
+                <span class="cnt">${counts[sc.sectorId] || 0} ${esc(ui.resultsAr)}</span></a>`).join('')}
+          </div>
+          <a class="btn btn-primary" href="products.html?sec=${encodeURIComponent(sc.sectorId)}">
+            ${esc(ui.browseSectorAr)} ${esc(s?.nameAr || '')}</a>
+        </div>
+      </div>`;
+  }).join('');
+
+  if (location.hash) {
+    const t = document.querySelector(location.hash);
+    if (t) setTimeout(() => t.scrollIntoView({ behavior: 'smooth', block: 'center' }), 300);
+  }
+}
+initSectors().catch(e => console.error('[sectors]', e));
+</script>
+</body>
+</html>

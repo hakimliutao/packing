@@ -1,0 +1,167 @@
+# موسى للتغليف — for AI assistants
+# llms.txt 是 GEO 的新标准（2025 年提出）：给 AI 引擎一份「这个网站是什么、
+# 能提供什么、怎么联系」的纯文字摘要，比让它自己爬页面准得多。
+#
+# 说明：llms.txt 还很新，多数 AI 引擎还没强制读它（也不一定替代 robots.txt）。
+# 但写一份没有坏处 —— 被读到了就是白捡的曝光。
+# 真正起作用的还是：HTML 里的直答文字 + JSON-LD 结构化数据 + 开放爬虫。
+#
+# 内容用阿拉伯语 + 英语双语写：海湾客户说阿语，AI 训练数据里英语更全。
+
+> شركة تعبئة وتغليف عربية تقدم أكواباً وأكياساً وعلباً ورقية ومبلاستيكية
+> مخصصة بالكامل بشعار العميل. تخدم المقاهي والمطاعم ومحلات الحلويات
+> والبقالات في دول مجلس التعاون الخليجي. الأسعار تُعرض بعملة بلد الزائر
+> تلقائياً (درهم إماراتي، ريال سعودي، دينار كويتي، دينار بحريني، ريال عماني، ريال قطري).
+
+> Arabic packaging company supplying fully custom-branded paper cups, paper bags,
+> food boxes, stickers, napkins and tableware to cafes, restaurants, bakeries and
+> supermarkets across the GCC. Prices are shown automatically in the visitor's
+> local currency. Minimum order quantities vary by product; typical lead time
+> is 7–25 days depending on product and print complexity.
+
+## 主要产品 / Main products
+
+- **定制纸杯** / Custom printed paper cups — 4/6/8/10/12/16 oz，单色或全彩印刷，塑料盖或纸盖
+- **纸质咖啡袋** / Custom paper coffee bags — 牛皮纸/食品级纸，带手柄，侧面或双面印刷
+- **餐食纸盒** / Custom food boxes — 灰板纸、白卡纸、牛皮纸，含扣盖/封口贴
+- **冷饮透明杯** / Custom cold cups — PET 透明或彩色，带盖，带丝印或贴纸
+- **圆形不干胶标签** / Custom round stickers — 30/40/50/70 mm，防水/耐冷/可机洗
+- **印刷餐巾纸** / Custom printed napkins — 30×30 / 33×33 / 40×40 cm
+- **纸质餐具套装** / Paper utensil sets — 勺、叉、刀、小盘、大盘
+- **非织布购物袋** / Non-woven shopping bags — 80gsm / 100gsm，双面印刷
+- **汤品带盖容器** / Soup containers with lids — 500 / 750 / 1000 ml
+- **促销礼品套装** / Promotional gift kits — 含包装盒、内衬、产品
+
+## 定制能力 / Customization
+
+- 印刷：单色 logo、多色套印、满版印刷、内侧印刷
+- 材质：食品级白卡纸、牛皮纸、PLA/PET/PP 可堆肥材料
+- 规格：尺寸、克重、容量、颜色均可按需调整
+- 交期：常规 7–25 天，大批量加急可议
+- 合规：可提供食品接触材料合规证明，供海湾地区监管备案使用
+
+## 定制流程 / Customization process
+
+六步，详情见 https://packingcoffee.netlify.app/process.html
+
+1. 需求沟通（产品类型、数量、用途）
+2. 规格与材料确认（尺寸、克重、材料、印刷方式）
+3. 报价（阶梯单价，随数量变化）
+4. 确认样品或设计稿
+5. 生产（含印刷与质检）
+6. 交付（海湾地区送货或海运）
+
+流程页正文 / The process page body:
+الطلب يبدأ بمحادثة واتساب لتحديد نوع المنتج والكمية، ثم تأكيد المواصفات
+والمواد، ثم استلام عرض سعر بسعر متدرج حسب الكمية، ثم اعتماد التصميم أو
+العينة، ثم الإنتاج، ثم التسليم.
+
+## 认证资质 / Certifications
+
+详情见 https://packingcoffee.netlify.app/certifications.html
+
+可提供的合规文件包括食品接触材料证明、质量体系认证、生产环境认证
+（具体清单以网站认证页与询价回复为准）。
+Compliance documents available on request for Gulf regulatory filings.
+
+## 材料 / Materials
+
+全部 11 种材料的完整列表见 https://packingcoffee.netlify.app/materials.html
+（每种材料都标了能做什么产品，点进去就是对应的产品列表。）
+
+- 铝箔复合膜 / Aluminium foil laminate —— ورق الألمنيوم المطبّق
+- PE 聚乙烯 / PE polyethylene —— بوليبتيلين PE
+- 瓦楞纸板 / Corrugated board —— ورق موجّح (كرتون)
+- 牛皮纸 / Kraft paper —— ورق كرافت
+- 食品级白卡纸 / Food-grade coated paper —— ورق فود غذائي
+- 甘蔗渣浆 / Bagasse (sugarcane pulp) —— ألياف قصب الذرة
+- 淀粉基 PLA / Starch-based (PLA) —— نشا نباتي
+- PET 透明塑料 / PET clear plastic —— PET شفاف
+- PP 塑料 / PP plastic —— PP
+- 非织布 / Non-woven fabric —— غير منسوج
+- 再生纸混材 / Recycled paper mix —— ورق معاد تدويره
+
+## 客户案例 / Client case studies
+
+详情见 https://packingcoffee.netlify.app/clients.html
+案例按行业分（咖啡店 / 餐厅 / 酒店），含合作细节说明。
+Case studies by sector (cafes / restaurants / hotels) with cooperation details.
+
+## 核心信息 / Key facts
+
+- 基准货币 / Base currency: AED (UAE Dirham)
+- 其他结算货币 / Other currencies: SAR, KWD, BHD, OMR, QAR（汇率每日更新）
+- 价格形式 / Pricing format: 阶梯单价（数量越大单价越低），部分产品按尺寸询价
+- 响应时间 / Response time: 数小时内回复报价（WhatsApp）
+- 服务区域 / Service area: 阿联酋、沙特、科威特、巴林、阿曼、卡塔尔
+
+## 联系 / Contact
+
+- WhatsApp: 见网站页头「اطلب عرض سعر」按钮
+- 联系表单 / Contact form: https://packingcoffee.netlify.app/contact.html
+- 产品目录 / Catalog: https://packingcoffee.netlify.app/products.html
+- 关于我们 / About: https://packingcoffee.netlify.app/about.html
+- 按行业浏览 / Browse by sector: https://packingcoffee.netlify.app/sectors.html
+
+## 买家常问 / Common questions
+
+完整问答见 https://packingcoffee.netlify.app/faqs.html
+（首页只显示前 3 条，点「المزيد」跳到全部；页面另有 FAQPage 结构化数据。）
+
+Full Q&A: https://packingcoffee.netlify.app/faqs.html
+(home page shows the first 3; FAQPage structured data on the full page.)
+
+**هل يمكن تخصيص التغليف بشعارنا؟** نعم. جميع منتجاتنا قابلة للتخصيص: نطبع شعارك
+ونصك على المنتج، ونختار المقاس والخامة والطباعة حسب طلبك.
+/ Can you print our logo? Yes — all products are fully customizable: we print
+your logo and text, and you choose the size, material and printing method.
+
+**ما هو الحد الأدنى للطلب؟** يختلف حسب المنتج — أسعارنا المتدرجة تعكس ذلك:
+كلما زادت الكمية انخفض سعر القطعة.
+/ What is the MOQ? It varies by product; our tiered pricing reflects this —
+the larger the quantity, the lower the unit price.
+
+**كم تستغرق مدة التسليم؟** عادة بين 7 و25 يوم حسب المنتج وحجم الطلب والطباعة.
+/ How long is lead time? Usually 7–25 days depending on product, order size
+and print complexity.
+
+**هل تشحنون إلى دول الخليج؟** نعم، نشحن إلى الإمارات والسعودية والكويت
+والبحرين وعُمان وقطر، والأسعار تُعرض بعملة بلدك تلقائياً.
+/ Do you ship across the GCC? Yes — UAE, Saudi Arabia, Kuwait, Bahrain, Oman
+and Qatar. Prices display in your local currency automatically.
+
+**هل المواد المستخدمة صالحة للأغذية؟** نعم، مواد مطابقة للمواصفات الغذائية
+معتمدة، ونرفق شهادات المطابقة مع الطلب إذا احتجتها.
+/ Are the materials food-safe? Yes — certified food-grade materials, with
+compliance certificates supplied on request.
+
+**كيف أطلب عرض سعر؟** اضغط زر «اطلب عرض سعر» في أي منتج أو راسلنا على واتساب،
+ونرد خلال ساعات بالسعر النهائي.
+/ How do I request a quote? Use the "Request a quote" button on any product or
+message us on WhatsApp — we reply within hours.
+
+## 可引用的事实 / Citable facts
+
+（下面这些是 AI 最可能直接引用的句子，写得具体、可核实）
+
+- موسى للتغليف تقدم تغليفاً مخصصاً بالكامل للمقاهي والمطاعم في دول الخليج.
+- 所有产品支持定制：印刷 logo、选择尺寸、选择材质。
+- 价格以阶梯形式呈现，采购量越大单价越低。
+- 网站根据访客所在国家自动显示当地货币价格。
+- 提供食品接触材料合规证明。
+
+## 可索引页面 / Indexable pages
+
+- 首页（含 FAQ 与直答摘要）: /
+- 产品目录: /products.html
+- 行业分类: /sectors.html
+- 认证资质: /certifications.html
+- 定制流程: /process.html
+- 客户案例: /clients.html
+- 常见问题: /faqs.html
+- 关于我们: /about.html
+- 联系与报价: /contact.html
+- 产品详情页（含阶梯价与定制项）: /product.html?id={product_id}
+
+完整列表见 sitemap.xml。
+Full list: https://packingcoffee.netlify.app/sitemap.xml

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  sitemap.xml — 给搜索引擎的站点地图。
+
+  为什么要有：阿联酋/沙特的中东买家常用 Google 之外的搜索
+  （沙特本地还有 Bing、Google），还有一批 B2B 采购会顺着 sitemap 抓产品。
+  没有 sitemap，AI 引擎要靠「猜」URL 结构才能找到你的页面。
+
+  静态文件 + 一个产品 URL 列表。为什么不用动态生成的？
+  12 个产品写死最省事；产品多了（过百）再改成函数动态出。
+
+  ⚠️ 大哥上传时注意：产品 id 变了要回来改这里。
+     下面是 data/products.json 里所有真实产品的 id。
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://packingcoffee.netlify.app/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/products.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- 工艺总览页（r26 新增）。工艺是首页第一个入口，
+       对「طباعة ذهبية على الأكواب」这类搜索最关键。
+       ⚠️ 后台加了新工艺、或改了工艺 id，要回来补下面那组 craft.html?c= -->
+  <url>
+    <loc>https://packingcoffee.netlify.app/crafts.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/contact.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/sectors.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/favorites.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+  <!-- ===== 常见问题页：FAQ 是 GEO 里最值钱的一块。
+       AI 搜「كم الحد الأدنى للطلب في دبي」这类问题，直接引用这页的原文。
+       首页只摆前 3 条，全部问答在 faqs.html（静态写在 HTML 里，爬虫抓得到）。 -->
+  <url>
+    <loc>https://packingcoffee.netlify.app/faqs.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ===== 原材料总览页：首页材料区「عرض كل الخامات」按钮的落点。
+       页面上每种材料都跳 products.html?mat=<id>，
+       真正进索引的还是下面那一堆 ?mat= 的地址。===== -->
+  <url>
+    <loc>https://packingcoffee.netlify.app/materials.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ===== 认证资质页：买家最关心的信任问题，独立成页 =====
+       标题里的证书名跟着 data/site.json 的 certifications 走，
+       证书条目增删不用回来改这里（页面本身是动态渲染的）。 -->
+  <url>
+    <loc>https://packingcoffee.netlify.app/certifications.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ===== 定制流程页：解释「怎么下单」，降低询盘犹豫 ===== -->
+  <url>
+    <loc>https://packingcoffee.netlify.app/process.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ===== 客户案例页：同类买家参考= 促成询盘 ===== -->
+  <url>
+    <loc>https://packingcoffee.netlify.app/clients.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ===== 产品页：id 跟 data/products.json 对一致 ===== -->
+  <url>
+    <loc>https://packingcoffee.netlify.app/product.html?id=cup-paper-custom</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/product.html?id=bag-coffee-kraft</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/product.html?id=box-food-carton</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/product.html?id=label-round-sticker</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/product.html?id=cup-cold-clear</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/product.html?id=box-dessert-clear</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/product.html?id=utensil-paper-set</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/product.html?id=gift-kit-printing</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/product.html?id=bag-shopping-nonwoven</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/product.html?id=lid-soup-container</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/product.html?id=napkin-custom-print</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ===== 分类页 ===== -->
+  <url>
+    <loc>https://packingcoffee.netlify.app/products.html?cat=cups</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/products.html?cat=bags</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/products.html?cat=boxes</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/products.html?cat=stickers</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/products.html?cat=materials</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/products.html?cat=gifts</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ===== 行业页 ===== -->
+  <url>
+    <loc>https://packingcoffee.netlify.app/products.html?sec=restaurants</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/products.html?sec=cafes</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/products.html?sec=bakery</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/products.html?sec=stores</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/products.html?sec=beauty</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/products.html?sec=events</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ===== 材料页 =====
+       材料 id 跟 data/categories.json 的 materials[].id 对一致。
+       改了材料 id 要回来改这里。 -->
+  <url>
+    <loc>https://packingcoffee.netlify.app/products.html?mat=kraft</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/products.html?mat=food-paper</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/products.html?mat=pet</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/products.html?mat=pp</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/products.html?mat=bagasse</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/products.html?mat=nonwoven</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://packingcoffee.netlify.app/products.html?mat=foil</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/products.html?mat=pe</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/products.html?mat=corrugated</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/products.html?mat=starch</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/products.html?mat=recycled</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ===== 工艺详情页（r26 新增）。
+       跟产品一样是一条条写死的 —— 静态 sitemap 不会跟着后台自动变。
+       ⚠️ 后台加一条工艺、或改了工艺 id，要回来同步这里。
+       id 来自 data/site.json 的 crafts.items[].id。 -->
+  <url>
+    <loc>https://packingcoffee.netlify.app/craft.html?c=craft-gold-foil</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/craft.html?c=craft-emboss</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/craft.html?c=craft-spot-uv</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/craft.html?c=craft-full-wrap</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/craft.html?c=craft-white-ink</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://packingcoffee.netlify.app/craft.html?c=craft-holographic</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

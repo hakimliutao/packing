@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>عملائنا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div id="search-bar"></div>
+<div id="site-drawer"></div>
+<header id="site-header"></header>
+
+<!-- 标题和正文全部来自 site.json，后台改完前台立刻跟着变。
+     这里只留骨架，不写死任何一句文案。 -->
+<section class="page-head">
+  <div class="wrap">
+    <nav class="crumbs"><a href="index.html">الرئيسية</a> <span>/</span> <span id="crumb-here"></span></nav>
+    <div class="blk-head" style="margin-top:10px">
+      <span class="kicker" id="blk-kicker"></span>
+      <h1 id="blk-title" style="font-size:clamp(28px,3.6vw,42px)"></h1>
+      <p id="blk-lead"></p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div id="blk-slot"></div>
+  </div>
+</section>
+
+
+<section style="padding-top:0">
+  <div class="wrap"><div id="cta-slot"></div></div>
+</section>
+
+<footer id="site-footer"></footer>
+
+<script src="assets/api.js"></script>
+<script src="assets/ui.js"></script>
+<script src="assets/popup.js"></script>
+<script src="assets/seo.js"></script>
+<script src="assets/currency.js"></script>
+<script src="assets/pricing.js"></script>
+<script src="assets/blocks.js"></script>
+<script src="assets/site.js"></script>
+<script>
+async function initPage() {
+  await boot('clients');
+  const { site, tax } = CTX;
+  const ui = tax.ui || {};
+  const b = blockData('clients');
+  const items = blockItems('clients', 'items');
+
+  document.title = `عملائنا — ${site.brand.nameAr}`;
+  document.getElementById('crumb-here').textContent = b.titleAr || 'عملائنا';
+  document.getElementById('blk-kicker').textContent = b.kickerAr || '';
+  document.getElementById('blk-title').textContent = b.titleAr || 'عملائنا';
+  document.getElementById('blk-lead').textContent = b.leadAr || '';
+
+  document.getElementById('blk-slot').innerHTML = items.length
+    ? clientFull()
+    : emptyState(ui.noClientsAr, ui.noClientsSubAr);
+
+  /* 从首页带 #锚点 过来的，滚到对应那一步 */
+  if (location.hash) {
+    const t = document.querySelector(location.hash);
+    if (t) setTimeout(() => t.scrollIntoView({ behavior: 'smooth', block: 'center' }), 320);
+  }
+}
+initPage().catch(e => console.error('[clients]', e));
+</script>
+</body>
+</html>

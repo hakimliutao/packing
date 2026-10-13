@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>من نحن</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div id="search-bar"></div>
+<div id="site-drawer"></div>
+<header id="site-header"></header>
+
+<section class="page-head">
+  <div class="wrap">
+    <nav class="crumbs"><a href="index.html">الرئيسية</a> <span>/</span> <span>من نحن</span></nav>
+    <h1 style="font-size:clamp(28px,3.6vw,42px)">من نحن</h1>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap about-grid">
+    <div>
+      <p style="font-size:18px;color:var(--ink-2);line-height:1.95" id="about-lead"></p>
+      <p style="color:var(--ink-2);line-height:1.95;margin-top:16px" id="about-body"></p>
+      <div class="info-list" id="about-facts"></div>
+    </div>
+    <div>
+      <div class="scene-img" style="min-height:400px;border-radius:20px">
+        <span class="cap">صورة عن الشركة</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 优势详解：首页那 4 个小格把说明收进弹层了，
+     这里把每条完整写出来 —— 想认真看的人点「المزيد」进来。 -->
+<section class="band" style="margin-top:20px">
+  <div class="wrap">
+    <h2 id="feat-title" style="text-align:center"></h2>
+    <p id="feat-lead" style="text-align:center;color:var(--ink-2);font-size:17px;margin:0 auto 34px;max-width:70ch"></p>
+    <div class="feat-grid" id="feat-grid"></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div id="cta-slot"></div>
+</section>
+
+<footer id="site-footer"></footer>
+
+<script src="assets/api.js"></script>
+<script src="assets/ui.js"></script>
+<script src="assets/popup.js"></script>
+<script src="assets/seo.js"></script>
+<script src="assets/currency.js"></script>
+<script src="assets/pricing.js"></script>
+<script src="assets/site.js"></script>
+<script>
+async function initAbout() {
+  await boot('about');
+  const { site, tax } = CTX;
+  const ui = tax.ui;
+  document.title = `من نحن — ${site.brand.nameAr}`;
+
+  document.getElementById('about-lead').textContent =
+    site.brand.taglineAr + ' — نخدم المطاعم والمقاهي والمتاجر والعلامات التجارية في المنطقة.';
+
+  /* kicker 已经不在 HTML 里了，只填标题。
+     lead 用原来那句 featuresLeadAr（首页那块已经删掉了说明文字，
+     现在搬到这儿当引言）。 */
+  document.getElementById('feat-title').textContent = ui.featuresTitleAr || 'لماذا يختارنا عملاؤنا';
+  document.getElementById('feat-lead').textContent = ui.featuresLeadAr || '';
+  document.getElementById('feat-grid').innerHTML = tax.features.map(f => `
+    <div class="feat">
+      <span class="n">${esc(f.no)}</span>
+      <h3>${esc(f.titleAr)}</h3>
+      <p>${esc(f.descAr)}</p>
+    </div>`).join('');
+
+  document.getElementById('about-facts').innerHTML = `
+    <div><span>📍</span><b>${esc(site.contact.cityAr)}</b></div>
+    <div><span>🕘</span><b>${esc(site.contact.workingHoursAr || '')}</b></div>
+    ${waOn('waFoot') ? `<a href="${waLink('', 'waFoot')}"><span>💬</span><b>واتساب — رد خلال ساعات</b></a>` : ''}`;
+}
+initAbout();
+</script>
+</body>
+</html>

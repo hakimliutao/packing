@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>تواصل معنا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div id="search-bar"></div>
+<div id="site-drawer"></div>
+<header id="site-header"></header>
+
+<section class="page-head">
+  <div class="wrap">
+    <nav class="crumbs"><a href="index.html">الرئيسية</a> <span>/</span> <span>تواصل معنا</span></nav>
+    <h1 style="font-size:clamp(28px,3.6vw,42px)">تواصل معنا</h1>
+    <p style="color:var(--ink-2);font-size:17px;margin-top:10px">أسرع طريقة للوصول إلينا هي واتساب — أرسل لنا طلبك وسنرد خلال ساعات.</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap about-grid">
+    <div>
+      <h2 style="font-size:24px">راسلنا مباشرة</h2>
+      <div class="info-list" id="contact-list"></div>
+      <p style="color:var(--ink-3);font-size:14px;margin-top:20px;line-height:1.9">
+        نصيحة: عند التواصل عبر واتساب، اذكر اسم المنتج أو القطاع الذي تهتم به — يساعدنا ذلك في الرد بدقة أكبر.
+      </p>
+    </div>
+    <div>
+      <div class="form" id="wa-form">
+        <div>
+          <label>الاسم</label>
+          <input id="c-name" placeholder="اسمك">
+        </div>
+        <div>
+          <label>المنتج أو القطاع</label>
+          <select id="c-topic"></select>
+        </div>
+        <div>
+          <label>رسالتك</label>
+          <textarea id="c-msg" placeholder="اكتب طلبك هنا…"></textarea>
+        </div>
+        <button class="btn btn-wa" id="c-send" style="width:100%"${'${waOn('waContactBtn') ? '' : ' hidden'}'}>إرسال عبر واتساب</button>
+        <p style="font-size:13px;color:var(--ink-3);text-align:center">
+          ضغط الزر سيفتح واتساب برسالة جاهزة.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer"></footer>
+
+<script src="assets/api.js"></script>
+<script src="assets/ui.js"></script>
+<script src="assets/popup.js"></script>
+<script src="assets/seo.js"></script>
+<script src="assets/currency.js"></script>
+<script src="assets/pricing.js"></script>
+<script src="assets/site.js"></script>
+<script>
+async function initContact() {
+  await boot('contact');
+  const { site, tax } = CTX;
+  document.title = `تواصل معنا — ${site.brand.nameAr}`;
+
+  document.getElementById('contact-list').innerHTML = `
+    ${waOn('waContactBtn') ? `<a href="${waLink('', 'waContactBtn')}" target="_blank" rel="noopener">
+      <span>💬</span><b>واتساب</b><span class="go" style="margin-inline-start:auto;color:var(--ink-3)">↗</span></a>` : ''}
+    <a href="mailto:${esc(site.contact.email)}"><span>✉️</span><b>${esc(site.contact.email)}</b></a>
+    <div><span>📍</span><b>${esc(site.contact.cityAr)}</b></div>
+    <div><span>🕘</span><b>${esc(site.contact.workingHoursAr || '')}</b></div>`;
+
+  const prods = await getProducts();
+  document.getElementById('c-topic').innerHTML =
+    `<option value="">— اختر —</option>` +
+    tax.sectors.map(s => `<option value="قطاع ${esc(s.nameAr)}">قطاع: ${esc(s.nameAr)}</option>`).join('') +
+    prods.map(p => `<option value="منتج: ${esc(p.nameAr)}">منتج: ${esc(p.nameAr)}</option>`).join('');
+
+  document.getElementById('c-send').onclick = () => {
+    const name = document.getElementById('c-name').value.trim();
+    const topic = document.getElementById('c-topic').value;
+    const msg = document.getElementById('c-msg').value.trim();
+    const lines = [`مرحباً${name ? '، أنا ' + name : ''}،`];
+    if (topic) lines.push(`موضوع الاستفسار: ${topic}`);
+    if (msg) lines.push('', msg);
+    window.open(waLink(lines.join('\n'), 'waContactBtn'), '_blank');
+  };
+}
+initContact();
+</script>
+</body>
+</html>

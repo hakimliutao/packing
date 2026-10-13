@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>الشهادات والاعتمادات</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div id="search-bar"></div>
+<div id="site-drawer"></div>
+<header id="site-header"></header>
+
+<!-- 这页不放静态文案：标题、说明、每张证书的名称/机构/编号/有效期全部
+     来自 site.json，后台在「إعدادات الموقع → الشهادات」里改。
+     写死在这里的话，后台改了这里还在，Google 抓到的也是旧的。 -->
+<section class="page-head">
+  <div class="wrap">
+    <nav class="crumbs"><a href="index.html">الرئيسية</a> <span>/</span> <span id="crumb-here"></span></nav>
+    <div class="blk-head" style="margin-top:10px">
+      <span class="kicker" id="cert-kicker"></span>
+      <h1 id="cert-title" style="font-size:clamp(28px,3.6vw,42px)"></h1>
+      <p id="cert-lead"></p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div id="cert-slot"></div>
+  </div>
+</section>
+
+<!-- FAQ：证书页是买家最会怀疑真假的页面，
+     写死几个常见问题（能提供哪些文件、有效期怎么算、能不能用在清关上），
+     搜索引擎和 AI 引擎最爱引用这种结构。 -->
+<section class="band faq-band">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker" id="cert-faq-kicker"></span>
+      <h2 id="cert-faq-title"></h2>
+    </div>
+    <div class="faq-list" id="cert-faq"></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap"><div id="cta-slot"></div></div>
+</section>
+
+<footer id="site-footer"></footer>
+
+<script src="assets/api.js"></script>
+<script src="assets/ui.js"></script>
+<script src="assets/popup.js"></script>
+<script src="assets/seo.js"></script>
+<script src="assets/currency.js"></script>
+<script src="assets/pricing.js"></script>
+<script src="assets/blocks.js"></script>
+<script src="assets/site.js"></script>
+<script>
+async function initCerts() {
+  await boot('certs');
+  const { site, tax } = CTX;
+  const ui = tax.ui || {};
+  const b = blockData('certifications');
+
+  const T = {
+    crumb: ui.certCrumbAr || 'الشهادات',
+    kicker: b.kickerAr || '',
+    title: b.titleAr || '',
+    lead: b.leadAr || '',
+    faqK: ui.certFaqKickerAr || 'أسئلة متكررة',
+    faqT: ui.certFaqTitleAr || 'أسئلة يطرحها العملاء عن الشهادات',
+  };
+  document.title = `${T.crumb} — ${site.brand.nameAr}`;
+  document.getElementById('crumb-here').textContent = T.crumb;
+  document.getElementById('cert-kicker').textContent = T.kicker;
+  document.getElementById('cert-title').textContent = T.title;
+  document.getElementById('cert-lead').textContent = T.lead;
+  document.getElementById('cert-faq-kicker').textContent = T.faqK;
+  document.getElementById('cert-faq-title').textContent = T.faqT;
+
+  const items = blockItems('certifications', 'items');
+  document.getElementById('cert-slot').innerHTML = items.length
+    ? certGrid(true)
+    : emptyState(ui.noCertAr || 'لم تُضف شهادات بعد',
+                 ui.noCertSubAr || 'أضف شهاداتك من لوحة التحكم لتظهر هنا.');
+
+  /* FAQ 写死不用 JS —— 爬虫抓不到 JS 渲染的内容 */
+  document.getElementById('cert-faq').innerHTML = [
+    [ui.certFaq1Q || 'هل يمكنني الحصول على ملفات الشهادات؟',
+     ui.certFaq1A || 'نعم، نرفق نسخ الشهادات مع العرض السعر، أو نرسلها لك قبل تأكيد الطلب. إذا كانت الجهات التنظيمية لديك تطلب نسخة محددة، أخبرنا ونجهزها.'],
+    [ui.certFaq2Q || 'هل الشهادات تغطي كل المنتجات؟',
+     ui.certFaq2A || 'الشهادة تخص مادة ومنتجاً معيّناً. مثلاً شهادة المواد الغذائية تغطي الأكواب الورقية، لكنها لا تغطي الأكواب البلاستيكية. نوضح لك ذلك في عرض السعر.'],
+    [ui.certFaq3Q || 'هل تنتهي صلاحية الشهادات؟',
+     ui.certFaq3A || 'نعم، معظم الشهادات لها تاريخ انتهاء. نراجع تواريخها دورياً ونحدّثها، وفي هذه الصفحة نكتب تاريخ كل شهادة صراحة.'],
+    [ui.certFaq4Q || 'هل تناسب هذه الشهادات للاستخدام في التخليص الجمركي؟',
+     ui.certFaq4A || 'نعم، نرفق Declaration of Conformity والشهادات المطلوبة لدول الخليج. أخبرنا إن كانت جهتك تطلب نموذجاً معيّناً وسنجهّزه.'],
+  ].map(([q, a]) => `<details class="faq-item"><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('');
+}
+initCerts().catch(e => console.error('[certs]', e));
+</script>
+</body>
+</html>

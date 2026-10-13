@@ -1,0 +1,41 @@
+# robots.txt
+# 告诉搜索引擎和 AI 引擎怎么抓这个站。
+#
+# 关键点：显式开放 AI 爬虫。
+# GPTBot / OAI-SearchBot / ChatGPT-User / PerplexityBot / ClaudeBot / Google-Extended
+# 这些是 AI 引擎的抓取程序。以前很多站默认把它们当普通 bot 拦掉，
+# 结果 ChatGPT 之类的就完全不知道你的网站存在 —— GEO 就无从谈起。
+# 开放它们是GEO 的前提。
+
+User-agent: *
+Allow: /
+# 后台别收录 —— 里面是内部数据，不该出现在搜索结果里
+Disallow: /admin/
+
+# ---- AI 引擎（GEO 用）----
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Apple 的 AI 摘要也用这个
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+Sitemap: https://packingcoffee.netlify.app/sitemap.xml

@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>后台管理</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="bar">
+  <div class="bar-in">
+    <div class="logo"><span class="mark">ل</span> <span>后台管理</span></div>
+    <div class="bar-actions">
+      <a class="lnk" href="../index.html" target="_blank">查看网站 ↗</a>
+      <span class="mode">测试模式 · 数据存在这个浏览器里</span>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <button class="on" data-p="products">产品</button>
+  <button data-p="cats">分类 / 行业 / 材料</button>
+  <button data-p="import">批量导入</button>
+  <button data-p="words">网站文案</button>
+  <button data-p="settings">网站设置</button>
+</nav>
+
+<main class="wrap2">
+
+  <!-- ========== 产品 ========== -->
+  <section class="panel on" id="p-products">
+    <div class="row">
+      <h1>产品</h1>
+      <div class="row-actions">
+        <button id="add-product" class="btn primary">+ 添加产品</button>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <input class="inp" id="q-filter" placeholder="按名称搜索…">
+      <select class="inp" id="cat-filter"></select>
+      <select class="inp" id="show-filter">
+        <option value="all">全部</option>
+        <option value="pub" selected>仅已发布</option>
+        <option value="unpub">仅隐藏</option>
+        <option value="feat">仅推荐</option>
+      </select>
+      <span class="count" id="count"></span>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr>
+          <th style="width:64px">图片</th>
+          <th>名称</th>
+          <th style="width:120px">所属分类</th>
+          <th style="width:90px">行业</th>
+          <th style="width:60px">排序</th>
+          <th style="width:70px">推荐</th>
+          <th style="width:80px">状态</th>
+          <th style="width:180px">操作</th>
+        </tr></thead>
+        <tbody id="list"></tbody>
+      </table>
+    </div>
+
+    <p class="tip">排序：数字小的在前。「推荐」勾上会出现在首页的「热门产品」区块。</p>
+  </section>
+
+  <!-- ========== 板块 ========== -->
+  <section class="panel" id="p-cats">
+    <h1>分类与行业</h1>
+    <p class="tip" style="margin-top:0">
+      每个分类、每个行业都能配图。传了就用图替换图标，没传就还是原来的图标 — 客户看到的是图。 没上传图就还是用图标。
+    </p>
+    <p class="hint" style="margin-top:-8px">
+      尺寸：分类图片 <b dir="ltr">600 × 600</b>（正方形，显示在圆框里）·
+      行业图片 <b dir="ltr">1200 × 675</b>（16:9）。板块封面最小 <b dir="ltr">400 × 400</b>。
+      图片要么正方形、要么 16:9，其它比例会被裁掉。
+    </p>
+
+    <h3 style="margin-top:24px" id="set-cats">产品分类（产品类型）</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr>
+          <th style="width:190px">图片 所属分类</th>
+          <th>阿拉伯语名称</th>
+          <th style="width:60px">图标</th>
+          <th style="width:70px">排序</th>
+          <th style="width:80px">产品数</th>
+          <th style="width:70px"></th>
+        </tr></thead>
+        <tbody id="cat-list"></tbody>
+      </table>
+    </div>
+    <div class="row-actions" style="margin-top:14px">
+      <button id="add-cat" class="btn">+ 添加分类</button>
+    </div>
+
+    <h3 style="margin-top:44px" id="set-sectors">使用行业（咖啡店、餐厅…）</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr>
+          <th style="width:190px">行业图片</th>
+          <th style="width:24%">阿拉伯语名称</th>
+          <th>描述</th>
+          <th style="width:60px">图标</th>
+          <th style="width:70px">排序</th>
+          <th style="width:80px">产品数</th><th style="width:70px"></th>
+        </tr></thead>
+        <tbody id="sector-list"></tbody>
+      </table>
+    </div>
+    <div class="row-actions" style="margin-top:14px">
+      <button id="add-sector" class="btn">+ 添加行业</button>
+    </div>
+
+    <h3 style="margin-top:44px" id="set-mats">原材料（纸、PET、PP…）</h3>
+    <p class="hint" style="margin-top:-8px;max-width:780px;line-height:1.95">
+      这是网站筛选里的第三个维度。客户可以同时选产品 + 行业 + 材料。<br>
+      <b>要添加新材料：</b> 点表格下面的「+ 添加材料」，下面会多出一行空白。
+      填阿语名称和描述，想传图就上传图片，然后点「保存修改」。<br>
+      <b>修改已有材料：</b> 直接在单元格里改，改完保存就自动刷新。<br>
+      <b>删除：</b> 点该行右侧的「删除」，会先让你确认一次。
+      如果这个材料已经被产品用着，会显示用它的产品数量，先从产品上解掉再来删。
+    </p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr>
+          <th style="width:190px">材料图片</th>
+          <th style="width:24%">阿拉伯语名称</th>
+          <th>描述</th>
+          <th style="width:60px">图标</th>
+          <th style="width:70px">排序</th>
+          <th style="width:80px">产品数</th><th style="width:70px"></th>
+        </tr></thead>
+        <tbody id="material-list"></tbody>
+      </table>
+    </div>
+    <div class="row-actions" style="margin-top:14px">
+      <button id="add-material" class="btn">+ 添加材料</button>
+    </div>
+
+    <div class="row-actions" style="margin-top:22px">
+      <button id="save-tax" class="btn primary">保存修改</button>
+    </div>
+  </section>
+
+  <!-- ========== 批量导入 ========== -->
+  <section class="panel" id="p-import">
+    <div class="row">
+      <h1>批量导入</h1>
+      <div class="row-actions">
+        <button id="imp-tpl" class="btn">下载 Excel 模板</button>
+        <button id="imp-export" class="btn">导出当前产品</button>
+      </div>
+    </div>
+
+    <p class="tip" style="margin-top:0">
+      ① 下载模板，在 Excel 里填好（表头是中文，别改名）② 回到这里上传文件 ③ 看一下预览，确认没问题再导入。
+      默认选「只加新的」—— 表格每一行都当成新产品，网站上已有的不受影响。
+    </p>
+
+    <div class="steps">
+      <div class="step">
+        <h4><span class="sn">1</span> 表格文件</h4>
+        <input type="file" id="imp-file" class="inp" accept=".xlsx,.xls,.csv">
+        <p class="hint">支持格式：xlsx、xls、csv。第一行必须是列名。</p>
+      </div>
+
+      <div class="step">
+        <h4><span class="sn">2</span> 图片</h4>
+        <div class="row-actions" style="margin-bottom:8px">
+          <label class="file"><input type="file" id="imp-imgs" accept="image/*" multiple><span>选择图片</span></label>
+          <label class="file"><input type="file" id="imp-folder" webkitdirectory directory multiple><span>选择文件夹</span></label>
+        </div>
+        <p class="hint" id="imp-imgcount">还没选图片</p>
+        <p class="hint">
+          在「图片1」这一列填直接链接，或者填文件名比如 <b dir="ltr">cup-01.jpg</b>
+          导入时会自动上传。图片的顺序有讲究：第一张是主图。
+        </p>
+      </div>
+
+      <div class="step">
+        <h4><span class="sn">3</span> 导入方式</h4>
+        <select class="inp" id="imp-mode">
+          <option value="append" selected>① 只加新的（推荐）— 已有的不动</option>
+          <option value="upsert">② 同名更新 + 加新的 — 要改老产品时用</option>
+          <option value="replace">③ 替换全部产品 — 会清空所有（有风险，很少用）</option>
+        </select>
+        <p class="hint">平时用第一个。只有当你要改老产品、并且填了相同的「中文名称」时才用第二个。第三个会删光现有产品。</p>
+      </div>
+    </div>
+
+    <div class="imp-stat" id="imp-stat"></div>
+    <div id="imp-preview"></div>
+
+    <div class="row-actions" style="margin-top:18px">
+      <button id="imp-go" class="btn primary">开始导入</button>
+    </div>
+    <div class="pbar"><div class="pbar-in" id="imp-bar"></div></div>
+  </section>
+
+  <!-- ========== 设置 ========== -->
+  <!-- ========== 网站文案 ========== -->
+  <section class="panel" id="p-words">
+    <h1>网站文案</h1>
+    <p class="tip" style="margin-top:0">
+      网站上所有阿拉伯语文字都在这里改。用阿语写，输入框
+      <b dir="ltr">dir="rtl"</b> 用来保证文字方向正确。
+      留空就显示默认文字。
+    </p>
+    <div id="words-list"></div>
+    <div class="row-actions" style="margin-top:18px">
+      <button id="words-save" class="btn primary">保存文字</button>
+      <span class="hint" id="words-count" style="margin:0"></span>
+    </div>
+  </section>
+
+  <!-- ========== 网站设置 ========== -->
+  <section class="panel" id="p-settings">
+    <h1>网站设置</h1>
+
+    <div id="upgrade-box" hidden>
+      <h3 style="margin-top:0;color:#a3402f">数据是旧版 — 需要升级一次</h3>
+      <p class="tip" style="margin-top:0">
+        这批数据是在「网站配色 / 横幅 / 分类图片」这些新功能之前录的。
+        点下面按钮跑一次就能升级完。你写过的图和文字都不会丢。
+      </p>
+      <div class="row-actions">
+        <button id="btn-upgrade" class="btn primary" type="button">现在升级数据</button>
+        <span class="hint" id="upgrade-msg" style="margin:0"></span>
+      </div>
+    </div>
+
+    <h3>品牌</h3>
+    <div class="fgrid">
+      <label>品牌名称<input class="inp" id="s-brand"></label>
+      <label>Logo 字母<input class="inp w60" id="s-logo" maxlength="2"></label>
+      <label class="full">文字 Logo（显示在页脚）<input class="inp" id="s-tagline"></label>
+    </div>
+
+    <h3>WhatsApp — 多个号码</h3>
+    <p class="tip" style="margin-top:-6px">
+      可以加多个号码。每个位置都能单独指定用哪个号，也可以整个关掉不显示。
+      不写「开场白」就用下面那个通用消息。
+    </p>
+
+    <!-- 号码列表 -->
+    <div id="wa-list" style="display:flex;flex-direction:column;gap:10px;margin-bottom:12px"></div>
+    <div class="row-actions" style="margin-top:12px">
+      <button type="button" class="btn" id="wa-add">+ 增加一个号码</button>
+    </div>
+
+    <!-- 位置分配 -->
+    <h3 style="margin-top:32px">哪个位置用哪个号</h3>
+    <p class="tip" style="margin-top:-6px">
+      左边勾=显示，右边选用哪个号码。全不勾就等于把那个位置的按钮撤掉。
+    </p>
+    <div id="wa-map" style="display:flex;flex-direction:column;gap:8px"></div>
+
+    <h3 style="margin-top:32px">通用开场白</h3>
+    <div class="fgrid">
+      <label class="full">消息内容<input class="inp" id="s-wamsg"></label>
+    </div>
+    <p class="tip">号码里没单独写消息的按钮，都用这句。示例号码：966500000000（国际格式，不带 +）。</p>
+
+    <h3>联系方式</h3>
+    <div class="fgrid">
+      <label>邮箱<input class="inp" id="s-email" dir="ltr"></label>
+      <label>城市<input class="inp" id="s-city"></label>
+      <label class="full">工作时间<input class="inp" id="s-hours"></label>
+    </div>
+
+    <h3>社媒渠道</h3>
+    <p class="tip" style="margin-top:-6px">
+      填了链接才显示在页脚，不填就不显示。图标按渠道自动配，不用自己挑。
+      点击在新标签页打开。
+    </p>
+    <div class="fgrid">
+      <label>Instagram<input class="inp" id="s-ig" dir="ltr" placeholder="https://instagram.com/..."></label>
+      <label>Facebook<input class="inp" id="s-fb" dir="ltr" placeholder="https://facebook.com/..."></label>
+      <label>LinkedIn<input class="inp" id="s-li" dir="ltr" placeholder="https://linkedin.com/company/..."></label>
+      <label>TikTok<input class="inp" id="s-tt" dir="ltr" placeholder="https://tiktok.com/@..."></label>
+      <label>Snapchat<input class="inp" id="s-sc" dir="ltr" placeholder="https://snapchat.com/add/..."></label>
+      <label>X (Twitter)<input class="inp" id="s-x" dir="ltr" placeholder="https://x.com/..."></label>
+      <label>Telegram<input class="inp" id="s-tg" dir="ltr" placeholder="https://t.me/..."></label>
+    </div>
+
+    <h3>页脚链接</h3>
+    <p class="tip" style="margin-top:-6px">
+      「快速链接」和「联系」这两组的标题和链接都在这里改。产品分类和行业自动生成，不用管。
+    </p>
+    <div class="fgrid">
+      <label>快速链接组标题<input class="inp" id="ft-quicktitle"></label>
+      <label>联系组标题<input class="inp" id="ft-contacttitle"></label>
+    </div>
+    <h4 style="margin-top:18px;font-size:14px">快速链接组</h4>
+    <div id="ft-quick" style="display:flex;flex-direction:column;gap:8px"></div>
+    <button type="button" class="btn" id="ft-quick-add" style="margin-top:10px">+ 增加一条</button>
+    <h4 style="margin-top:24px;font-size:14px">联系组</h4>
+    <div id="ft-contact" style="display:flex;flex-direction:column;gap:8px"></div>
+    <button type="button" class="btn" id="ft-contact-add" style="margin-top:10px">+ 增加一条</button>
+
+    <h3 id="set-homeblocks">首页板块开关</h3>
+    <p class="tip" style="margin-top:-6px">
+      每一行是一个板块。数量填<b>0</b> 就把整个板块藏掉；正常填就显示这么多个（板块本身内容不够时按实际数量）。
+    </p>
+    <div class="fgrid">
+      <label>首屏 · 三个数字<input class="inp w60" id="s-h-stats" type="number" min="0" max="6"></label>
+      <label>信任区 · 几条<input class="inp w60" id="s-h-trust" type="number" min="0" max="8"></label>
+      <label>产品类型 · 几个<input class="inp w60" id="s-h-cats" type="number" min="0" max="20"></label>
+      <label>行业场景 · 几个<input class="inp w60" id="s-h-sectors" type="number" min="0" max="20"></label>
+      <label>原材料 · 几个<input class="inp w60" id="s-h-mats" type="number" min="0" max="20"></label>
+      <label>热门产品 · 几个<input class="inp w60" id="s-h-featured" type="number" min="0" max="24"></label>
+      <label>最新产品 · 几个<input class="inp w60" id="s-h-new" type="number" min="0" max="24"></label>
+      <label>定制流程 · 几步<input class="inp w60" id="s-h-proc" type="number" min="0" max="12"></label>
+      <label>客户案例 · 几个<input class="inp w60" id="s-h-cli" type="number" min="0" max="20"></label>
+      <label>认证资质 · 几个<input class="inp w60" id="s-h-cert" type="number" min="0" max="6"></label>
+      <label>常见问题 · 几条<input class="inp w60" id="s-h-faq" type="number" min="0" max="20"></label>
+    </div>
+    <div class="row-actions" style="margin-top:12px">
+      <label class="chk" style="display:flex;align-items:center;gap:8px;cursor:pointer">
+        <input type="checkbox" id="s-h-scene" style="width:18px;height:18px">
+        <span>显示「为咖啡店定制」板块</span>
+      </label>
+      <span class="hint" style="margin:0">这个板块跟行业场景重复，默认隐藏。</span>
+    </div>
+
+    <h3 id="set-homecopy">首页文案</h3>
+    <div class="fgrid">
+      <label class="full">主标题<input class="inp" id="s-hero"></label>
+      <label class="full">说明文字<textarea class="inp" id="s-lead" rows="3"></textarea></label>
+    </div>
+
+    <h3 id="set-stats">首页那三个数字</h3>
+    <p class="tip" style="margin-top:0">
+      这些数字显示在首屏标题下面，比如「+250 目录里的产品」。
+      一行都不填的话会全部消失。
+    </p>
+    <div id="stats-list"></div>
+    <div class="row-actions">
+      <button type="button" class="btn" id="stats-add">+ 添加数字</button>
+    </div>
+
+    <h3 id="set-banners">首页横幅（轮播图）</h3>
+    <p class="tip" style="margin-top:0">
+      横幅想加多少张都行，顺序从右往左排。
+      建议尺寸 <b dir="ltr">1600 × 1200</b>（4:3），或者 <b dir="ltr">1200 × 1200</b> 正方形。
+      第一张图片就是打开页面时显示的那张。
+    </p>
+    <p class="tip" style="margin-top:-8px">
+      每张横幅都可以做成可点击的：选「跳转类型」再填目标地址。
+      如果选「没有链接」，图片就不可点击。
+    </p>
+    <h3 id="set-cover">旧封面图（改版前那张单张大图）</h3>
+    <p class="tip" style="margin-top:0">
+      首页顶部如果有横幅就显示横幅；一条都没有时，就用这张旧封面图顶着。
+      所以「首页那张图换不掉」通常就是卡在这里 —— 现在可以直接上传替换。
+    </p>
+    <div class="bnr-list" id="bnr-cover"></div>
+
+    <h3 id="set-bnrlist">横幅列表</h3>
+    <p class="tip" style="margin-top:0">
+      每张横幅都可以做成可点击的：选「跳转类型」再填目标地址。
+      如果选「没有链接」，图片就不可点击。
+    </p>
+    <div class="bnr-list" id="bnr-list"></div>
+    <div class="row-actions">
+      <button id="bnr-add" class="btn">+ 添加横幅</button>
+      <span class="hint" id="bnr-count" style="margin:0"></span>
+    </div>
+
+    <!-- ====================== 三个新板块 ======================
+         认证资质 / 定制流程 / 客户案例
+         前台首页只放入口，细节在这三块里改。
+         图片建议 1600x1200 (4:3)，logo 建议正方形 400x400。
+         ====================== -->
+
+    <h3 id="set-crafts">工艺</h3>
+    <p class="tip" style="margin-top:0">
+      这是首页的第一个选择入口。加一个前台就显示一个，只上架一个就只显示一个。
+      图片建议 <b dir="ltr">1200 × 1200</b> 正方形、白底，前台会自动裁成一样大。
+    </p>
+    <div class="fgrid" style="margin-bottom:12px">
+      <label>区块上方的小标题<input class="inp" id="cf-kicker"></label>
+      <label>区块标题<input class="inp" id="cf-title"></label>
+      <label class="full">区块说明<textarea class="inp" id="cf-lead" rows="2"></textarea></label>
+    </div>
+    <div id="craft-list" style="display:flex;flex-direction:column;gap:12px"></div>
+    <div class="row-actions" style="margin-top:12px">
+      <button type="button" class="btn" id="craft-add">+ 添加工艺</button>
+    </div>
+
+    <h3 id="set-certs">认证资质</h3>
+    <p class="tip" style="margin-top:0">
+      这些证书会显示成首页的一条横幅，点进去是证书详情页。建议尺寸 <b dir="ltr">400 × 400</b>。还可以填证书名称、编号和有效期。表格里怎么填，这里就怎么显示。
+    </p>
+    <div class="fgrid" style="margin-bottom:12px">
+      <label>横幅上的标题<input class="inp" id="c-kicker"></label>
+      <label>标题<input class="inp" id="c-title"></label>
+      <label class="full">描述<textarea class="inp" id="c-lead" rows="2"></textarea></label>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr>
+          <th style="width:150px">证书</th>
+          <th style="width:26%">名称</th>
+          <th>发证机构</th>
+          <th style="width:18%">编号</th>
+          <th style="width:14%">日期</th>
+          <th style="width:64px">文件</th>
+          <th style="width:64px"></th>
+        </tr></thead>
+        <tbody id="cert-list"></tbody>
+      </table>
+    </div>
+    <div class="row-actions" style="margin-top:12px">
+      <button type="button" class="btn" id="cert-add">+ 添加证书</button>
+    </div>
+
+    <h3 id="set-process">定制流程</h3>
+    <p class="tip" style="margin-top:0">
+      图片会出现在首页六个位置里，每个步骤的详细内容在流程页。图片建议尺寸 1600×1200。
+    </p>
+    <div class="fgrid" style="margin-bottom:12px">
+      <label>卡片上方的标题<input class="inp" id="p-kicker"></label>
+      <label>标题<input class="inp" id="p-title"></label>
+      <label class="full">描述<textarea class="inp" id="p-lead" rows="2"></textarea></label>
+    </div>
+    <div id="proc-list-admin" style="display:flex;flex-direction:column;gap:12px"></div>
+    <div class="row-actions" style="margin-top:12px">
+      <button type="button" class="btn" id="proc-add">+ 添加步骤</button>
+    </div>
+
+    <h3 id="set-clients">客户案例</h3>
+    <p class="tip" style="margin-top:0">
+      客户 logo 显示在卡片上，合影和详细说明在客户案例页。 logo 建议 400×400，合影图建议 1600×1200。
+    </p>
+    <div class="fgrid" style="margin-bottom:12px">
+      <label>卡片上方的标题<input class="inp" id="cl-kicker"></label>
+      <label>标题<input class="inp" id="cl-title"></label>
+      <label class="full">描述<textarea class="inp" id="cl-lead" rows="2"></textarea></label>
+    </div>
+    <div id="client-list-admin" style="display:flex;flex-direction:column;gap:12px"></div>
+    <div class="row-actions" style="margin-top:12px">
+      <button type="button" class="btn" id="client-add">+ 添加 客户</button>
+      <span class="hint" id="client-count" style="margin:0"></span>
+    </div>
+
+    <h3 id="set-faq">常见问题</h3>
+    <p class="tip" style="margin-top:0">
+      这里的问题会显示在首页的<b>客户常问问题</b>板块里。
+      前 <b dir="ltr">3</b> 条显示在首页，剩下的全部在 <b dir="ltr">faqs.html</b> 页面。
+      首页显示几条，在上面「常见问题 · 显示几条」里改。
+    </p>
+    <p class="hint" style="margin-top:-8px">
+      加完或删完，点「保存设置」。保存只写到
+      只改 <b dir="ltr">site.faqs</b>，不影响产品和其他板块。
+    </p>
+    <div class="fgrid" style="margin-bottom:12px">
+      <label>卡片上方的标题<input class="inp" id="fq-kicker"></label>
+      <label>标题<input class="inp" id="fq-title"></label>
+      <label class="full">描述<textarea class="inp" id="fq-lead" rows="2"></textarea></label>
+    </div>
+    <div id="faq-list-admin" style="display:flex;flex-direction:column;gap:10px"></div>
+    <div class="row-actions" style="margin-top:12px">
+      <button type="button" class="btn" id="faq-add">+ 添加 问题</button>
+      <span class="hint" id="faq-count" style="margin:0"></span>
+    </div>
+
+    <h3>网站配色</h3>
+    <div class="fgrid">
+      <label class="full">主色（玻璃感和按钮）
+        <span class="hint">点色块选现成颜色，或直接写色号</span>
+        <div class="swatches" id="sw-primary"></div>
+        <input class="inp" id="s-primary" dir="ltr" placeholder="#0e6b52">
+      </label>
+      <label class="full">辅色（强调用）
+        <div class="swatches" id="sw-gold"></div>
+        <input class="inp" id="s-gold" dir="ltr" placeholder="#c9962f">
+      </label>
+    </div>
+    <div class="row-actions" style="margin-top:10px">
+      <button class="mini" type="button" id="theme-reset">恢复默认配色</button>
+    </div>
+
+    <h3>WhatsApp 按钮文字（页尾）</h3>
+    <div class="fgrid">
+      <label class="full">标题<input class="inp" id="s-cta"></label>
+      <label class="full">文字<textarea class="inp" id="s-ctabody" rows="3"></textarea></label>
+    </div>
+
+    <div class="row-actions" style="margin-top:24px">
+      <button id="save-site" class="btn primary">保存设置</button>
+      <button id="export-all" class="btn">下载数据备份（JSON）</button>
+    </div>
+
+    <h3 style="margin-top:44px;color:#a3402f">危险操作区</h3>
+    <div class="row-actions">
+      <button id="reset-data" class="btn danger">恢复到原始数据</button>
+    </div>
+    <p class="tip">会删掉你在这个浏览器里的所有修改，产品恢复成原始状态。</p>
+  </section>
+</main>
+
+<!-- ========== 编辑弹窗 ========== -->
+<div class="dlg" id="dlg">
+  <div class="dlg-box">
+    <div class="dlg-head">
+      <h2 id="dlg-title">添加产品</h2>
+      <button id="dlg-close" class="x">✕</button>
+    </div>
+    <div class="dlg-body">
+      <div class="fgrid">
+        <label class="full">产品阿拉伯语名称 <b>*</b><input class="inp" id="f-nameAr" placeholder="例：定制纸杯"></label>
+        <label>中文名称（仅供内部核对，不显示在网站）<input class="inp" id="f-nameZh" placeholder="例：定制纸杯"></label>
+        <label>所属分类<select class="inp" id="f-cat"></select></label>
+        <label class="full">简短描述<span class="hint">一行字，显示在产品卡片上</span><input class="inp" id="f-shortAr"></label>
+        <label class="full">完整描述<textarea class="inp" id="f-descAr" rows="4"></textarea></label>
+      </div>
+
+      <h4>适用行业</h4>
+      <p class="hint" style="margin-top:-8px">
+        这个产品卖给哪些店 —— 咖啡店、餐厅、烘焙店这类。
+        勾中的会出现在「按行业」筛选里。
+      </p>
+      <div class="checks" id="f-sectors"></div>
+
+      <h4>材料</h4>
+      <p class="hint" style="margin-top:-8px">
+        选中的材料会出现在「按材料」筛选里 ——
+        产品可以属于多个材料，网站上前台最多同时选两个做交集筛选。
+      </p>
+      <div class="checks" id="f-materials"></div>
+
+      <h4>可用工艺</h4>
+      <p class="hint" style="margin-top:-8px">
+        这个产品能做哪些工艺。勾中的会显示在产品页上，客户点一下能看到工艺说明。
+        列表来自「工艺」区 —— 那边加一个，这里就多一个可勾的。
+      </p>
+      <div class="checks" id="f-crafts"></div>
+
+      <!-- 常用值按钮（.chips）怎么工作：
+           按钮显示中文，data-v 里存阿语值，点一下追加进上面的输入框。
+           分隔符写在 data-sep 上 —— 规格区用阿语逗号（前台显示的就是它），
+           可定制项区用中点「·」，跟产品页的样子一致。
+
+           阿语逗号这里写成 &#1548; 实体，不直接写原字符：
+           后台界面必须全中文，r21 那条验收会扫源文件里的阿语字符。
+           直接写会把它扫出来报错；写成实体，浏览器照样解析成「，」。 -->
+      <h4>规格</h4>
+      <div class="fgrid">
+        <label class="full">材料<input class="inp" id="f-material"></label>
+        <label class="full">尺寸 / 容量<span class="hint">用逗号分开，也可以点下面的常用值。
+          纸杯写安士、袋子写重量、盒子写长宽 —— 一个字段都装得下</span>
+          <input class="inp" id="f-sizes"></label>
+        <div class="chips" data-for="f-sizes" data-set="size" data-sep="&#1548; "></div>
+        <label class="full">颜色<span class="hint">用逗号分开；也可以点下面的常用值</span>
+          <input class="inp" id="f-colors"></label>
+        <div class="chips" data-for="f-colors" data-set="color" data-sep="&#1548; "></div>
+        <label class="full">适合装什么<span class="hint">热咖啡、茶、冷饮这类 —— 跟上面的「适用行业」不是一回事</span>
+          <input class="inp" id="f-uses"></label>
+        <div class="chips" data-for="f-uses" data-set="use" data-sep="&#1548; "></div>
+      </div>
+
+      <h4>可定制项</h4>
+      <p class="hint" style="margin-top:-8px">
+        这些选项在产品页显示为「可以改什么」清单。
+        大部分都能点下面的常用值直接填，不用手打。
+      </p>
+      <div class="fgrid">
+        <!-- r28：原来这里还有个「容量」，跟上面「规格 → 尺寸」填的是同一件事，
+             产品页会显示成两处尺寸。已经合并 —— 要改尺寸去上面「规格」那儿改。 -->
+        <label class="full">材质<span class="hint">点下面的常用值，或从「材料」表里挑</span>
+          <input class="inp" id="f-cust-materials"></label>
+        <div class="chips" data-for="f-cust-materials" data-set="cmaterial" data-sep=" · "></div>
+        <label class="full">印刷工艺<span class="hint">点下面的常用值，或直接手打补充说明</span>
+          <input class="inp" id="f-cust-print"></label>
+        <div class="chips" data-for="f-cust-print" data-set="print" data-sep=" · "></div>
+        <label class="full">可选项<span class="hint">盖子、杯套这类配件</span>
+          <input class="inp" id="f-cust-extras"></label>
+        <div class="chips" data-for="f-cust-extras" data-set="extras" data-sep=" · "></div>
+        <label class="full">交期<span class="hint">点下面的常用档</span>
+          <input class="inp" id="f-cust-lead"></label>
+        <div class="chips" data-for="f-cust-lead" data-set="lead" data-sep=" " data-single="1"></div>
+      </div>
+
+      <h4>价格</h4>
+      <p class="hint" style="margin-top:-8px">
+        所有价格以阿联酋迪拉姆（AED）录入 — 网站会自动换算成海湾其他国家的货币。
+        纸杯的价格举例：100–499 个 0.35，500–999 个 0.28，1000 个以上 0.22。
+      </p>
+      <div id="f-tiers"></div>
+      <button type="button" class="mini" id="f-tier-add" style="margin-top:6px">+ 添加价格档</button>
+
+      <h4>图片</h4>
+      <p class="tip" style="margin-top:0">从电脑上传图片，或粘贴链接。第一张是主图，其余是缩略图。</p>
+      <p class="hint" style="margin-top:-6px">
+        尺寸要求：正方形 <b dir="ltr">1000 × 1000</b> 像素，最低 <b dir="ltr">600 × 600</b>。
+        单张压在 <b dir="ltr">200 KB</b> 以内，手机打开才不卡。
+        非正方形的图会被裁掉上下或左右，露白太多就不好看了。
+      </p>
+      <div id="f-images"></div>
+
+      <h4>发布</h4>
+      <div class="fgrid">
+        <label>排序<span class="hint">数字小的排前面</span><input class="inp" id="f-sort" type="number"></label>
+        <label>上架日期<span class="hint">会显示在「最新上架」里</span><input class="inp" id="f-addedAt" type="date" dir="ltr"></label>
+        <div class="switches">
+          <label class="ck"><input type="checkbox" id="f-featured"> 推荐（显示在首页）</label>
+          <label class="ck"><input type="checkbox" id="f-published" checked> 已发布（网站上可见）</label>
+        </div>
+      </div>
+      <p class="hint" style="margin-top:-6px">
+        「最新上架」区块显示最近 4 个填了日期的产品，最新的在前。
+        没填日期的产品不会出现在这个区块。
+      </p>
+    </div>
+    <div class="dlg-foot">
+      <button id="dlg-cancel" class="btn">取消</button>
+      <button id="f-save" class="btn primary">保存</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- 密钥输入：首次访问或密钥不对时弹出 -->
+<div class="gate" id="gate">
+  <div class="gate-box">
+    <h2>管理密码</h2>
+    <p>请输入管理密码以进入后台。</p>
+    <input class="inp" id="gate-token" type="password" placeholder="管理密码" autocomplete="off">
+    <div class="gate-actions">
+      <button class="btn primary" id="gate-ok">登录</button>
+    </div>
+    <p class="gate-err" id="gate-err"></p>
+  </div>
+</div>
+
+<script src="../assets/api.js"></script>
+<script src="../assets/ui.js"></script>
+<script src="../assets/vendor/xlsx.full.min.js"></script>
+<script src="wordlabels.js"></script>
+<!-- 图片压缩。必须在 admin.js / import.js 之前加载：
+     两个文件上传时都直接调它，压完再传。 -->
+<script src="imgopt.js"></script>
+<!-- 删除确认框。不用浏览器原生confirm()：它会被弹窗拦截挡掉，
+     样式也不搭，而且只有英文按钮。用自己的层更稳。
+     ⚠️ 必须放在 <script src="admin.js"> 之前 —— bindConfirm() 是同步跑的，
+        放在后面的话那时 DOM 还没解析到，绑不上 onclick。 -->
+<div class="cfm" id="confirm">
+  <div class="cfm-box">
+    <h3 id="cfm-t"></h3>
+    <p id="cfm-b"></p>
+    <div class="cfm-row">
+      <button type="button" class="btn" id="cfm-no">取消</button>
+      <button type="button" class="btn danger" id="cfm-yes">永久删除</button>
+    </div>
+  </div>
+</div>
+<script src="admin.js"></script>
+<script src="import.js"></script>
+
+</body>
+</html>

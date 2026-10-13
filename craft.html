@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0e6b52">
+<title>الطباعة والتشطيبات</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div id="search-bar"></div>
+<div id="site-drawer"></div>
+<header id="site-header"></header>
+
+<section class="page-head" style="padding-bottom:0">
+  <div class="wrap"><nav class="crumbs" id="crumbs"></nav></div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap"><div id="cf-hero"></div></div>
+</section>
+
+<section style="padding-top:6px" id="cf-spec-sec" hidden>
+  <div class="wrap"><div id="cf-spec"></div></div>
+</section>
+
+<section style="padding-top:10px" id="cf-video-sec" hidden>
+  <div class="wrap"><div id="cf-video"></div></div>
+</section>
+
+<section style="padding-top:8px" id="cf-prod-sec" hidden>
+  <div class="wrap">
+    <div class="sec-head"><h2 style="font-size:25px" id="cf-prod-title"></h2></div>
+    <div class="grid-4" id="cf-prod"></div>
+  </div>
+</section>
+
+<section class="band faq-band" id="cf-faq-sec" hidden>
+  <div class="wrap">
+    <div class="sec-head"><h2 class="sec-title" id="cf-faq-title"></h2></div>
+    <div id="cf-faq"></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap"><div id="cta-slot"></div></div>
+</section>
+
+<footer id="site-footer"></footer>
+
+<script src="assets/api.js"></script>
+<script src="assets/ui.js"></script>
+<script src="assets/popup.js"></script>
+<script src="assets/seo.js"></script>
+<script src="assets/currency.js"></script>
+<script src="assets/pricing.js"></script>
+<script src="assets/site.js"></script>
+<script>
+/* 从后台填的链接里认出 YouTube 视频 id。
+   后台可能填整段链接（youtu.be/xxx、watch?v=xxx、embed/xxx、带 &t=34s 之类的参数），
+   也可能直接填 11 位 id —— 都能认。认不出就返回空，页面上那块直接不显示。 */
+function ytId(url) {
+  const s = (url || '').trim();
+  if (!s) return '';
+  if (/^[\w-]{11}$/.test(s)) return s;
+  const m = s.match(/(?:youtu\.be\/|v=|\/embed\/|\/shorts\/|\/v\/)([\w-]{11})/);
+  return m ? m[1] : '';
+}
+function ytInfo(url) {
+  const id = ytId(url);
+  if (!id) return null;
+  return {
+    id: id,
+    thumb: 'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg',
+    embed: 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0',
+  };
+}
+
+/* 工艺详情页。
+   地址形如 craft.html?c=gold-foil —— c 就是后台那条工艺的 id。
+   数据全从 site.crafts.items 里取，页面结构对每条工艺都一样，
+   后台加一条、这里就能打开一条，不用改代码。 */
+async function initCraft() {
+  await boot('home');
+  const { site, tax } = CTX;
+  const ui = tax.ui;
+  const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v || ''; };
+
+  const id = new URLSearchParams(location.search).get('c');
+  const list = ((site.crafts && site.crafts.items) || [])
+    .filter(x => x && x.published !== false)
+    .slice().sort((a, b) => (a.sort || 99) - (b.sort || 99));
+  const c = list.find(x => x.id === id);
+
+  /* 找不到（链接过期/手打的地址）→ 给一句人话 + 回工艺总览 */
+  if (!c) {
+    document.getElementById('cf-hero').innerHTML = `
+      <div class="cf-empty">
+        <h1>${esc(ui.noResultAr || 'لم نجد هذه الصفحة')}</h1>
+        <p style="margin-top:10px">
+          <a class="btn btn-line" href="crafts.html">${esc(ui.craftsAllAr || 'عرض كل الطباعات')}</a>
+        </p>
+      </div>`;
+    return;
+  }
+
+  /* SEO：工艺页是新增页面，seo.js 的 PAGES 表里没有对应条目，
+     不显式传 title/desc 的话会退回首页的标题描述 —— 那等于白建这一页。
+     标题用「工艺名 | 品牌名」，描述用那句话定义。 */
+  const brandAr = (site.brand && site.brand.nameAr) || '';
+  if (window.SEO) {
+    try {
+      SEO.apply({
+        key: 'craft',
+        title: (c.nameAr || '') + (brandAr ? ' | ' + brandAr : ''),
+        desc: (c.leadAr || (site.brand && site.brand.descAr) || '').slice(0, 155),
+      });
+    } catch (e) { console.warn('[seo]', e); }
+  } else {
+    document.title = (c.nameAr || '') + (brandAr ? ' — ' + brandAr : '');
+  }
+  set('crumbs', c.nameAr || '');
+
+  /* ---------- 1. 首屏：图 + 名 + 一句话 + 询价 ---------- */
+  const wa = (site.whatsapp && site.whatsapp.nums && site.whatsapp.nums[0]
+              && site.whatsapp.nums[0].number) || '';
+  const waMsg = encodeURIComponent(
+    (ui.craftWaMsgAr || 'مرحباً، أرغب بعرض سعر لهذا النوع: ') + (c.nameAr || ''));
+  document.getElementById('cf-hero').innerHTML = `
+    <div class="cf-hero">
+      <div class="cf-himg">
+        ${c.image
+          ? imgTag(c.image, c.nameAr, { set: c.imageSet, sizes: '(max-width:820px) 100vw, 560px', lazy: false })
+          : `<span class="cf-ph">\u2726</span>`}
+      </div>
+      <div class="cf-hbd">
+        ${c.nameEn ? `<span class="cf-en" dir="ltr">${esc(c.nameEn)}</span>` : ''}
+        <h1>${esc(c.nameAr || '')}</h1>
+        ${c.leadAr ? `<p class="cf-lead">${esc(c.leadAr)}</p>` : ''}
+        ${c.descAr ? `<p class="cf-desc">${esc(c.descAr)}</p>` : ''}
+        ${wa ? `<a class="btn btn-primary btn-lg" style="margin-top:18px"
+                   href="https://wa.me/${esc(wa)}?text=${waMsg}"
+                   target="_blank" rel="noopener">${esc(ui.askQuoteAr || 'اطلب عرض سعر')}</a>` : ''}
+      </div>
+    </div>`;
+
+  /* ---------- 2. 参数：客户下单前必问的四条。有一条就显示一块 ---------- */
+  const specs = [
+    [ui.specMoqAr || 'الحد الأدنى للطلب', c.moqAr],
+    [ui.specLeadAr || 'مدة التنفيذ', c.leadTimeAr],
+    [ui.specMatAr || 'المواد المتاحة', c.materialsAr],
+    [ui.specLimitAr || 'ملاحظات', c.limitsAr],
+  ].filter(x => (x[1] || '').trim());
+  if (specs.length) {
+    document.getElementById('cf-spec-sec').hidden = false;
+    document.getElementById('cf-spec').innerHTML = `
+      <div class="cf-specs">
+        ${specs.map(([k, v]) => `
+          <div class="cf-spec">
+            <b>${esc(k)}</b>
+            <span>${esc(v)}</span>
+          </div>`).join('')}
+      </div>`;
+  }
+
+  /* ---------- 2.5 视频：后台填了链接才显示 ----------
+     不填就整块隐藏，链接失效或填错也不会留一个破窗口。
+     这里不用 YouTube 的 iframe 直接嵌 —— iframe 一上来就加载，
+     一个 300KB 的播放器 + 第三方 cookie，为了一条可能没人点的视频不值。
+     做成「封面图 + 播放键」，点了才把 iframe 放进去。封面走 i.ytimg.com，
+     那是纯图片，不影响速度和隐私。 */
+  const vid = ytInfo(c.videoUrl);
+  if (vid) {
+    document.getElementById('cf-video-sec').hidden = false;
+    document.getElementById('cf-video').innerHTML = `
+      <div class="cf-video" id="cf-video-box" role="button" tabindex="0"
+           style="background-image:url('${vid.thumb}')"
+           data-embed="${esc(vid.embed)}"
+           aria-label="${esc(ui.craftVideoPlayAr || 'شغّل الفيديو')}">
+        <span class="cf-video-play" aria-hidden="true"></span>
+      </div>`;
+    const box = document.getElementById('cf-video-box');
+    const play = () => {
+      box.innerHTML = `<iframe src="${esc(box.dataset.embed)}"
+        title="${esc(c.nameAr || '')}"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen loading="lazy"></iframe>`;
+      box.classList.add('cf-video-on');
+      box.removeAttribute('role');
+    };
+    box.addEventListener('click', play);
+    box.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(); }
+    });
+  }
+
+  /* ---------- 3. 这个工艺能用在哪些产品上（r27：真关联了） ----------
+     产品身上有 craftIds，反查一下就有。
+     一个产品都没关联时退回「推荐产品」，并换一句不误导的文案 ——
+     不能嘴上说「这些杯子都能做」而实际没关联。 */
+  try {
+    const all = await getProducts();
+    let rel = all.filter(p => (p.craftIds || []).indexOf(c.id) >= 0);
+    let fallback = false;
+    if (!rel.length) {
+      rel = (await getProducts({ featuredOnly: true })).slice(0, 4);
+      fallback = true;
+    } else {
+      rel = rel.slice(0, 8);
+    }
+    if (rel.length) {
+      document.getElementById('cf-prod-sec').hidden = false;
+      set('cf-prod-title', fallback
+        ? (ui.craftOnAllAr || 'يمكن تنفيذ هذه الطباعة على أكوابنا')
+        : (ui.craftOnAr || 'منتجات تُنفَّذ عليها هذه الطباعة'));
+      document.getElementById('cf-prod').innerHTML = rel.map(productCard).join('');
+      paintFavs();
+    }
+  } catch (e) { /* 拿不到产品就不显示这一块，不影响主内容 */ }
+
+  /* ---------- 4. FAQ：工艺通用的四条，每条页面一样 ---------- */
+  const faqs = [
+    [ui.craftFaq1Q || 'هل يمكن تنفيذ هذه الطباعة على أكواب بأحجام مختلفة؟',
+     ui.craftFaq1A || 'نعم. الطباعة تُنفَّذ على الكوب نفسه، فتشمل كل الأحجام المتوفرة لدينا من 4 أونصة حتى 20 أونصة. أخبرنا بالحجم المطلوب ونرسل لك السعر.'],
+    [ui.craftFaq2Q || 'ما هو الحد الأدنى للطلب؟',
+     ui.craftFaq2A || 'الحد الأدنى يعتمد على نوع الطباعة. الطباعة العادية تبدأ من كميات صغيرة، أما الطباعات الخاصة مثل النقش البارز والرقائق المعدنية فتحتاج كمية أكبر لأنها تتطلب قالباً.'],
+    [ui.craftFaq3Q || 'هل تتأثر الطباعة بحرارة الخليج ورطوبته؟',
+     ui.craftFaq3A || 'نستخدم رقائق وخامات مقاومة للحرارة والرطوبة حتى لا تتقشّر الطباعة الذهبية أو الفضية مع الوقت. هذا مهم خصوصاً لمن يخزّن الكوب في مستودع غير مكيّف.'],
+    [ui.craftFaq4Q || 'هل يمكنني رؤية عيّنة قبل الإنتاج الكامل؟',
+     ui.craftFaq4A || 'نعم، نجهّز لك عيّنة مطبوعة بنفس التصميم والخامة قبل الإنتاج الكمي، ونعتمدها معك قبل التشغيل.'],
+  ].map(([q, a]) => `<details class="faq-item"><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('');
+  document.getElementById('cf-faq-sec').hidden = false;
+  set('cf-faq-title', ui.craftFaqTitleAr || 'أسئلة متكررة عن هذه الطباعة');
+  document.getElementById('cf-faq').innerHTML = faqs;
+
+  /* ---------- 5. 底部：其它工艺（互相导流） ---------- */
+  const others = list.filter(x => x.id !== c.id).slice(0, 6);
+  if (others.length && wa) {
+    const slot = document.getElementById('cta-slot');
+    if (slot) {
+      slot.insertAdjacentHTML('beforeend', `
+        <div class="cf-more">
+          <b>${esc(ui.otherCraftsAr || 'طباعات أخرى')}</b>
+          <div class="cf-more-list">
+            ${others.map(x => `<a href="craft.html?c=${encodeURIComponent(x.id)}">${esc(x.nameAr)}</a>`).join('')}
+          </div>
+        </div>`);
+    }
+  }
+}
+initCraft().catch(e => console.error('[craft]', e));
+</script>
+</body>
+</html>

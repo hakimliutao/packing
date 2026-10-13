@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0e6b52">
+<title>الرئيسية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div id="search-bar"></div>
+<div id="site-drawer"></div>
+<header id="site-header"></header>
+
+<!-- ① 首屏：banner 通栏在最上（第一块，独立区块，有自己的上下边距和分割线），
+     文字在下面。电脑手机一样，不再左右分栏。 -->
+<section class="hero" id="hero-sec">
+  <div class="hero-visual" id="hero-banners"></div>
+  <div class="wrap hero-text">
+      <h1 id="hero-title"></h1>
+      <!-- 直答块：30-40 字，直接回答「你们做什么、覆盖哪里、怎么找我」。
+           这是给搜索引擎和 AI 引擎读的——爬虫不执行 JS，只从 HTML 抓文字，
+           措辞要像被人问「你们是干什么的」时的标准回答。 -->
+      <p class="hero-answer" id="hero-answer"></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="products.html" id="hero-primary"></a>
+        <a class="btn btn-line btn-lg" href="contact.html" id="hero-secondary"></a>
+      </div>
+      <!-- 包一层是为了能整体隐藏：三个数字有 border-top 分隔线，
+           藏了之后不能留一条空横线在那里 -->
+      <div id="hero-stats-box">
+        <div class="hero-stats" id="hero-stats"></div>
+      </div>
+  </div>
+</section>
+
+<!-- ① 工艺 —— 首页第一个板块（r28：大哥要求放到最靠上，紧跟首屏）。
+     卡片样式直接套 .sector（跟下面「行业使用场景」一致），
+     所以网格容器也用 .sector-grid 的列数规则；列数上限在 CSS 里按 id 单独收。 -->
+<section id="craft-sec">
+  <div class="wrap">
+    <h2 id="craft-title" class="sec-title center"></h2>
+    <div class="sector-grid" id="craft-grid"></div>
+    <div class="sec-foot" id="craft-foot" hidden>
+      <a class="btn btn-line btn-lg" href="crafts.html" id="craft-all"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ② 信任区：买家下单前最想确认的四件事。
+     小标题（kicker）已删，只留主标题；每条的说明文字手机上点格子弹层显示。 -->
+<section class="band trust-band" id="trust-sec">
+  <div class="wrap">
+    <h2 id="trust-title" class="sec-title"></h2>
+    <div class="trust-grid" id="trust-grid"></div>
+  </div>
+</section>
+
+<!-- ① 产品类型（横向滑动条）—— r26 收起来了：首页只留「工艺」和「行业&场景」两个入口。
+     代码和数据都还在，把 page-home.js 里的 HOME_ENTRIES.cats 改成 true 就能恢复。 -->
+<section style="padding-block:44px" id="cats-sec" hidden>
+  <div class="wrap">
+    <h2 id="cat-title" class="sec-title"></h2>
+  </div>
+  <div class="rail-wrap">
+    <div class="rail" id="cat-rail"></div>
+    </div>
+</section>
+
+<!-- ③ 行业使用场景（r28：卡片改成「点一下就地展开产品」，逻辑在 page-home.js）
+     卡片仍然是 <a href="products.html?sec=xxx">：
+     没 JS 时照样能点进去，爬虫也抓得到；有 JS 时才拦下来就地展开。 -->
+<section id="sector-sec">
+  <div class="wrap">
+    <h2 id="sector-title" class="sec-title center"></h2>
+    <div class="sector-grid" id="sector-grid"></div>
+  </div>
+
+  <!-- 点了行业卡片后，这个行业的产品在这里展开。
+       最多两行（桌面上限 8 个 / 手机 4 个），多的走「更多产品」。
+       用 CSS 的 nth-child 裁行，跟工艺区一个套路。 -->
+  <div class="wrap" id="sec-prod-wrap" hidden>
+    <div class="sec-prod-head">
+      <h2 id="sec-prod-title"></h2>
+      <button type="button" class="btn btn-line" id="sec-prod-close"></button>
+    </div>
+    <div class="grid-4" id="sec-prod"></div>
+    <div class="sec-foot" id="sec-prod-foot" hidden>
+      <a class="btn btn-line btn-lg" href="products.html" id="sec-prod-more"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ③ 原材料 —— r26 收起来了，同 cats-sec。
+     改 page-home.js 的 HOME_ENTRIES.mats 为 true 即可恢复。 -->
+<section class="band" id="mat-sec" hidden>
+  <div class="wrap">
+    <h2 id="mat-title" class="sec-title center"></h2>
+  </div>
+  <div class="rail-wrap">
+    <div class="rail" id="mat-grid"></div>
+  </div>
+  <div class="wrap">
+    <div class="sec-foot">
+      <a class="btn btn-line btn-lg" href="materials.html" id="mat-all"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ④ 热门产品 -->
+<section class="band" id="featured-sec">
+  <div class="wrap">
+    <h2 id="featured-title" class="sec-title"></h2>
+    <div class="grid-4" id="featured-grid"></div>
+    <div class="sec-foot">
+      <a class="btn btn-line btn-lg" href="products.html" id="view-all"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ 最新产品 -->
+<section class="band" id="new-sec" hidden>
+  <div class="wrap">
+    <h2 id="new-title" class="sec-title"></h2>
+    <div class="grid-4" id="new-grid"></div>
+  </div>
+</section>
+
+<!-- ⑥ 定制流程：横向滑动条，只留编号+图标+标题，点进 process.html 看细节 -->
+<section style="padding-top:34px" id="proc-sec">
+  <div class="wrap">
+    <h2 id="proc-title" class="sec-title center"></h2>
+    <div id="proc-slot"></div>
+  </div>
+</section>
+
+<!-- ⑦ 认证材料（首页只放一条窄 banner，点进去看清单） -->
+<!-- r23：原来是裸 div，没带 section 的上下 padding，
+     导致它跟前后两个板块贴在一起、而 .cert-banner 自己又有 margin-top:34px，
+     视觉上就空出一大块。给它补上跟别的 section 一样的留白。 -->
+<div class="wrap cert-slot-wrap" id="cert-slot"></div>
+
+<!-- ⑧ 我们的客户：只显示 3 个 + 「المزيد」进 clients.html -->
+<section style="padding-top:34px" id="cli-sec">
+  <div class="wrap">
+    <h2 id="cli-title" class="sec-title center"></h2>
+    <div id="cli-slot"></div>
+  </div>
+</section>
+
+<!-- ⑨ 我们是谁 —— 原「لماذا تختارنا」（为什么选择我们）不再单独成板块，
+     内容并进这里：左边一段介绍，右边四条优势。
+     手机端 4 小格一行，点格子弹层看解释，底部「المزيد」进 about.html。 -->
+<section class="band" id="about-sec">
+  <div class="wrap">
+    <div class="about">
+      <div class="about-l">
+        <h2 id="feat-title"></h2>
+        <p id="feat-lead"></p>
+      </div>
+      <div class="feat-grid" id="feat-grid"></div>
+    </div>
+    <div class="sec-foot">
+      <a class="btn btn-line" href="about.html" id="feat-more"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ⑩ 常见疑问 —— 只显示前 3 条，底部「المزيد」跳到全部问题页。
+     这块写死不用 JS：搜索引擎抓不到 JS 渲染出来的内容，
+     而 FAQ 是 AI 引擎最爱引用的结构，不能丢。 -->
+<section class="band faq-band" id="faq-sec">
+  <div class="wrap">
+    <h2 id="faq-title" class="sec-title"></h2>
+    <div class="faq-list" id="faq-list">
+      <details class="faq-item">
+        <summary>هل يمكن تخصيص التغليف بشعارنا؟</summary>
+        <p>نعم، جميع منتجاتنا قابلة للتخصيص: نطبع شعارك ونصك على المنتج، ونختار المقاس والخامة والطباعة حسب طلبك. أرسل لنا الشعار والمقاس والكمية عبر واتساب ونرد خلال ساعات بعرض سعر.</p>
+      </details>
+      <details class="faq-item">
+        <summary>ما هو الحد الأدنى للطلب؟</summary>
+        <p>الحد الأدنى يختلف حسب المنتج. أسعارنا المتدرجة تعكس ذلك: كلما زادت الكمية انخفض سعر القطعة. تواصل معنا للحصول على الحد الأدنى المناسب لمنتجك المحدد.</p>
+      </details>
+      <details class="faq-item">
+        <summary>كم تستغرق مدة التسليم؟</summary>
+        <p>عادة بين 7 و25 يوم حسب المنتج وحجم الطلب والطباعة. المنتجات البسيطة أسرع، أما الطلبات الكبيرة أو الطباعة المتعددة الألوان فتحتاج وقتاً أطول.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل تشحنون إلى دول الخليج؟</summary>
+        <p>نعم، نشحن إلى الإمارات والسعودية والكويت والبحرين وعُمان وقطر. الأسعار تُعرض بعملة بلدك تقابًا، والدفع يتم بالطريقة التي نتفق عليها.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل المواد المستخدمة صالحة للأغذية؟</summary>
+        <p>نعم، نستخدم مواد مطابقة للمواصفات الغذائية معتمدة. نرفق شهادات المطابقة مع الطلب إذا كنت تحتاجها للجهات التنظيمية.</p>
+      </details>
+      <details class="faq-item">
+        <summary>كيف أطلب عرض سعر؟</summary>
+        <p>اضغط زر «اطلب عرض سعر» في أي منتج، أو راسلنا على واتساب مباشرة. أرسل لنا نوع المنتج والمقاس والكمية والشعار، ونرد خلال ساعات بالسعر النهائي.</p>
+      </details>
+      <!-- 以上 6 条全部写在这里，不用 JS：搜索引擎和 AI 引擎不执行 JS。
+           页面上只显示前 3 条，第 4~6 条在 page-home.js 里被加上 hidden。
+           点「المزيد」去 faqs.html，那里列的是全部 12 条。 -->
+    </div>
+    <div class="sec-foot">
+      <a class="btn btn-line" id="faq-more" href="faqs.html"></a>
+    </div>
+  </div>
+</section>
+
+<!-- 场景区块（原来叫「مُصمَّم للمقاهي」）。
+     它讲的是「咖啡店场景下整套包装怎么配」，跟上面的行业板块重复了，
+     用户反馈不知道是干什么的 —— 改成后台可开关，默认隐藏，
+     数据还留着，想开就在后台把开关打开。 -->
+<section id="scene-sec" hidden>
+  <div class="wrap">
+    <div class="scene">
+      <div class="scene-img" id="scene-img"></div>
+      <div class="scene-body">
+        <h2 id="scene-title"></h2>
+        <p id="scene-body"></p>
+        <div class="scene-list" id="scene-list"></div>
+        <a class="btn btn-primary" id="scene-btn" href="#"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑧ WhatsApp CTA -->
+<section style="padding-top:0">
+  <div class="wrap"><div id="cta-slot"></div></div>
+</section>
+
+<footer id="site-footer"></footer>
+
+<script src="assets/api.js"></script>
+<script src="assets/ui.js"></script>
+<script src="assets/popup.js"></script>
+<script src="assets/seo.js"></script>
+<script src="assets/currency.js"></script>
+<script src="assets/pricing.js"></script>
+<script src="assets/blocks.js"></script>
+<script src="assets/site.js"></script>
+<script src="assets/page-home.js"></script>
+<!-- 前台 → 后台 一键跳（r23）。放最后，要等板块都渲染完才挂编辑按钮 -->
+<script src="assets/editjump.js"></script>
+</body>
+</html>

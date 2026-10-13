@@ -1,0 +1,1723 @@
+/* ==========================================================================
+   style.css — 全站样式
+   品牌色：深祖母绿 + 鎏金。中东客户对「绿金」的接受度最高，
+   也比原来的咖啡棕显眼，拍照发社交平台时更抓眼。
+   ========================================================================== */
+:root{
+  --ink:#12100e;
+  --ink-2:#45403a;
+  --ink-3:#8b8478;
+  --line:#e8e3d9;
+  --bg:#fbfaf6;
+  --card:#ffffff;
+  --brand:#0e6b52;          /* 祖母绿 */
+  --brand-deep:#084a38;
+  --brand-soft:#e4f2ec;
+  --gold:#c9962f;
+  --gold-soft:#fbf1dc;
+  --hot:#d92b3f;            /* 收藏红 */
+  --hot-soft:#fdeaec;
+  --accent:#0e6b52;
+  --wa:#25D366;
+  --r:14px;
+  --sh-1:0 2px 10px -4px rgba(20,18,14,.1);
+  --sh-2:0 18px 38px -24px rgba(20,18,14,.4);
+  --sh-3:0 30px 70px -34px rgba(20,18,14,.45);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Tajawal','Segoe UI',Tahoma,sans-serif;
+  background:var(--bg);color:var(--ink);
+  line-height:1.75;font-size:16px;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden
+}
+body.noscroll{overflow:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+::selection{background:var(--brand);color:#fff}
+:focus-visible{outline:2.5px solid var(--gold);outline-offset:2px;border-radius:4px}
+
+/* ==========================================================================
+   顶栏
+   ========================================================================== */
+#search-bar{
+  position:fixed;inset-block-start:0;inset-inline:0;z-index:70;
+  background:#fff;border-bottom:1px solid var(--line);
+  transform:translateY(-100%);transition:transform .22s;
+  box-shadow:var(--sh-2)
+}
+#search-bar.on{transform:translateY(0)}
+.search-inner{
+  max-width:1180px;margin:0 auto;padding:14px 24px;
+  display:flex;gap:10px;align-items:center
+}
+.si-ic{display:grid;place-items:center;color:var(--ink-3);flex:none}
+#q{
+  flex:1;min-width:0;border:1px solid var(--line);border-radius:11px;padding:12px 16px;
+  font-family:inherit;font-size:16px;background:var(--bg)
+}
+#q:focus{outline:none;border-color:var(--brand);background:#fff}
+
+header{
+  position:sticky;top:0;z-index:55;background:rgba(251,250,246,.94);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line)
+}
+.nav{width:100%}
+/* 三列网格。RTL 下第一列贴右边，所以：
+   第1列 = 收藏（用户要的「右」）
+   第2列 = 品牌名（居中）
+   第3列 = 文字导航 + 三横线 + 搜索（用户要的「左」） */
+.nav-in{
+  max-width:1180px;margin:0 auto;padding:0 24px;height:70px;
+  display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px
+}
+/* 左：黑底实心三横线 + 搜索 */
+.nav-tail{display:flex;align-items:center;gap:20px;justify-content:flex-end}
+.nav-start{display:flex;align-items:center;gap:10px}
+.burger{
+  width:42px;height:42px;border:none;border-radius:12px;
+  background:#141210;color:#fff;display:grid;place-items:center;cursor:pointer;
+  transition:.18s;flex:none
+}
+.burger svg{width:22px;height:22px}
+.burger:hover{background:#000;transform:translateY(-1px)}
+.icon-btn{
+  width:42px;height:42px;border:1px solid var(--line);border-radius:12px;
+  display:grid;place-items:center;background:#fff;color:var(--ink-2);cursor:pointer;
+  transition:.18s;flex:none
+}
+.icon-btn svg{width:18px;height:18px}
+.icon-btn:hover{background:var(--brand-soft);border-color:var(--brand);color:var(--brand)}
+
+/* 中：品牌名 */
+.nav-logo{
+  font-weight:800;font-size:20px;letter-spacing:-.3px;
+  display:flex;align-items:center;gap:9px;justify-content:center;min-width:0
+}
+.nav-logo .lgo-tx{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-logo .mark{
+  width:34px;height:34px;border-radius:10px;flex:none;
+  background:linear-gradient(140deg,var(--brand),var(--brand-deep));
+  display:grid;place-items:center;color:#fff;font-size:15px;font-weight:700
+}
+
+/* 桌面文字导航 */
+.menu{display:flex;gap:26px;font-size:15.5px;font-weight:500}
+.menu a{padding:6px 0;position:relative;color:var(--ink-2)}
+.menu a:hover,.menu a.on{color:var(--ink)}
+.menu a.on::after{
+  content:"";position:absolute;inset-inline:2px;bottom:-1px;height:2.5px;
+  background:var(--brand);border-radius:2px
+}
+
+/* 右：收藏（红底白心 + 角标）+ WhatsApp */
+.nav-end{display:flex;align-items:center;gap:12px}
+.favbtn-top{
+  position:relative;display:flex;align-items:center;gap:8px;
+  background:var(--hot);color:#fff;padding:9px 15px;border-radius:12px;
+  font-weight:700;font-size:14.5px;transition:.18s;border:1.5px solid var(--hot)
+}
+.favbtn-top:hover{filter:brightness(1.06);transform:translateY(-1px);box-shadow:var(--sh-2)}
+.favbtn-top .ic{display:grid;place-items:center}
+.favbtn-top .ic svg{width:19px;height:19px;display:block}
+.favbtn-top .bdg{
+  min-width:22px;height:22px;padding:0 5px;border-radius:100px;
+  background:#fff;color:var(--hot);font-size:12.5px;font-weight:800;
+  display:grid;place-items:center;line-height:1
+}
+.favbtn-top .bdg:not(.on){display:none}
+.favbtn-top .lbl{white-space:nowrap}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:13px 26px;border-radius:12px;font-weight:700;font-size:15.5px;
+  border:1px solid transparent;cursor:pointer;transition:.18s;white-space:nowrap
+}
+.btn-primary{background:var(--brand);color:#fff}
+.btn-primary:hover{background:var(--brand-deep)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{filter:brightness(.95);transform:translateY(-1px)}
+.btn-line{background:#fff;border-color:var(--line);color:var(--ink)}
+.btn-line:hover{background:var(--brand-soft);border-color:var(--brand);color:var(--brand-deep)}
+.btn-lg{padding:16px 34px;font-size:16.5px}
+.btn-sm{padding:8px 14px;font-size:13.5px;border-radius:10px}
+
+/* ==========================================================================
+   汉堡抽屉
+   ========================================================================== */
+#site-drawer{position:fixed;inset:0;z-index:80;pointer-events:none}
+#site-drawer.on{pointer-events:auto}
+.drw-scrim{
+  position:absolute;inset:0;background:rgba(12,16,14,.55);
+  opacity:0;transition:opacity .25s;backdrop-filter:blur(2px)
+}
+#site-drawer.on .drw-scrim{opacity:1}
+.drw-panel{
+  position:absolute;inset-block:0;inset-inline-start:0;
+  width:min(400px,88vw);background:var(--bg);
+  display:flex;flex-direction:column;
+  transform:translateX(-100%);
+  transition:transform .28s cubic-bezier(.4,0,.2,1);
+  box-shadow:var(--sh-3)
+}
+html[dir="rtl"] .drw-panel{transform:translateX(100%)}
+#site-drawer.on .drw-panel{transform:translateX(0)}
+.drw-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 20px;border-bottom:1px solid var(--line);background:#fff;flex:none
+}
+.drw-head .logo{font-weight:800;font-size:18px;display:flex;align-items:center;gap:9px}
+.drw-head .mark{
+  width:32px;height:32px;border-radius:9px;flex:none;
+  background:linear-gradient(140deg,var(--brand),var(--brand-deep));
+  display:grid;place-items:center;color:#fff;font-size:14px
+}
+.drw-body{flex:1;overflow-y:auto;padding:18px 20px;-webkit-overflow-scrolling:touch}
+.drw-sec{margin-bottom:26px}
+.drw-sec h4{
+  font-size:12.5px;font-weight:800;color:var(--ink-3);
+  letter-spacing:.6px;margin-bottom:11px;text-transform:uppercase
+}
+.drw-two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.drw-list{display:flex;flex-direction:column;gap:7px}
+/* 整行都是热点 */
+.drw-item{
+  display:flex;align-items:center;gap:11px;padding:9px 11px;
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  transition:.16s;position:relative
+}
+.drw-item:hover{border-color:var(--brand);background:var(--brand-soft);transform:translateX(-3px)}
+html[dir="rtl"] .drw-item:hover{transform:translateX(3px)}
+.di-ic{
+  width:40px;height:40px;border-radius:10px;flex:none;overflow:hidden;
+  display:grid;place-items:center;background:var(--brand-soft)
+}
+.di-ic img{width:100%;height:100%;object-fit:cover}
+.di-ic.is-emoji{font-size:20px}
+.di-tx{display:flex;flex-direction:column;min-width:0;flex:1}
+.di-tx b{font-size:14.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.di-tx small{font-size:11.5px;color:var(--ink-3)}
+.di-go{color:var(--ink-3);flex:none;display:grid;place-items:center}
+.di-go svg{width:15px;height:15px}
+.drw-quick{display:flex;flex-wrap:wrap;gap:8px}
+.drw-quick a{
+  display:inline-flex;align-items:center;gap:7px;padding:8px 14px;
+  background:#fff;border:1px solid var(--line);border-radius:100px;
+  font-size:13.5px;font-weight:600;transition:.16s
+}
+.drw-quick a:hover{border-color:var(--brand);color:var(--brand-deep);background:var(--brand-soft)}
+.drw-quick a svg{width:15px;height:15px;color:var(--hot)}
+.drw-qn{
+  background:var(--hot);color:#fff;border-radius:100px;
+  min-width:19px;height:19px;padding:0 5px;display:grid;place-items:center;font-size:11.5px;font-weight:800
+}
+.drw-foot{padding:14px 20px;border-top:1px solid var(--line);background:#fff;flex:none}
+.drw-foot .btn{width:100%}
+
+/* ==========================================================================
+   悬浮 WhatsApp
+   ========================================================================== */
+.fab-wa{
+  position:fixed;inset-block-end:18px;inset-inline-end:18px;z-index:65;
+  display:flex;align-items:center;gap:10px;
+  background:var(--wa);color:#fff;font-weight:800;font-size:15px;
+  padding:14px 20px;border-radius:100px;box-shadow:0 10px 30px -8px rgba(37,211,102,.6);
+  transition:.2s
+}
+.fab-wa svg{width:24px;height:24px;flex:none}
+.fab-wa:hover{transform:translateY(-3px) scale(1.02);filter:brightness(1.05)}
+.fab-tx{white-space:nowrap}
+.fab-wa::after{
+  content:"";position:absolute;inset:-6px;border-radius:100px;
+  border:2px solid var(--wa);opacity:0;animation:pulse 2.6s ease-out infinite
+}
+@keyframes pulse{
+  0%{opacity:.55;transform:scale(.94)}
+  70%{opacity:0;transform:scale(1.12)}
+  100%{opacity:0}
+}
+
+/* 轻提示 */
+#mini-toast{
+  position:fixed;inset-block-end:88px;inset-inline:0;z-index:90;
+  margin:0 auto;width:max-content;max-width:88vw;
+  background:var(--ink);color:#fff;padding:11px 20px;border-radius:100px;
+  font-size:14px;font-weight:600;box-shadow:var(--sh-2);
+  opacity:0;transform:translateY(10px);pointer-events:none;transition:.24s
+}
+#mini-toast.on{opacity:1;transform:translateY(0)}
+
+/* ==========================================================================
+   通用区块
+   ========================================================================== */
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px;width:100%}
+/* 板块上下留白（r23）
+   原来 76px —— 相邻两个板块之间就是 152px，整页拉下来到处是空白，
+   大哥说「看着空旷」。量了竞品 racetopprint.com，它的 banner 跟顶部
+   搜索栏是重叠的（-10px），根本不留空。
+   现在压到 46px，相邻留 92px，靠分割线和底色差把区块分开 ——
+   比留大片空白紧凑，也不至于糊成一片。 */
+section{padding:46px 0}
+/* 有底色交替的板块，上下再各收一点，让色块之间贴得更紧 */
+section.alt-sec{padding:40px 0}
+/* r24：标题居中了，标题下面的说明文字也要跟着居中，
+   否则大标题居中、小字贴左边，看着更别扭。 */
+.sec-head{max-width:760px;margin-inline:auto;text-align:center;margin-bottom:30px}
+.sec-head.center{margin-inline:auto;text-align:center}
+.sec-head p{color:var(--ink-2);font-size:17px}
+/* 改版后统一用这个：只留一个主标题，居中或不居中。
+   kicker（小标题）和 p（说明）都从 HTML 删了，标题区高度压到一行。
+
+   r24：板块标题全部居中，跟竞品一致（量过 racetopprint.com，
+   8 个板块标题 .page_mod_title 全是 text-align:center）。
+   原来靠给 4 个标题单独加 .center 类，另外 4 个忘加了 —— 很容易漏。
+   现在直接写成默认行为：所有 .sec-title 都居中。
+   .center 类留着不用删（别的页面/后台可能还在引，
+   而且留着无害），HTML 里那 4 个多余的 class 也可以留着不影响。
+
+   注意不能用 .wrap{text-align:center} —— .wrap 是全站共用容器（13 处），
+   一改卡片网格里的文字全被居中。范围只放在标题自己身上。 */
+.sec-title{
+  margin:0 auto 26px;font-size:clamp(23px,2.8vw,32px);
+  text-align:center;max-width:760px
+}
+.sec-title.center{margin-inline:auto;text-align:center;max-width:760px}
+.kicker{font-size:13.5px;font-weight:800;color:var(--brand);letter-spacing:.4px}
+.sec-head.center .kicker{
+  display:inline-block;background:var(--brand-soft);color:var(--brand-deep);
+  padding:6px 15px;border-radius:100px
+}
+h1{font-size:clamp(32px,4.4vw,52px);line-height:1.24;font-weight:800;letter-spacing:-.6px}
+h1 em{color:var(--brand);font-style:normal}
+h2{font-size:clamp(25px,3vw,35px);font-weight:800;margin:12px 0 14px;letter-spacing:-.4px;line-height:1.3}
+.sec-head p{color:var(--ink-2);font-size:17px}
+.sec-foot{text-align:center;margin-top:42px}
+.band{background:#fff;border-block:1px solid var(--line)}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;
+  color:var(--brand-deep);background:var(--brand-soft);padding:7px 15px;border-radius:100px;
+  margin-bottom:20px
+}
+
+/* ==========================================================================
+   首屏 + banner 轮播
+   改版后：banner 通栏在最上面（第一块），文字在下面。
+   电脑手机一样，不再左右分栏 —— 用户要求 banner 永远是第一眼看到的，
+   而且要跟文字「割裂」，所以给了独立的上下边距 + 底部分割线。
+   ========================================================================== */
+.hero{padding:0 0 60px;position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset-block-start:-200px;inset-inline-start:-180px;
+  width:560px;height:560px;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,var(--brand-soft),transparent 68%)
+}
+.hero::after{
+  content:"";position:absolute;inset-block-end:-240px;inset-inline-end:-200px;
+  width:460px;height:460px;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,var(--gold-soft),transparent 70%)
+}
+/* 文字区。banner 在它上面，所以文字是「第二块」，跟 banner 之间有分割线 */
+.hero-text{
+  position:relative;z-index:1;padding-top:40px;text-align:center;
+  max-width:820px
+}
+.hero-text h1{margin:0 0 18px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:26px}
+#hero-stats-box{max-width:640px;margin:0 auto}
+.hero-stats{display:flex;gap:38px;margin-top:44px;padding-top:28px;border-top:1px solid var(--line);justify-content:center}
+.stat b{display:block;font-size:26px;font-weight:800;line-height:1.2;color:var(--brand-deep)}
+.stat span{font-size:13.5px;color:var(--ink-3)}
+.lead{font-size:18.5px;color:var(--ink-2);margin:20px 0 32px;max-width:52ch}
+
+/* banner 通栏：在 .hero 里最上面，通栏满宽，跟文字之间有分割线
+   r23：跟最顶部的搜索行贴紧。大哥说「banner 没跟顶部搜索那行挨着，很奇怪」——
+   量了竞品 racetopprint.com，它的 hero 跟上方搜索栏是 -10px 重叠的，
+   一点空隙都不留。这里照这个思路：banner 上边不留白，只用一条细分割线隔开。 */
+.hero-visual{
+  width:100%;aspect-ratio:21/8;position:relative;overflow:hidden;
+  background:linear-gradient(150deg,#dff0e8,#cfe7dc 55%,#bcdccd)
+}
+/* banner 上边那条线：跟顶部搜索行之间就靠它分隔 */
+.hero-visual::before{
+  content:"";position:absolute;top:0;inset-inline:0;height:1px;
+  background:var(--line);z-index:6
+}
+.blob{position:absolute;border-radius:50%;opacity:.42;z-index:3;pointer-events:none}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1}
+.hero-visual.has-img .blob{opacity:.14}
+
+/* 轮播 */
+.bnr-track{display:flex;height:100%;transition:transform .45s cubic-bezier(.4,0,.2,1);will-change:transform}
+.bnr{
+  flex:0 0 100%;position:relative;height:100%;
+  display:flex;align-items:flex-end
+}
+.bnr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.bnr-tx{
+  position:relative;z-index:2;padding:26px 24px;width:100%;
+  background:linear-gradient(transparent,rgba(8,20,16,.82));
+  color:#fff;border-radius:0 0 26px 26px
+}
+.bnr-tx h3{font-size:22px;font-weight:800;margin-bottom:5px;line-height:1.35}
+.bnr-tx p{font-size:14.5px;opacity:.9;line-height:1.6}
+.bnr-nav{
+  position:absolute;z-index:5;top:50%;transform:translateY(-50%);
+  width:40px;height:40px;border-radius:50%;border:none;cursor:pointer;
+  background:rgba(255,255,255,.94);color:var(--ink);display:grid;place-items:center;
+  box-shadow:var(--sh-2);transition:.18s
+}
+.bnr-nav svg{width:19px;height:19px}
+.bnr-nav:hover{background:#fff;transform:translateY(-50%) scale(1.08)}
+.bnr-prev{inset-inline-end:14px}
+.bnr-next{inset-inline-start:14px}
+.bnr-dots{
+  position:absolute;z-index:5;inset-block-end:14px;inset-inline:0;
+  display:flex;justify-content:center;gap:7px
+}
+.bnr-dots button{
+  width:8px;height:8px;padding:0;border:none;border-radius:100px;cursor:pointer;
+  background:rgba(255,255,255,.55);transition:.2s
+}
+.bnr-dots button.on{width:26px;background:#fff}
+.hero-visual.has-banners .bnr-tx{padding-block-end:38px}
+/* 带链接的 banner 是个 <a>：手型光标 + 焦点圈，
+   让客户看得出能点，键盘用户也走得进去 */
+a.bnr{cursor:pointer;-webkit-tap-highlight-color:transparent}
+a.bnr:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
+
+/* ==========================================================================
+   横向滑动的分类条
+   ========================================================================== */
+.rail-wrap{position:relative}
+.rail{
+  display:flex;gap:16px;overflow-x:auto;padding:4px 4px 16px;
+  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none;cursor:grab;
+  /* 电脑端卡片不满一行时居中，不要全挤在右边留一大片空白。
+     手机上内容本来就溢出，justify-content 不起作用，行为不变。
+     注意：这里必须用 justify-content，margin:auto 在 flex 容器里
+     会被滚动区吃掉，出现卡片跑到看不见的地方。 */
+  justify-content:center;
+  /* overflow-x:auto + justify-content:center 有个老坑：
+     内容一溢出，浏览器会把起始位置当作 0，
+     居中导致左边那截卡点不出来。补这两个属性还原滚动起点。 */
+  justify-content:safe center
+}
+.rail::-webkit-scrollbar{display:none}
+.rail.dragging{cursor:grabbing;scroll-snap-type:none;user-select:none}
+.rail>*{scroll-snap-align:start;flex:none}
+.rail-nav{
+  position:absolute;z-index:6;top:50%;transform:translateY(-50%);
+  width:40px;height:40px;border-radius:50%;border:1px solid var(--line);
+  background:#fff;color:var(--ink);display:grid;place-items:center;cursor:pointer;
+  box-shadow:var(--sh-1);transition:.18s
+}
+.rail-nav svg{width:18px;height:18px}
+.rail-nav:hover{background:var(--brand);color:#fff;border-color:var(--brand)}
+.rail-prev{inset-inline-end:-8px}
+.rail-next{inset-inline-start:-8px}
+.rail-nav[hidden]{display:none}
+
+/* 分类圆卡：圆形图 + 文字在图下方
+   之前是横长方形、文字压在图里，名字长短不一样卡片宽度也不一样，
+   看着不齐还占地方。圆形 + 图下文字，横滑时高度一致、留白均匀。 */
+.catcard{
+  width:112px;background:none;border:0;border-radius:0;
+  transition:.2s;position:relative;display:block;text-align:center
+}
+.catcard:hover{transform:translateY(-4px)}
+.catcard:hover .cc-img{border-color:var(--brand);box-shadow:var(--sh-2)}
+.catcard .cc-img{
+  /* span 默认 inline，不吃 width/height —— 必须 display:block，
+     否则圆图会被内容撑成一条。 */
+  display:block;
+  width:104px;height:104px;margin:0 auto;border-radius:50%;position:relative;
+  overflow:hidden;background:var(--brand-soft);border:2px solid var(--line);
+  transition:.2s
+}
+.catcard .cc-img img{width:100%;height:100%;object-fit:cover;transition:.35s}
+.catcard:hover .cc-img img{transform:scale(1.07)}
+.catcard .cc-img .is-emoji{
+  position:absolute;inset:0;display:grid;place-items:center;font-size:40px;opacity:.55
+}
+/* 文字在圆外面：名字最多两行，超出省略，不把卡片撑高。
+   min-height:2.7em 是给两行名留的位，让所有卡等高 ——
+   名字一行和两行的卡并排时才不会一高一低。
+   （原来下面还有一行「2 منتج」，已按大哥要求删掉，padding 也跟着收了。） */
+.catcard .cc-bd{display:block;padding:11px 4px 0}
+.catcard .cc-bd b{
+  font-size:14px;font-weight:700;line-height:1.35;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+  overflow:hidden;min-height:2.7em
+}
+
+/* ==========================================================================
+   筛选 chip
+   ========================================================================== */
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:26px}
+.chip{
+  padding:9px 18px;border:1px solid var(--line);border-radius:100px;
+  font-size:14.5px;font-weight:500;background:#fff;color:var(--ink-2);
+  display:inline-flex;align-items:center;gap:6px;transition:.16s
+}
+.chip:hover{border-color:var(--brand);color:var(--brand-deep)}
+.chip.on{background:var(--brand);color:#fff;border-color:var(--brand)}
+
+/* ==========================================================================
+   产品卡
+   ========================================================================== */
+.grid-4{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pcard{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  overflow:hidden;transition:.2s;display:flex;flex-direction:column;position:relative
+}
+.pcard:hover{transform:translateY(-4px);box-shadow:var(--sh-2);border-color:#d6cfc1}
+/* 整张卡都是热点。pcover 铺满卡片，z-index 低于两个按钮 */
+.pcover{position:absolute;inset:0;z-index:2}
+/* r24：原来 aspect-ratio:1/1，364 宽的卡就撑出 362px 高的图区，
+   占整卡 65% —— 而里面大多数时候只有一个占位小图标，看着就是一片空。
+   改成 4/3 压到 273px（-25%），整卡从 561px 降到 472px。
+   4/3 是电商列表卡最常用的比例，产品图传上来也不会被裁太多。
+   真实图用 object-fit:cover 填满，不会因为比例变了而变形。 */
+.pimg{
+  aspect-ratio:4/3;background:linear-gradient(160deg,#eef5f1,#dfeae4);
+  position:relative;overflow:hidden
+}
+.pimg img{width:100%;height:100%;object-fit:cover;transition:.35s}
+.pcard:hover .pimg img{transform:scale(1.05)}
+/* r24：图区从 1/1 压到 4/3，占位图标跟着放大一点，
+   免得图区里就飘一个小图标、四周全是空的（就是大哥说的「空旷」）。 */
+.pimg .shape{position:absolute;inset:0;display:grid;place-items:center;font-size:58px;opacity:.45}
+.badge-new{
+  position:absolute;inset-block-start:12px;inset-inline-start:12px;z-index:3;
+  background:var(--gold);color:#fff;font-size:11.5px;font-weight:800;
+  padding:4px 11px;border-radius:100px
+}
+.favbtn{
+  position:absolute;inset-block-start:10px;inset-inline-end:10px;z-index:4;
+  width:38px;height:38px;border-radius:50%;border:none;cursor:pointer;
+  background:rgba(255,255,255,.95);color:var(--ink-3);display:grid;place-items:center;
+  box-shadow:var(--sh-1);transition:.18s
+}
+.favbtn svg{width:19px;height:19px;display:block}
+.favbtn:hover{transform:scale(1.12);color:var(--hot)}
+.favbtn.on{background:var(--hot);color:#fff}
+.favbtn.pulse{animation:pop .4s}
+@keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.32)}100%{transform:scale(1)}}
+.pbody{padding:15px 16px 16px;display:flex;flex-direction:column;gap:5px;flex:1}
+.pcat{font-size:12px;color:var(--brand);font-weight:700}
+.pname{font-weight:700;font-size:16.5px;line-height:1.45}
+.pmeta{
+  font-size:13.5px;color:var(--ink-3);margin-bottom:11px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden
+}
+.pfoot{display:flex;gap:8px;margin-top:auto;position:relative;z-index:3}
+.pfoot .btn{flex:1;padding:10px 12px;font-size:13.5px}
+.pfoot .btn svg{width:15px;height:15px}
+/* 从详情页返回时高亮刚才看的那张 */
+.pcard.flash{outline:3px solid var(--gold);outline-offset:2px;animation:flashin 1.1s ease-out 3}
+@keyframes flashin{0%,100%{box-shadow:none}50%{box-shadow:0 0 0 9px rgba(201,150,47,.22)}}
+
+/* 空状态 */
+.empty-state{
+  grid-column:1/-1;text-align:center;padding:56px 20px;
+  background:#fff;border:1px dashed var(--line);border-radius:18px
+}
+.es-ic{font-size:44px;display:block;margin-bottom:12px;opacity:.45}
+.empty-state p{font-size:17px;font-weight:700;color:var(--ink-2)}
+.empty-state small{display:block;color:var(--ink-3);font-size:14px;margin-top:6px}
+
+/* ==========================================================================
+   行业
+   ========================================================================== */
+.sector-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+/* r26：工艺区沿用 .sector-grid 的列数，但多一条「最多 3 行」。
+   桌面 3 列 → 第 10 个起藏起来；手机 2 列 → 第 5 个起藏（见下面的断点）。
+   用 nth-child 而不是 JS 裁剪：后台改数量、或者转屏，CSS 自己重算，
+   不用重新渲染，也不会跟「末行孤儿卡」那段逻辑打架。 */
+#craft-grid > :nth-child(n+10){display:none}
+
+/* r28：点行业卡片后，产品就地展开的那一块。
+   大哥的原话是「点一下标签我不知道会显示什么」——
+   现在点完下面立刻出产品，还给个「收起」按钮，行为一眼可见。 */
+#sec-prod-wrap{margin-top:30px;padding-top:24px;border-top:1px solid var(--line)}
+.sec-prod-head{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:14px;margin-bottom:20px;flex-wrap:wrap
+}
+.sec-prod-head h2{font-size:22px;line-height:1.45;margin:0}
+.sec-prod-head .btn{flex:none;white-space:nowrap}
+/* 最多两行：桌面 4 列 = 8 个。手机那份在下面的断点里改成 4 个。
+   跟工艺区一样用 nth-child 裁，不用 JS 切数组 —— 转屏时 CSS 自己重算 */
+#sec-prod > :nth-child(n+9){display:none}
+/* 展开着的那个行业卡片高亮，让客户知道下面这块是谁的产品 */
+.sector.on{border-color:var(--brand);box-shadow:var(--sh-2)}
+.sector.on .sec-bd h3{color:var(--brand)}
+.sector{
+  background:#fff;border:1px solid var(--line);border-radius:18px;
+  overflow:hidden;transition:.2s;display:flex;flex-direction:column
+}
+.sector:hover{transform:translateY(-4px);box-shadow:var(--sh-2);border-color:var(--brand)}
+.sec-img{aspect-ratio:16/9;position:relative;overflow:hidden;background:var(--brand-soft)}
+.sec-img img{width:100%;height:100%;object-fit:cover;transition:.35s}
+.sector:hover .sec-img img{transform:scale(1.06)}
+.sec-img .is-emoji{position:absolute;inset:0;display:grid;place-items:center;font-size:44px;opacity:.5}
+/* 底部那行「تصفّح القطاع + N 个产品」去掉了：整张卡本身就是链接，
+   再写一遍是重复表达，还白占 40px 高度。 */
+.sec-bd{padding:15px 16px 17px;display:flex;flex-direction:column;gap:5px;flex:1}
+.sector h3{font-size:17.5px;font-weight:700}
+.sector p{
+  font-size:13.5px;line-height:1.6;color:var(--ink-3);flex:1;margin:0;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden
+}
+.count{font-size:12.5px;color:var(--ink-3);background:var(--bg);border:1px solid var(--line);padding:3px 9px;border-radius:7px;font-weight:600}
+
+/* ==========================================================================
+   优势
+   ========================================================================== */
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+/* r23：加边框 + 底色。
+   原来四条优势是纯文字浮在页面上，边界不清，看着像散落的字。
+   量了竞品 racetopprint.com，卡片统一用「1px 细边框 + 白底 + 轻阴影 + 大圆角」
+   （他们圆角 36px，我们整体圆角体系是 22px，跟这个走），
+   视觉上每条就是一个独立块，不会跟旁边的文字混在一起。 */
+.feat{
+  display:flex;flex-direction:column;gap:11px;
+  background:#fff;border:1px solid var(--line);border-radius:18px;
+  padding:22px 20px;
+  box-shadow:0 2px 10px -4px rgba(31,35,41,.10);
+  transition:border-color .18s,box-shadow .18s,transform .18s
+}
+.feat:hover{border-color:var(--brand);box-shadow:0 8px 22px -10px rgba(31,35,41,.22);transform:translateY(-2px)}
+/* 手机上点是弹层，鼠标悬停抬起就多余了 */
+@media (hover:none){.feat:hover{transform:none;box-shadow:0 2px 10px -4px rgba(31,35,41,.10)}}
+.feat .n{
+  font-size:13px;font-weight:800;color:var(--brand);letter-spacing:1px;
+  background:var(--brand-soft);width:38px;height:38px;border-radius:11px;
+  display:grid;place-items:center
+}
+.feat h3{font-size:18.5px;font-weight:700}
+.feat p{font-size:15px;color:var(--ink-2);margin:0}
+
+/* ==========================================================================
+   场景
+   ========================================================================== */
+.scene{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+.scene-img{background:linear-gradient(150deg,#dff0e8,#c3ddd1);min-height:400px;position:relative;overflow:hidden}
+.scene-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.scene-img .cap{
+  position:absolute;inset-block-end:18px;inset-inline-start:18px;z-index:2;
+  background:rgba(255,255,255,.95);padding:9px 16px;border-radius:10px;
+  font-size:13.5px;font-weight:700
+}
+.scene-body{padding:52px 48px}
+.scene-body>p{color:var(--ink-2)}
+.scene-list{display:flex;flex-direction:column;gap:8px;margin:24px 0 30px}
+.scene-list a{
+  display:flex;align-items:center;gap:14px;padding:14px 18px;border:1px solid var(--line);
+  border-radius:12px;background:var(--bg);font-weight:600;font-size:16px;transition:.16s
+}
+.scene-list a:hover{background:#fff;border-color:var(--brand);color:var(--brand-deep)}
+.scene-list .cnt{font-size:12.5px;color:var(--ink-3);font-weight:500;margin-inline-start:auto}
+
+/* ==========================================================================
+   CTA
+   ========================================================================== */
+.cta{
+  background:linear-gradient(135deg,var(--brand-deep),var(--brand));
+  color:#fff;border-radius:24px;padding:60px 54px;
+  display:grid;grid-template-columns:1fr auto;gap:44px;align-items:center;
+  position:relative;overflow:hidden
+}
+.cta::after{
+  content:"";position:absolute;inset-block-end:-150px;inset-inline-end:-130px;
+  width:340px;height:340px;border-radius:50%;background:rgba(255,255,255,.09)
+}
+.cta h2{color:#fff;margin-bottom:14px}
+.cta p{color:rgba(255,255,255,.82);font-size:17.5px;max-width:48ch;position:relative}
+.cta .btn{position:relative;font-size:16.5px;padding:17px 32px}
+
+/* ==========================================================================
+   页脚
+   ========================================================================== */
+footer{border-top:1px solid var(--line);padding:52px 0 40px;background:#fff}
+.f-grid{
+  max-width:1180px;margin:0 auto;padding:0 24px;
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px
+}
+.f-col h4{font-size:14px;font-weight:800;margin-bottom:14px}
+.f-col a{display:block;font-size:14.5px;color:var(--ink-3);padding:5px 0}
+.f-col a:hover{color:var(--brand)}
+.f-bottom{
+  max-width:1180px;margin:38px auto 0;padding:22px 24px 0;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:13.5px;color:var(--ink-3)
+}
+
+/* ==========================================================================
+   列表页
+   ========================================================================== */
+.page-head{padding:44px 0 30px}
+.crumbs{font-size:14px;color:var(--ink-3);display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.crumbs a:hover{color:var(--brand)}
+.toolbar{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:26px}
+.search-inline{
+  flex:1;min-width:220px;display:flex;align-items:center;gap:10px;
+  border:1px solid var(--line);border-radius:12px;padding:11px 15px;background:#fff
+}
+.search-inline svg{color:var(--ink-3);flex:none}
+.search-inline input{border:none;outline:none;background:transparent;font-family:inherit;font-size:15.5px;width:100%}
+.search-inline:focus-within{border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)}
+.count-note{font-size:14.5px;color:var(--ink-3);white-space:nowrap}
+.count-note b{color:var(--brand-deep);font-weight:800}
+.sector-filter{
+  background:#fff;border:1px solid var(--line);border-radius:18px;
+  padding:28px 26px;margin-bottom:30px
+}
+.sector-filter h3{font-size:20px;font-weight:700;margin-bottom:8px}
+
+/* ==========================================================================
+   详情页
+   ========================================================================== */
+.pd{display:grid;grid-template-columns:1.05fr 1fr;gap:50px;align-items:start}
+.gallery .main{
+  aspect-ratio:1/1;border-radius:20px;border:1px solid var(--line);
+  background:linear-gradient(160deg,#eef5f1,#dfeae4);display:grid;place-items:center;
+  overflow:hidden;position:relative;cursor:zoom-in
+}
+.gallery .main img{width:100%;height:100%;object-fit:cover}
+.gallery .main .shape{font-size:80px;opacity:.4}
+.gallery .zoom{
+  position:absolute;inset-block-end:14px;inset-inline-end:14px;z-index:3;
+  background:rgba(255,255,255,.94);border-radius:10px;padding:8px 13px;
+  font-size:12.5px;font-weight:700;color:var(--ink-2);display:flex;align-items:center;gap:6px
+}
+.gallery .zoom svg{width:15px;height:15px}
+.thumbs{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.thumb{
+  width:74px;height:74px;border-radius:12px;border:2px solid var(--line);
+  background:linear-gradient(160deg,#eef5f1,#dfeae4);display:grid;place-items:center;
+  cursor:pointer;overflow:hidden;position:relative
+}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb.on{border-color:var(--brand)}
+.thumb .tip{
+  position:absolute;inset-block-end:0;inset-inline:0;background:rgba(18,16,14,.78);color:#fff;
+  font-size:9.5px;text-align:center;padding:3px 2px;line-height:1.3
+}
+.pd-head h1{font-size:clamp(25px,3.4vw,36px);margin:8px 0 12px}
+.pd-cat{font-size:13.5px;color:var(--brand);font-weight:800}
+.pd-short{font-size:17px;color:var(--ink-2);margin-bottom:24px}
+.pd-desc{font-size:15.5px;color:var(--ink-2);margin-bottom:28px;line-height:1.95}
+.spec{border-top:1px solid var(--line);padding-top:6px;margin-bottom:28px}
+.spec-row{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.spec-row:last-child{border-bottom:none}
+.spec-k{font-size:14px;font-weight:700;color:var(--ink-3)}
+.spec-v{display:flex;gap:8px;flex-wrap:wrap}
+.spec-v span{background:var(--bg);border:1px solid var(--line);padding:5px 12px;border-radius:8px;font-size:14px}
+.pd-actions{
+  display:flex;gap:12px;flex-wrap:wrap;position:sticky;bottom:0;z-index:4;
+  background:linear-gradient(transparent,var(--bg) 26%);padding-top:18px
+}
+.pd-actions .btn{flex:1;min-width:160px}
+.pd-actions .favbtn{
+  position:static;width:auto;height:auto;border-radius:12px;padding:0 22px;
+  gap:9px;font-weight:700;font-size:15.5px;background:#fff;color:var(--ink-2);
+  border:1px solid var(--line);min-width:132px
+}
+.pd-actions .favbtn.on{background:var(--hot);color:#fff;border-color:var(--hot)}
+.pd-actions .favbtn svg{width:20px;height:20px}
+.tag-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;margin-bottom:20px}
+.tag-row a{font-size:13.5px;color:var(--ink-3);background:var(--bg);border:1px solid var(--line);padding:5px 12px;border-radius:8px}
+.tag-row a:hover{border-color:var(--brand);color:var(--brand)}
+
+/* ==========================================================================
+   图片灯箱
+   ========================================================================== */
+#lightbox{position:fixed;inset:0;z-index:95;pointer-events:none}
+#lightbox.on{pointer-events:auto}
+.lb-scrim{position:absolute;inset:0;background:rgba(10,12,11,.94);opacity:0;transition:.24s}
+#lightbox.on .lb-scrim{opacity:1}
+.lb-box{position:absolute;inset:0;display:grid;place-items:center;padding:60px 20px}
+.lb-img{
+  max-width:min(1000px,92vw);max-height:82vh;object-fit:contain;
+  border-radius:12px;box-shadow:0 30px 80px -30px rgba(0,0,0,.8);
+  transform:scale(.96);transition:.24s
+}
+#lightbox.on .lb-img{transform:scale(1)}
+.lb-x{
+  position:absolute;inset-block-start:20px;inset-inline-end:20px;z-index:3;
+  width:44px;height:44px;border-radius:50%;border:none;cursor:pointer;
+  background:rgba(255,255,255,.14);color:#fff;display:grid;place-items:center;transition:.18s
+}
+.lb-x:hover{background:rgba(255,255,255,.28)}
+.lb-x svg{width:22px;height:22px}
+.lb-nav{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:3;
+  width:48px;height:48px;border-radius:50%;border:none;cursor:pointer;
+  background:rgba(255,255,255,.14);color:#fff;display:grid;place-items:center;transition:.18s
+}
+.lb-nav:hover{background:rgba(255,255,255,.3)}
+.lb-nav svg{width:24px;height:24px}
+.lb-prev{inset-inline-end:20px}
+.lb-next{inset-inline-start:20px}
+.lb-cap{
+  position:absolute;inset-block-end:24px;inset-inline:0;text-align:center;
+  color:rgba(255,255,255,.8);font-size:14.5px;font-weight:600
+}
+
+/* ==========================================================================
+   关于 / 联系
+   ========================================================================== */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.info-list{display:flex;flex-direction:column;gap:8px;margin-top:26px}
+.info-list a,.info-list div{
+  display:flex;align-items:center;gap:14px;padding:15px 18px;border:1px solid var(--line);
+  border-radius:12px;background:#fff
+}
+.form{display:flex;flex-direction:column;gap:14px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px}
+.form label{font-size:14.5px;font-weight:700;display:block;margin-bottom:6px}
+.form input,.form textarea,.form select{
+  width:100%;border:1px solid var(--line);border-radius:11px;padding:12px 15px;
+  font-family:inherit;font-size:15.5px;background:var(--bg)
+}
+.form input:focus,.form textarea:focus,.form select:focus{outline:none;border-color:var(--brand)}
+.form textarea{resize:vertical;min-height:110px}
+
+/* ==========================================================================
+   响应式 —— 手机端是重点
+   ========================================================================== */
+@media(max-width:1000px){
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .feat-grid{grid-template-columns:repeat(2,1fr)}
+  .sector-grid{grid-template-columns:repeat(2,1fr)}
+  /* r26：这个断点（≤1000px）网格变 2 列 → 工艺区最多 2 行（4 个）。
+     断点跟 .sector-grid 保持一致 —— 它俩列数必须一样，
+     不然工艺区和下面行业区会一宽一窄对不齐。 */
+  #craft-grid > :nth-child(n+5){display:none}
+  /* r28：行业展开的产品区同理 —— 手机 2 列 = 最多 2 行（4 个） */
+  #sec-prod > :nth-child(n+5){display:none}
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero{padding:40px 0 56px}
+  .menu{display:none}
+  .scene{grid-template-columns:1fr}
+  .scene-img{min-height:280px}
+  .scene-body{padding:34px 26px}
+  .cta{grid-template-columns:1fr;padding:42px 30px}
+  .f-grid{grid-template-columns:1fr 1fr}
+  .pd{grid-template-columns:1fr;gap:32px}
+  .about-grid{grid-template-columns:1fr;gap:32px}
+  .favbtn-top .lbl{display:none}
+  .favbtn-top{padding:10px 13px}
+  .drw-two{grid-template-columns:1fr}
+  .hero-visual{aspect-ratio:16/11}
+  .catcard{width:132px}
+  .catcard .cc-img{width:124px;height:124px}
+  .catcard .cc-bd b{font-size:14.5px}
+}
+
+/* 手机：产品一排 2 个，一直保持到最小的屏 */
+@media(max-width:620px){
+  .wrap{padding:0 16px}
+  .f-grid{padding:0 16px}
+  .f-bottom{padding-inline:16px}
+  .search-inner{padding:12px 16px}
+
+  .nav-in{height:62px;padding:0 14px;gap:10px}
+  .nav-tail{gap:10px}
+  .burger{width:40px;height:40px;border-radius:11px}
+  .burger svg{width:21px;height:21px}
+  .icon-btn{width:40px;height:40px}
+  .nav-start{gap:7px}
+  .nav-logo{font-size:16.5px;gap:7px}
+  .nav-logo .mark{width:30px;height:30px;border-radius:9px;font-size:13px}
+  .nav-end{gap:8px}
+  .nav-wa{display:none}
+  .favbtn-top .ic svg{width:18px;height:18px}
+  .favbtn-top .bdg{min-width:20px;height:20px;font-size:11.5px}
+
+  /* 产品网格：2 列。不再掉到 1 列 */
+  .grid-4{grid-template-columns:repeat(2,1fr);gap:11px}
+  .pimg{aspect-ratio:1/1}
+  .pbody{padding:11px 11px 12px;gap:3px}
+  .pcat{font-size:11px}
+  .pname{font-size:14.5px;line-height:1.4}
+  .pmeta{font-size:12px;-webkit-line-clamp:2;margin-bottom:8px}
+  .pfoot .btn{padding:9px 8px;font-size:12.5px;gap:5px}
+  .pfoot .btn svg{width:14px;height:14px}
+  .favbtn{width:34px;height:34px;inset-block-start:8px;inset-inline-end:8px}
+  .favbtn svg{width:17px;height:17px}
+  .badge-new{font-size:10.5px;padding:3px 9px;inset-block-start:8px;inset-inline-start:8px}
+
+  .sector-grid{grid-template-columns:repeat(2,1fr);gap:11px}
+  .sec-bd{padding:12px 12px 14px;gap:4px}
+  .sector h3{font-size:16px}
+  .sector p{font-size:13px;-webkit-line-clamp:3;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
+
+  .feat-grid{grid-template-columns:1fr 1fr;gap:16px}
+  .feat h3{font-size:16.5px}
+  .feat p{font-size:13.5px}
+  .feat .n{width:32px;height:32px;font-size:11.5px}
+
+  .catcard{width:112px}
+  .catcard .cc-img{width:106px;height:106px}
+  .catcard .cc-bd{padding:9px 3px 0}
+  .catcard .cc-bd b{font-size:13.5px}
+  .rail{gap:11px;padding-bottom:12px}
+  .rail-nav{display:none}
+
+  section{padding:52px 0}
+  .sec-head{margin-bottom:28px}
+  h2{font-size:25px}
+  .hero-stats{gap:20px;flex-wrap:wrap;margin-top:34px;padding-top:22px}
+  .stat b{font-size:22px}
+  .lead{font-size:16.5px;margin:16px 0 26px}
+  .hero-actions .btn{flex:1;min-width:140px}
+
+  .cta{padding:32px 22px;border-radius:20px;gap:24px}
+  .cta p{font-size:15.5px}
+  .cta .btn{width:100%;padding:15px 20px;font-size:15.5px}
+
+  .f-grid{grid-template-columns:1fr 1fr;gap:26px 20px}
+  .f-col a{font-size:13.5px}
+
+  .spec-row{grid-template-columns:1fr;gap:4px}
+  .pd-actions{flex-wrap:nowrap;padding-top:14px;padding-bottom:8px}
+  .pd-actions .btn{min-width:0;padding:13px 14px;font-size:14px}
+  .pd-actions .favbtn{min-width:0;padding:0 16px}
+  .gallery .main{border-radius:16px}
+  .thumb{width:62px;height:62px}
+
+  .fab-wa{inset-block-end:14px;inset-inline-end:14px;padding:13px 17px;gap:8px;font-size:14px}
+  .fab-wa svg{width:22px;height:22px}
+  .fab-tx{display:none}
+  .drw-panel{width:92vw}
+  .drw-body{padding:16px}
+  .bnr-nav{width:34px;height:34px}
+  .bnr-nav svg{width:16px;height:16px}
+  .bnr-tx{padding:20px 18px 34px}
+  .bnr-tx h3{font-size:18px}
+  .lb-nav{width:40px;height:40px}
+  .lb-prev{inset-inline-end:8px}
+  .lb-next{inset-inline-start:8px}
+}
+
+/* 超小屏（iPhone SE 之类）还是 2 列，只把间距再收一点 */
+@media(max-width:380px){
+  .wrap{padding:0 12px}
+  .nav-in{padding:0 10px;gap:7px}
+  .nav-logo{font-size:15.5px}
+  .nav-logo .mark{width:27px;height:27px;font-size:12px}
+  .grid-4{gap:9px}
+  .pbody{padding:10px 9px 11px}
+  .pname{font-size:13.5px}
+  .pmeta{font-size:11.5px}
+  .pfoot .btn{font-size:11.5px;padding:8px 6px}
+  .sector-grid{gap:9px}
+  .sec-bd{padding:11px 10px 13px}
+  .sector h3{font-size:15px}
+  .favbtn-top{padding:9px 10px}
+  .catcard{width:100px}
+  .catcard .cc-img{width:94px;height:94px}
+  .catcard .cc-bd b{font-size:13px}
+}
+
+@media print{
+  .fab-wa,#mini-toast,#site-drawer,#lightbox,.bnr-nav,.bnr-dots{display:none!important}
+}
+
+/* ==========================================================================
+   货币切换（页头）
+   --------------------------------------------------------------------------
+   靠 IP 自动切、用户手选后记住。IP 只决定「第一次打开显示什么」，
+   不强制覆盖用户的选择 —— 否则同一网址对不同国家返回不同内容，
+   Google 会判成重复内容。 */
+.ccy-box{
+  display:flex;align-items:center;gap:5px;height:38px;padding:0 4px 0 9px;
+  border:1.5px solid var(--line);border-radius:11px;background:#fff;
+  position:relative;transition:border-color .18s
+}
+.ccy-box:hover{border-color:var(--brand)}
+.ccy-box:focus-within{border-color:var(--brand);box-shadow:0 0 0 3px rgba(0,0,0,.05)}
+.ccy-ic{
+  font-size:15px;color:var(--brand);font-weight:800;line-height:1;
+  /* ¤ 是通用货币符号，六个国家都在用，不带政治含义 */
+}
+.ccy-sel{
+  appearance:none;-webkit-appearance:none;background:transparent;border:none;outline:none;
+  font:inherit;font-size:13px;font-weight:800;color:var(--ink);cursor:pointer;
+  padding:0 14px 0 0;height:36px;
+  /* r22：原来 option 文字是「AED — الإمارات」一整串，原生 select 收起时
+     显示的就是那行字，按钮被撑到一百多像素宽，把旁边的搜索和菜单挤出去。
+     改成只留货币简写。
+     r24：大哥说还是字多，收起时只剩三字母代码（AED/SAR），
+     所以再从 62px 收到 54px。收起显示的是 3 个字符，54px 绰绰有余。 */
+  min-width 不能用百分比 —— select 在 flex 里内容为空时会塌成 0。 */
+  width:54px;min-width:54px;max-width:54px;
+  /* 自定义下拉箭头：RTL 下箭头该在左边 */
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%238a857a' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:left 3px center;
+  text-overflow:ellipsis;
+}
+/* 展开时把完整国家名补回来（收起状态看不到，靠 attr() 取data-full）。
+   attr() 只能读字符串属性，正好 data-full 就是纯文本。
+   放在 option 上：Chrome/Firefox 支持，Safari 对 option 内伪元素限制较多，
+   就算不生效也只是少个后缀，不影响切换。 */
+.ccy-sel option{font-size:14px;font-weight:700;padding:8px 10px;
+  white-space:nowrap}
+.ccy-sel option::after{content:" — " attr(data-full);color:var(--ink-3);font-weight:600}
+
+/* ==========================================================================
+   阶梯价格
+   --------------------------------------------------------------------------
+   放在产品卡（compact）和详情页（完整表）两种形态。
+   compact 只给「起 N 件 · 单价」一行，卡片高度可控；完整表在详情页。 */
+
+/* ---- 产品卡上的起价 ---- */
+.ptier-compact{
+  display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;
+  margin-top:9px;padding-top:9px;border-top:1px dashed var(--line)
+}
+.pt-label{font-size:11.5px;color:var(--ink-3);font-weight:700}
+.pt-qty{font-size:12px;color:var(--ink-2);font-weight:700;direction:ltr}
+.pt-price{font-size:16px;color:var(--brand);font-weight:800;direction:ltr;
+  font-variant-numeric:tabular-nums;letter-spacing:-.2px}
+.pt-per{font-size:11px;color:var(--ink-3);font-weight:600}
+
+/* ---- 详情页价格表 ---- */
+.ptier-box{
+  margin:20px 0;padding:18px 18px 14px;
+  border:2px solid var(--brand);border-radius:16px;background:var(--brand-soft)
+}
+.ptier-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.ptier-title{font-size:15.5px;font-weight:800;color:var(--ink)}
+.ptier-ccy{
+  font-size:11px;font-weight:800;color:var(--brand);letter-spacing:.6px;
+  background:#fff;border:1.5px solid var(--brand);border-radius:7px;padding:3px 8px
+}
+.ptier{width:100%;border-collapse:collapse;font-size:14px}
+.ptier th{
+  text-align:right;font-size:12.5px;font-weight:800;color:var(--ink-3);
+  padding:0 8px 8px;border-bottom:1.5px solid var(--line);white-space:nowrap
+}
+.ptier th:first-child,.ptier td:first-child{padding-right:0}
+/* 「总量」列在 RTL 下会被推到最左，单价居中更好读 */
+.ptier th:nth-child(2),.ptier td:nth-child(2){text-align:center;width:34%}
+.ptier td{
+  padding:10px 8px;border-bottom:1px solid var(--line);
+  color:var(--ink-2);font-weight:600;vertical-align:middle
+}
+.ptier tr:last-child td{border-bottom:none}
+.ptier td.q{direction:ltr;text-align:right;font-weight:800;color:var(--ink)}
+.ptier td.p{text-align:center;direction:ltr;font-weight:800;font-size:15.5px;
+  color:var(--brand);font-variant-numeric:tabular-nums}
+.ptier td.t{text-align:right;direction:ltr;font-size:13px;color:var(--ink-3)}
+.ptier td.t .from{font-size:11px;color:var(--ink-3);font-weight:600}
+.ptier td .more{color:var(--brand);font-weight:800}
+.ptier td .neg{font-size:12px;color:var(--ink-3);font-weight:600;font-style:italic}
+.ptier-note{
+  margin:10px 0 0;padding-top:10px;border-top:1px dashed var(--line);
+  font-size:12.5px;color:var(--ink-3);line-height:1.6
+}
+
+/* 价格里的数字统一等宽，换货币时不会左右跳 */
+.money{font-variant-numeric:tabular-nums}
+
+/* ==========================================================================
+   可定制项
+   --------------------------------------------------------------------------
+   买家问得最多的第二件事（第一是价格）：能改什么？
+   按类分组，别堆成一长串 —— 一长串就没人看了。 */
+.cu-box{
+  margin:18px 0;padding:16px 18px;border:1.5px solid var(--line);
+  border-radius:14px;background:var(--bg)
+}
+.cu-title{
+  display:flex;align-items:center;gap:7px;margin-bottom:12px;
+  font-size:14.5px;font-weight:800;color:var(--ink)
+}
+.cu-ic{
+  display:grid;place-items:center;width:22px;height:22px;border-radius:7px;
+  background:var(--brand);color:#fff;font-size:12px;font-weight:800
+}
+.cu-row{
+  display:flex;gap:12px;padding:7px 0;border-top:1px solid var(--line);
+  font-size:13.5px;line-height:1.65
+}
+.cu-row:first-of-type{border-top:none;padding-top:0}
+.cu-k{
+  flex:0 0 118px;font-weight:800;color:var(--ink);font-size:13px;
+  /* 长词（الإضافات）也要能读，不硬换行 */
+  hyphens:none
+}
+.cu-v{flex:1;color:var(--ink-2);font-weight:600}
+.cu-v i{font-style:normal;color:var(--line);font-weight:400;padding:0 3px}
+/* 交期用绿色点一下，让人一眼看到「多久能拿到」 */
+.cu-lead .cu-v{color:var(--brand);font-weight:800}
+
+/* ==========================================================================
+   报价行动区（详情页价格上方）
+   --------------------------------------------------------------------------
+   这一块是成单的最后一步 —— 让买家不用自己想办法联系你。 */
+.quotebar{margin:18px 0 4px}
+.quotebar .btn-wa{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;padding:15px 22px;font-size:16.5px;font-weight:800;
+  border-radius:13px
+}
+.qb-hint{
+  margin:9px 0 0;font-size:12.5px;color:var(--ink-3);line-height:1.6;text-align:center
+}
+
+/* ---- 手机适配 ---- */
+@media(max-width:620px){
+  .ccy-sel{max-width:60px;font-size:12px;padding-right:11px}
+  .ccy-box{padding:0 3px 0 7px;height:36px}
+  .ccy-box .ccy-ic{font-size:14px}
+
+  .ptier-box{padding:15px 14px 12px;margin:16px 0}
+  .ptier{font-size:13px}
+  .ptier th{font-size:11.5px;padding:0 5px 7px}
+  .ptier td{padding:9px 5px}
+  .ptier td.p{font-size:14px}
+  /* 「الإجمالي」列在窄屏挤得没法看，砍掉 —— 买家自己会乘 */
+  .ptier th:nth-child(3),.ptier td:nth-child(3){display:none}
+  .ptier td.p{width:auto}
+
+  .cu-box{padding:14px}
+  .cu-row{flex-direction:column;gap:2px;padding:8px 0}
+  .cu-k{flex:none;font-size:12.5px}
+  .ptier-compact{gap:5px}
+  .pt-price{font-size:15px}
+}
+
+/* ==========================================================================
+   直答块（首屏那 40 字）
+   --------------------------------------------------------------------------
+   写给搜索引擎和 AI 引擎看的：它们不执行 JS，只抓 HTML 文字。
+   样式上刻意做得比 lead 稍小、颜色更淡 —— 给人看是补充说明，
+   给机器看是明确的答案。 */
+.hero-answer{
+  margin:0 auto 14px;padding:11px 16px 11px 14px;max-width:62ch;
+  border-right:3px solid var(--brand);
+  background:var(--brand-soft);border-radius:0 10px 10px 0;
+  font-size:14px;line-height:1.75;color:var(--ink-2);font-weight:600;
+  text-align:right
+}
+
+/* ==========================================================================
+   信任区
+   --------------------------------------------------------------------------
+   买家下单前最想确认四件事：能不能定制 / 多久交货 / 什么材料 / 怎么问价。
+   答清楚，询盘质量会明显提高 —— 省掉的是来回问的那几轮。 */
+/* 大哥说这块「不是特别主要的内容，占地太多」，原来四张竖排大卡 393px。
+   现在压成一条紧凑横排带，约 180px。
+   r21 改动：说明文字从卡里拿出来，改成点格子弹层显示（data-desc）。
+   所以卡里只剩图标 + 标题，格子能小很多；标题允许折2 行，不要截字。 */
+.trust-band{padding-block:26px;background:var(--bg);
+  border-block:1px solid var(--line)}
+.trust-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:12px
+}
+.trust{
+  padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;
+  background:var(--card);transition:border-color .2s,transform .2s;
+  display:grid;gap:6px;align-items:start;
+  grid-template-columns:34px 1fr;
+  grid-template-areas:'ic t';
+  cursor:pointer
+}
+.trust:hover{border-color:var(--brand);transform:translateY(-2px)}
+.trust-ic{
+  grid-area:ic;align-self:start;
+  display:grid;place-items:center;width:34px;height:34px;
+  border-radius:10px;background:var(--brand-soft);color:var(--brand);
+  font-size:16px;font-weight:800
+}
+/* 说明文字不进卡里了，在弹层里。标题折 2 行，不省略号截断 —— 阿语词长，
+   截掉一半客户看不懂。 */
+.trust h3{grid-area:t;font-size:14.5px;font-weight:800;color:var(--ink);margin:0;
+  line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* ==========================================================================
+   弹层（点格子看说明）
+   --------------------------------------------------------------------------
+   r21 新增。只在窄屏（≤760px）生效 —— 宽屏说明文字本来就在卡里可见。
+   用 fixed 定位在视口底部（手机上拇指够得到），不改变页面高度。 */
+.pop{
+  position:fixed;inset:0;z-index:120;
+  background:rgba(12,26,21,.5);
+  display:flex;align-items:flex-end;justify-content:center;
+  opacity:0;transition:opacity .2s
+}
+.pop.on{opacity:1}
+.pop[hidden]{display:none}
+.pop-card{
+  position:relative;width:100%;max-width:520px;
+  background:var(--card);border-radius:20px 20px 0 0;
+  padding:22px 20px 26px;
+  box-shadow:0 -8px 30px rgba(0,0,0,.18);
+  transform:translateY(14px);transition:transform .22s
+}
+.pop.on .pop-card{transform:none}
+.pop-x{
+  position:absolute;inset-block-start:12px;inset-inline-end:14px;
+  width:32px;height:32px;border-radius:50%;
+  border:1.5px solid var(--line);background:var(--bg);
+  font-size:19px;line-height:1;color:var(--ink-3);cursor:pointer
+}
+.pop-t{
+  display:block;font-size:16px;font-weight:800;color:var(--ink);
+  padding-inline-end:36px;margin-bottom:8px
+}
+.pop-t:empty{display:none}
+.pop-d{margin:0;font-size:14.5px;line-height:1.75;color:var(--ink-2)}
+
+/* ==========================================================================
+   FAQ
+   --------------------------------------------------------------------------
+   用 <details> 写死，不靠 JS —— 搜索引擎和 AI 引擎抓不到 JS 渲染的内容。
+   GEO（Generative Engine Optimization）里这块最值钱：AI 搜
+   「كم الحد الأدنى للطلب في دبي」时，能直接答出这里的原文。 */
+.faq-band{padding-block:48px;background:var(--card);
+  border-block:1px solid var(--line)}
+.faq-list{
+  max-width:820px;margin:24px auto 0;display:flex;flex-direction:column;gap:9px
+}
+.faq-item{
+  border:1.5px solid var(--line);border-radius:12px;background:var(--card);
+  overflow:hidden;transition:border-color .2s
+}
+.faq-item[open]{border-color:var(--brand)}
+.faq-item summary{
+  padding:15px 18px;cursor:pointer;font-size:15px;font-weight:800;
+  color:var(--ink);list-style:none;display:flex;align-items:center;gap:11px
+}
+/* 去掉浏览器默认的三角，换成自己的加号 */
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::before{
+  content:'+';flex-shrink:0;display:grid;place-items:center;
+  width:22px;height:22px;border-radius:7px;background:var(--brand-soft);
+  color:var(--brand);font-size:16px;font-weight:800;transition:transform .2s
+}
+.faq-item[open] summary::before{transform:rotate(45deg)}
+.faq-item p{
+  padding:0 18px 16px 51px;font-size:14px;line-height:1.85;
+  color:var(--ink-2);font-weight:600
+}
+
+/* ---- 手机适配 ---- */
+@media(max-width:900px){
+  .trust-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+}
+@media(max-width:620px){
+  .hero-answer{
+    margin-bottom:12px;padding:10px 12px;font-size:13.5px;
+    border-right-width:2px;border-radius:0 8px 8px 0
+  }
+  .trust-band,.faq-band{padding-block:38px}
+  .trust-grid{grid-template-columns:1fr 1fr;gap:9px}
+  .trust{padding:12px 11px;gap:2px 9px;grid-template-columns:30px 1fr;
+    grid-template-areas:'ic t' 'ic p'}
+  .trust-ic{width:30px;height:30px;font-size:14px;border-radius:9px}
+  .trust h3{font-size:13.5px}
+  .trust p{font-size:11.5px;line-height:1.45;-webkit-line-clamp:3}
+
+  .faq-item summary{padding:13px 14px;font-size:14px;gap:9px}
+  .faq-item p{padding:0 14px 13px 45px;font-size:13.5px;line-height:1.75}
+}
+
+/* ==========================================================================
+   三维筛选面板（产品 / 场景 / 材料）
+   三个维度并列可叠加。同一维度单选，材料最多选两个 —— 选三个几乎必然空结果。
+   ========================================================================== */
+.filter-panel{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:18px 18px 14px;margin-bottom:22px
+}
+.fp-group + .fp-group{margin-top:16px;padding-top:15px;border-top:1px dashed var(--line)}
+.fp-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.fp-head h3{
+  margin:0;font-size:14px;font-weight:800;color:var(--ink);
+  letter-spacing:.2px
+}
+.fp-x{
+  margin-inline-start:auto;background:none;border:0;padding:4px 6px;cursor:pointer;
+  font:inherit;font-size:12.5px;font-weight:600;color:var(--brand);
+  text-decoration:underline;text-underline-offset:3px
+}
+.fp-x:hover{color:var(--brand-deep)}
+
+/* 横向滚动的一行筛选按钮 —— 手机上能滑，不换行占地方 */
+.fp-row{
+  display:flex;gap:9px;overflow-x:auto;padding-bottom:6px;
+  scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch
+}
+.fp-row::-webkit-scrollbar{height:5px}
+.fp-row::-webkit-scrollbar-thumb{background:var(--line);border-radius:10px}
+.fp-item{
+  flex:0 0 auto;scroll-snap-align:start;cursor:pointer;
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 13px 7px 8px;border:1px solid var(--line);border-radius:100px;
+  background:#fff;color:var(--ink-2);font:inherit;font-size:14px;font-weight:600;
+  transition:.16s
+}
+.fp-item:hover{border-color:var(--brand);color:var(--brand-deep)}
+.fp-item.on{background:var(--brand);border-color:var(--brand);color:#fff}
+.fp-item.on .fp-t{color:#fff}
+.fp-ic{
+  width:30px;height:30px;border-radius:50%;overflow:hidden;flex:0 0 auto;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:var(--bg);border:1px solid var(--line)
+}
+.fp-ic img{width:100%;height:100%;object-fit:cover;display:block}
+.fp-em{font-size:16px;background:transparent;border-color:transparent}
+.fp-t{white-space:nowrap}
+
+.fp-foot{display:flex;justify-content:flex-start;margin-top:14px}
+.fp-clear{
+  background:none;border:1px solid var(--line);border-radius:100px;cursor:pointer;
+  padding:7px 16px;font:inherit;font-size:13.5px;font-weight:600;color:var(--ink-2)
+}
+.fp-clear:hover{border-color:var(--brand);color:var(--brand-deep)}
+
+/* 已选条件标签条 */
+.fp-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.fp-tag{
+  cursor:pointer;font:inherit;font-size:13.5px;font-weight:600;
+  background:var(--brand-soft);color:var(--brand-deep);
+  border:1px solid var(--brand);border-radius:100px;padding:5px 12px;
+  display:inline-flex;align-items:center;gap:6px
+}
+.fp-tag i{font-style:normal;font-size:16px;line-height:1;opacity:.75}
+.fp-tag:hover{background:var(--brand);color:#fff}
+
+@media(max-width:620px){
+  .filter-panel{padding:14px 13px 11px;margin-bottom:18px}
+  .fp-group + .fp-group{margin-top:13px;padding-top:12px}
+  .fp-item{padding:6px 11px 6px 7px;font-size:13.5px}
+  .fp-ic{width:26px;height:26px}
+  .fp-em{font-size:14px}
+}
+
+/* ==========================================================================
+   三个新板块：认证资质 / 定制流程 / 客户案例
+   首页只放入口（一条 banner / 六个站位 / 一排卡片），点进去才展开细节。
+   ========================================================================== */
+
+/* ---- ① 认证资质：首页入口 banner ---- */
+/* r23：原来 margin-block:34px。
+   这个 div 夹在 proc-sec 和 cli-sec 两个 section 之间，上下 section 本身
+   已经有 padding 了，再加 margin 就三段叠加 ——量出来上下共 266px 的空当，
+   跟改版前一样空。留白交给两边 section 管，这里归零。 */
+.cert-banner{
+  display:block;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--r);padding:26px 28px;margin-block:0;
+  box-shadow:var(--sh-1);transition:.18s
+}
+.cert-banner:hover{border-color:var(--brand);box-shadow:var(--sh-2);transform:translateY(-2px)}
+.cb-in{display:flex;align-items:center;gap:22px}
+.cb-txt{flex:1;min-width:0}
+.cb-txt h2{font-size:clamp(19px,2.2vw,25px);margin:4px 0 6px}
+.cb-txt p{color:var(--ink-2);font-size:14.5px;line-height:1.7;max-width:64ch}
+.cb-n{
+  flex:0 0 auto;text-align:center;padding:10px 20px;border-radius:var(--r);
+  background:var(--brand-soft);color:var(--brand-deep)
+}
+.cb-n b{display:block;font-size:30px;line-height:1.1}
+.cb-n span{font-size:12.5px;font-weight:600}
+.cb-go{
+  flex:0 0 auto;font-size:14px;font-weight:700;color:var(--brand);
+  white-space:nowrap
+}
+.cb-go i{font-style:normal}
+
+/* 认证网格（详情页） */
+.cert-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px
+}
+.cert-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:20px;display:flex;flex-direction:column;gap:12px
+}
+.cc-top{display:flex;align-items:center;gap:13px}
+.cc-badge{
+  width:56px;height:56px;flex:0 0 auto;border-radius:12px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--gold-soft);border:1px solid var(--line)
+}
+.cc-badge img{width:100%;height:100%;object-fit:contain}
+.cc-ic{font-size:24px;color:var(--gold);font-weight:700}
+.cc-tt h3{font-size:16.5px;margin:0 0 3px;line-height:1.4}
+.cc-org{font-size:13px;color:var(--ink-3);margin:0}
+.cc-desc{font-size:14px;line-height:1.75;color:var(--ink-2);margin:0}
+.cc-meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin:0;padding-top:12px;border-top:1px dashed var(--line)}
+.cc-meta dt{font-size:11.5px;color:var(--ink-3);font-weight:600}
+.cc-meta dd{margin:2px 0 0;font-size:13.5px;font-weight:700;color:var(--ink)}
+.cc-file{
+  align-self:flex-start;font-size:13.5px;font-weight:700;color:var(--brand);
+  text-decoration:underline;text-underline-offset:3px
+}
+
+/* ---- ② 定制流程 ----
+   r21：改成横向滑动条（.rail），只留编号+图标+标题。
+   原来 3 列网格 6 个步骤竖着占 417px（手机 634px），用户反馈「一屏不够」。
+   横滑只占一行高度，且以后加到十步也不涨。
+   .ps-b 的说明文字从卡里拿掉了，详情在 process.html。 */
+.proc-wrap{margin-block:30px}
+.proc-grid{
+  display:grid;grid-auto-flow:column;grid-auto-columns:minmax(200px,1fr);
+  gap:14px;counter-reset:ps
+}
+.proc-step{
+  position:relative;display:flex;flex-direction:column;gap:9px;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:16px 15px 18px;transition:.18s;overflow:hidden
+}
+.proc-step:hover{border-color:var(--brand);box-shadow:var(--sh-2);transform:translateY(-2px)}
+.ps-n{
+  position:absolute;inset-block-start:12px;inset-inline-end:14px;
+  font-size:34px;font-weight:800;line-height:1;color:var(--brand-soft)
+}
+.ps-ic{
+  width:56px;height:56px;border-radius:14px;overflow:hidden;display:flex;
+  align-items:center;justify-content:center;background:var(--bg);border:1px solid var(--line)
+}
+.ps-ic img{width:100%;height:100%;object-fit:cover}
+.ps-em{font-size:24px}
+.ps-t{font-size:16px;font-weight:800;position:relative;line-height:1.4}
+.proc-more{display:inline-flex;margin-top:20px}
+
+/* 流程详情（左右交替） */
+.proc-detail{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:22px}
+.pd-row{
+  display:grid;grid-template-columns:420px 1fr;gap:26px;align-items:center;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:18px;scroll-margin-top:90px
+}
+.pd-row:nth-child(even) .pd-img{order:2}
+.pd-img{
+  aspect-ratio:4/3;border-radius:10px;overflow:hidden;display:flex;
+  align-items:center;justify-content:center;background:var(--bg);border:1px solid var(--line)
+}
+.pd-img img{width:100%;height:100%;object-fit:cover}
+.pd-em{font-size:44px}
+.pd-body{position:relative;padding-inline-start:52px}
+.pd-n{
+  position:absolute;inset-inline-start:0;inset-block-start:0;
+  width:38px;height:38px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;background:var(--brand);color:#fff;font-weight:800;font-size:16px
+}
+.pd-body h3{font-size:20px;margin:0 0 8px}
+.pd-body p{font-size:15px;line-height:1.85;color:var(--ink-2);margin:0}
+
+/* ---- ③ 客户案例墙 ---- */
+/* ---------- 客户卡片（左右结构） ----------
+   用户要求：左边客户 logo，右边行业标签 + 客户名 + 短描述 + 阅读更多。
+   原来 logo 在上面、描述在下面，卡片又高又乱；左右排之后一行能放 2~3 张，
+   整页高度也降下来了。
+   logo 用固定方形（object-fit:cover），因为客户 logo 有横版也有竖版，
+   不裁一下的话高的会把卡片撑变形。 */
+.cli-wall{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.cli-card{display:flex;gap:18px;align-items:flex-start;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:18px;transition:border-color .18s,transform .18s,box-shadow .18s}
+.cli-card:hover{border-color:var(--brand);transform:translateY(-2px);
+  box-shadow:0 10px 26px rgba(0,0,0,.07)}
+.cli-logo{flex:0 0 132px;width:132px;height:132px;border-radius:var(--r);
+  background:var(--bg);border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;overflow:hidden}
+.cli-logo img{width:100%;height:100%;object-fit:cover;display:block}
+.cli-logo .cli-ic{font-size:34px;color:var(--ink-4);opacity:.5}
+.cli-bd{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
+.cli-tag{display:inline-block;align-self:flex-start;
+  background:var(--brand-soft);color:var(--brand);
+  font-size:12px;font-weight:700;padding:3px 10px;border-radius:99px}
+.cli-name{font-size:17px;font-weight:700;color:var(--ink);line-height:1.5}
+/* 描述固定两行，超出省略 —— 卡片高度统一，一排看着齐 */
+.cli-body{font-size:14px;line-height:1.85;color:var(--ink-2);
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+  overflow:hidden;min-height:3.7em}
+.cli-go{margin-top:auto;padding-top:4px;font-size:13px;font-weight:700;color:var(--brand)}
+.cli-go i{font-style:normal;display:inline-block;transition:transform .18s}
+.cli-card:hover .cli-go i{transform:translateX(-4px)}
+
+@media(max-width:900px){
+  .cli-wall{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .cli-card{gap:13px;padding:14px}
+  .cli-logo{flex:0 0 88px;width:88px;height:88px}
+  .cli-name{font-size:15.5px}
+  .cli-body{font-size:13.5px}
+}
+
+/* 案例详情：合影大图 + 叙述 */
+.cli-detail{display:flex;flex-direction:column;gap:22px;margin-top:26px}
+.cd-row{
+  display:grid;grid-template-columns:480px 1fr;gap:28px;align-items:center;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:20px;scroll-margin-top:90px
+}
+.cd-row:nth-child(even) .cd-photo{order:2}
+.cd-photo{
+  aspect-ratio:4/3;border-radius:12px;overflow:hidden;display:flex;
+  align-items:center;justify-content:center;background:var(--bg);border:1px solid var(--line)
+}
+.cd-photo img{width:100%;height:100%;object-fit:cover}
+.cd-em{font-size:52px;color:var(--brand-soft)}
+.cd-logo{
+  width:88px;height:88px;border-radius:14px;overflow:hidden;display:flex;
+  align-items:center;justify-content:center;background:var(--bg);
+  border:1px solid var(--line);margin-bottom:14px
+}
+.cd-logo img{width:100%;height:100%;object-fit:contain}
+.cd-body h3{font-size:23px;margin:0 0 5px}
+.cd-sub{font-size:14.5px;color:var(--brand);font-weight:700;margin:0 0 12px}
+.cd-text{font-size:15.5px;line-height:1.9;color:var(--ink-2);margin:0;white-space:pre-line}
+
+/* 详情页统一的板块骨架 */
+.blk-head{margin-bottom:26px}
+.blk-head .kicker{display:block;margin-bottom:8px}
+.blk-head h2{font-size:clamp(24px,3vw,34px);margin:0 0 10px}
+.blk-head p{font-size:16px;line-height:1.8;color:var(--ink-2);max-width:70ch;margin:0}
+
+@media(max-width:900px){
+  .pd-row,.cd-row{grid-template-columns:1fr;gap:18px}
+  .pd-row:nth-child(even) .pd-img,.cd-row:nth-child(even) .cd-photo{order:0}
+  .cb-in{flex-wrap:wrap}
+  .cb-txt{flex:1 1 100%}
+}
+@media(max-width:620px){
+  .cert-banner{padding:20px 18px;margin-block:26px}
+  .cb-in{gap:14px}
+  .cb-n{padding:8px 16px}
+  .cb-n b{font-size:24px}
+  /* r21：流程改成横向滑动条了，这里不再改列数，只缩内容。
+     卡片固定 150px 宽，手机上一屏能看 2 个多，一滑到底。
+     （原来这里是 repeat(2,1fr) 两列网格，6 个格子竖着占 634px） */
+  .proc-grid{grid-auto-columns:150px;gap:10px}
+  .proc-step{padding:13px 12px 15px}
+  .ps-ic{width:44px;height:44px}
+  .ps-n{font-size:26px}
+  .ps-t{font-size:13.5px}
+  /* 材料卡在滑动条里固定宽度，不能撑满 */
+  .rail .matcard{width:170px;flex:none}
+  .rail .matcard .sec-bd h3{font-size:14px}
+  .rail .matcard .sec-bd p{-webkit-line-clamp:2;font-size:11.5px;line-height:1.5}
+  .pd-body{padding-inline-start:0;padding-top:52px}
+  .blk-head h2{font-size:23px}
+  .cert-grid{grid-template-columns:1fr}
+}
+
+/* ---------- 商品卡片瘦身（r19） ----------
+   用户要求：内容定长，超出用省略号截断，只展示名称和起订量。
+   .pname 两行截断 + .pbody 最小高度，保证一排卡片底边齐平 ——
+   卡片高矮不齐是最影响「这站专不专业」的第一印象。 */
+.pname{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+  overflow:hidden;min-height:2.9em;
+  font-size:15.5px;font-weight:700;line-height:1.45;color:var(--ink);
+  text-align:start}
+.pmoq{display:inline-block;align-self:flex-start;
+  font-size:13px;font-weight:700;color:var(--brand);
+  background:var(--brand-soft);padding:3px 10px;border-radius:99px}
+/* WhatsApp 小圆标，浮在卡片右下。不占行高。 */
+.pwa{position:absolute;bottom:10px;inset-inline-end:10px;
+  width:36px;height:36px;border-radius:50%;
+  background:#25D366;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 3px 12px rgba(37,211,102,.4);
+  transition:transform .18s;z-index:2}
+.pwa:hover{transform:scale(1.1)}
+.pwa svg{width:19px;height:19px}
+/* 起价在左下，小圆标在右下，别撞上 */
+.pbody .price-compact{padding-inline-end:46px}
+
+@media(max-width:620px){
+  .pname{font-size:14.5px;min-height:2.8em}
+  .pmoq{font-size:12px;padding:2px 8px}
+  .pwa{width:32px;height:32px;bottom:8px;inset-inline-end:8px}
+}
+
+/* ---------- 「我们是谁」区块（r19） ----------
+   原来「لماذا تختارنا」（为什么选择我们）是单独一个板块，
+   用户要求把它并进「我们是谁」：左边一段介绍，右边四条优势。
+   这样首页少一屏，逻辑也更顺 —— 先说我们是谁，再说为什么选我们。 */
+/* 桌面：左边介绍，右边 2×2 带说明文字（用户说「电脑上的效果还行」，不动） */
+.about{display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);
+  gap:44px;align-items:center}
+.about-l h2{font-size:clamp(22px,2.8vw,32px);margin:6px 0 14px;line-height:1.45}
+.about-l p{font-size:15.5px;line-height:1.95;color:var(--ink-2);margin:0}
+.about .feat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+@media(max-width:980px){
+  .about{grid-template-columns:1fr;gap:26px}
+  .about-l{text-align:center}
+}
+/* 手机：4 小格一行，说明文字藏起来（进弹层）。
+   原来这里是 1fr —— 4 条竖排 4 行占掉整整一屏，
+   这是用户要求改掉的主要原因。 */
+@media(max-width:760px){
+  .about .feat-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+  .about .feat{padding:11px 6px;gap:5px;align-items:center;text-align:center;
+    grid-template-columns:1fr;justify-items:center}
+  .about .feat .n{width:26px;height:26px;font-size:10px;border-radius:8px}
+  .about .feat h3{font-size:11.5px;line-height:1.35;margin:0}
+  .about .feat p{display:none}
+  .about .feat{cursor:pointer}
+}
+@media(max-width:620px){
+  .about-l p{font-size:14.5px}
+}
+/* 无价产品的起价占位，高度跟真起价块一致 —— 保证一排卡片底边齐平。 */
+.pprice-ph{display:block;height:38px;margin:9px 0}
+/* 起订量占位：没价格的也留一行，height 跟 .pmoq 的 29px 一致 */
+.pmoq-ph{display:inline-block;width:1px;height:29px;margin:0}
+
+/* ---------- 详情页规格项（可点击） ----------
+   用户要求详情页的尺寸、材料能点、能跳到筛选结果。
+   做成按钮样式的标签，带小箭头提示「能点」，
+   hover 变品牌色 —— 不然用户不知道这东西能点。 */
+.spec-v .spec-v-item{display:inline-flex;align-items:center;gap:5px;
+  background:var(--bg);border:1px solid var(--line);border-radius:8px;
+  padding:5px 11px;font-size:14px;color:var(--ink);
+  cursor:pointer;transition:border-color .16s,color .16s,background .16s;
+  text-decoration:none}
+.spec-v .spec-v-item::after{content:"\2192";font-size:12px;opacity:.45;
+  transition:transform .16s}
+.spec-v .spec-v-item:hover{border-color:var(--brand);color:var(--brand);
+  background:var(--brand-soft)}
+.spec-v .spec-v-item:hover::after{transform:translateX(-3px);opacity:.9}
+/* 材料那一行是真正能跳筛选的，给个更明显的样式 */
+.spec-v .spec-v-item[data-spec-type="mat"]{border-color:var(--brand);
+  color:var(--brand);font-weight:600}
+.spec-row:has(.spec-v-item[data-spec-type="mat"]) .spec-k::after{
+  content:"\2022";margin-inline-start:6px;opacity:.5}
+
+/* ==========================================================================
+   前台 → 后台 一键跳（r23）
+   --------------------------------------------------------------------------
+   鼠标移到板块上，右上角滑出一个小「✎ 编辑」按钮。
+   平时藏起来（opacity:0 + 缩一点），鼠标移上去才显出来 ——
+   客户看网站时干干净净，只有改网站的人才看得到。
+   ========================================================================== */
+.edit-jump{
+  position:absolute;top:8px;inset-inline-end:8px;z-index:20;
+  display:inline-flex;align-items:center;gap:5px;
+  padding:6px 11px;border-radius:100px;
+  background:var(--brand);color:#fff;
+  font-size:12.5px;font-weight:700;text-decoration:none;white-space:nowrap;
+  box-shadow:0 4px 14px -4px rgba(37,211,102,.55);
+  opacity:0;transform:scale(.9);pointer-events:none;
+  transition:opacity .16s,transform .16s;
+  line-height:1.5
+}
+/* 板块被鼠标移上去才显出来 */
+[data-edit-host].edit-hover .edit-jump{opacity:1;transform:scale(1);pointer-events:auto}
+.edit-jump:hover{filter:brightness(1.06);box-shadow:0 6px 18px -4px rgba(37,211,102,.7)}
+.edit-jump .ej-i{font-size:13px;line-height:1}
+
+/* 手机上 hover 不成立，藏起来别占地方 */
+@media(max-width:900px),(hover:none){
+  .edit-jump{display:none!important}
+}
+
+
+/* r23：认证资质那个容器原来是裸 div，跟 section.p-wrap 会重叠留白，
+   这里明确「留白由 .cert-banner 的 margin-block 负责」，别再叠一层。 */
+/* r23：这个容器同时带 .wrap 类（自带 24px 左右内边距，别去掉）。
+   留白原来由 .cert-banner 的 margin-block 负责，但那是「外边距」，
+   撑在父容器外面，视觉上跟两边 section 的 padding 叠成三段 ——
+   量出来上下共 266px 的空当，跟改版前一模一样。
+   现在归一到容器自己的 padding = 46px，跟 section 一样，全页节奏统一。 */
+.cert-slot-wrap{padding-top:46px;padding-bottom:46px}
+@media(max-width:900px){.cert-slot-wrap{padding-top:34px;padding-bottom:34px}}
+
+/* ==========================================================================
+   r26：工艺详情页（craft.html）
+   页面结构对每条工艺都一样，后台加一条就能打开一条，不用改这里。
+   ========================================================================== */
+.cf-hero{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:34px;align-items:center
+}
+.cf-himg{
+  border-radius:22px;overflow:hidden;position:relative;
+  background:linear-gradient(160deg,#eef5f1,#dfeae4);
+  aspect-ratio:4/3;display:grid;place-items:center
+}
+.cf-himg img{width:100%;height:100%;object-fit:cover}
+/* 还没传图时的占位符 —— 大哥先上占位，图从淘宝拿了再换 */
+.cf-ph{font-size:64px;opacity:.3;line-height:1}
+.cf-hbd h1{font-size:clamp(26px,3.2vw,38px);margin:6px 0 0;line-height:1.32}
+.cf-en{
+  font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--ink-3)
+}
+.cf-lead{
+  font-size:17px;font-weight:700;color:var(--ink-2);
+  margin-top:12px;line-height:1.7
+}
+.cf-desc{font-size:15px;color:var(--ink-2);margin-top:10px;line-height:1.85}
+
+.cf-specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.cf-spec{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:6px
+}
+.cf-spec b{font-size:13px;color:var(--ink-3);font-weight:600}
+.cf-spec span{font-size:15px;color:var(--ink);line-height:1.6}
+
+/* 页尾的「其它工艺」—— 互相导流，让客户多看几条 */
+.cf-more{margin-top:26px;padding:20px 22px;border:1px solid var(--line);border-radius:18px}
+.cf-more b{display:block;margin-bottom:12px;font-size:15px}
+.cf-more-list{display:flex;flex-wrap:wrap;gap:10px}
+.cf-more-list a{
+  padding:8px 14px;border:1px solid var(--line);border-radius:100px;
+  font-size:14px;color:var(--ink-2);text-decoration:none;transition:.18s
+}
+.cf-more-list a:hover{border-color:var(--brand);color:var(--brand)}
+
+/* 工艺页的视频位。不是直接嵌 iframe，而是封面图 + 播放键，
+   点了才加载播放器 —— 见 craft.html 里的注释。 */
+.cf-video{
+  position:relative;border-radius:20px;overflow:hidden;cursor:pointer;
+  aspect-ratio:16/9;max-width:760px;margin:0 auto;
+  background:#0d1b16 center/cover no-repeat;
+  box-shadow:0 10px 30px rgba(13,27,22,.14)
+}
+.cf-video::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.34))
+}
+.cf-video-play{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:74px;height:74px;border-radius:50%;z-index:2;
+  background:rgba(255,255,255,.94);
+  box-shadow:0 6px 20px rgba(0,0,0,.28);transition:transform .18s
+}
+.cf-video-play::before{
+  content:'';position:absolute;left:54%;top:50%;transform:translate(-50%,-50%);
+  border-style:solid;border-width:13px 0 13px 21px;
+  border-color:transparent transparent transparent #0e6b52
+}
+.cf-video:hover .cf-video-play{transform:translate(-50%,-50%) scale(1.08)}
+.cf-video-on{cursor:default;box-shadow:none}
+.cf-video-on::after{display:none}
+.cf-video iframe{width:100%;height:100%;border:0;display:block}
+
+.cf-empty{text-align:center;padding:60px 0}
+
+@media(max-width:820px){
+  .cf-hero{grid-template-columns:1fr;gap:22px}
+  /* 手机上让图矮一点，别一屏全是图 */
+  .cf-himg{aspect-ratio:16/11}
+  .cf-lead{font-size:15.5px}
+}
+
+/* 工艺总览页（crafts.html）：全部工艺一个网格，不限行数 */
+.crafts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:900px){.crafts-grid{grid-template-columns:repeat(2,1fr);gap:12px}}
+@media(max-width:380px){.crafts-grid{gap:9px}}

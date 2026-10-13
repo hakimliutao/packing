@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>الخامات</title>
+<meta name="description" content="كل الخامات التي نطبع عليها التغليف المخصص: ورق كرافت، فود غذائي، PET، PP، ألياف قصب الذرة، كرتون مموج، ورق معاد تدويره. اختر الخامة المناسبة لمنتجك.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div id="search-bar"></div>
+<div id="site-drawer"></div>
+<header id="site-header"></header>
+
+<!-- 顶部引言：原来首页材料区下面那句说明文字，挪到这里来了。
+     用户要求首页只留一个主标题，说明文字放详情页顶部。 -->
+<section class="page-head">
+  <div class="wrap">
+    <nav class="crumbs"><a href="index.html">الرئيسية</a> <span>/</span> <span>الخامات</span></nav>
+    <h1 id="pg-title" style="font-size:clamp(28px,3.6vw,42px)"></h1>
+    <p id="pg-lead" style="color:var(--ink-2);font-size:17px;margin-top:10px;max-width:70ch"></p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sector-grid" id="mat-grid"></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div id="cta-slot"></div>
+</section>
+
+<footer id="site-footer"></footer>
+
+<script src="assets/api.js"></script>
+<script src="assets/ui.js"></script>
+<script src="assets/popup.js"></script>
+<script src="assets/seo.js"></script>
+<script src="assets/currency.js"></script>
+<script src="assets/pricing.js"></script>
+<script src="assets/site.js"></script>
+<script>
+async function initMaterials() {
+  await boot('materials');
+  const { site, tax } = CTX;
+  const ui = tax.ui;
+  document.title = `${ui.matTitleAr || 'الخامات'} — ${site.brand.nameAr}`;
+
+  /* 顶部标题和引言用材料区那三行文案。
+     kicker 已经从首页删了，这里只要主标题和说明。 */
+  document.getElementById('pg-title').textContent = ui.matTitleAr || 'نصنع التغليف من كل الخامات';
+  document.getElementById('pg-lead').textContent = ui.matSubAr ||
+    'ورق، بلاستيك، ألياف، أو ألمنيوم. اختر الخامة وتعرّف على المنتجات اللي منها.';
+
+  const all = await getProducts();
+  const counts = {};
+  all.forEach(p => (p.materialIds || []).forEach(m => counts[m] = (counts[m] || 0) + 1));
+
+  const mats = (tax.materials || []).slice().sort((a, b) => (a.sort || 99) - (b.sort || 99));
+
+  /* 没有产品的材料不摆出来 —— 点进去是空页面，不如不列。
+     首页只显示有货的，详情页也保持一致。 */
+  const shown = mats.filter(m => counts[m.id]);
+
+  document.getElementById('mat-grid').innerHTML = shown.length ? shown.map(m => `
+    <a class="sector" href="products.html?mat=${encodeURIComponent(m.id)}" id="${esc(m.id)}">
+      <span class="sec-img">
+        ${m.image || m.imageAr
+          ? `<img src="${esc(m.image || m.imageAr)}" alt="${esc(m.nameAr)}" loading="lazy">`
+          : `<span class="is-emoji">${esc(m.emoji || '\u{1F9FB}')}</span>`}
+      </span>
+      <span class="sec-bd">
+        <h3>${esc(m.nameAr)}</h3>
+        <p>${esc(m.descAr || '')}</p>
+        <span class="more">${esc(ui.browseMatAr || 'تصفح الخامة')}
+          <span class="count">${counts[m.id] || 0} ${esc(ui.resultsAr)}</span></span>
+      </span>
+    </a>`).join('') : `<p class="hint" style="color:var(--ink-3)">${esc(ui.noMatsSubAr || 'لم تُضف خامات بعد.')}</p>`;
+
+  if (location.hash) {
+    const t = document.querySelector(location.hash);
+    if (t) setTimeout(() => t.scrollIntoView({ behavior: 'smooth', block: 'center' }), 300);
+  }
+}
+initMaterials().catch(e => console.error('[materials]', e));
+</script>
+</body>
+</html>

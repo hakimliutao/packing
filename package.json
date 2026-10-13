@@ -1,0 +1,14 @@
+{
+  "name": "packing-coffee-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Arabic product showcase site for the Middle East market, with a self-service admin panel",
+  "type": "module",
+  "scripts": {
+    "dev": "netlify dev",
+    "deploy": "netlify deploy --prod"
+  },
+  "dependencies": {
+    "@netlify/blobs": "~10.7.13"
+  }
+}

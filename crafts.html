@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0e6b52">
+<title>الطباعة والتشطيبات</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div id="search-bar"></div>
+<div id="site-drawer"></div>
+<header id="site-header"></header>
+
+<section class="page-head">
+  <div class="wrap">
+    <h1 id="cr-title"></h1>
+    <p id="cr-lead" class="page-lead"></p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap"><div class="crafts-grid" id="cr-grid"></div></div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap"><div id="cta-slot"></div></div>
+</section>
+
+<footer id="site-footer"></footer>
+
+<script src="assets/api.js"></script>
+<script src="assets/ui.js"></script>
+<script src="assets/popup.js"></script>
+<script src="assets/seo.js"></script>
+<script src="assets/currency.js"></script>
+<script src="assets/pricing.js"></script>
+<script src="assets/site.js"></script>
+<script>
+/* 工艺总览页 —— 首页工艺区放不下的那些，全在这里。
+   数据跟首页同一份（site.crafts.items），后台加一条这里就多一张卡。 */
+async function initCrafts() {
+  await boot('home');
+  const { site, tax } = CTX;
+  const ui = tax.ui;
+
+  const b = site.crafts || {};
+  const list = (b.items || [])
+    .filter(c => c && c.published !== false)
+    .slice().sort((a, z) => (a.sort || 99) - (z.sort || 99));
+
+  /* SEO：总览页也是新页面，PAGES 表里没有它，得显式给 title/desc */
+  const brandAr = (site.brand && site.brand.nameAr) || '';
+  const pageTitle = b.titleAr || ui.craftTitleAr || 'الطباعة والتشطيبات';
+  if (window.SEO) {
+    try {
+      SEO.apply({
+        key: 'crafts',
+        title: pageTitle + (brandAr ? ' | ' + brandAr : ''),
+        desc: (b.leadAr || (site.brand && site.brand.descAr) || '').slice(0, 155),
+      });
+    } catch (e) { console.warn('[seo]', e); }
+  } else {
+    document.title = pageTitle + (brandAr ? ' — ' + brandAr : '');
+  }
+
+  document.getElementById('cr-title').textContent =
+    b.titleAr || ui.craftTitleAr || 'الطباعة والتشطيبات';
+  const lead = document.getElementById('cr-lead');
+  if (b.leadAr) lead.textContent = b.leadAr; else lead.remove();
+
+  const grid = document.getElementById('cr-grid');
+  if (!list.length) {
+    grid.outerHTML = `<div class="wrap">${emptyState(ui.emptyCategoryAr || 'لا يوجد شيء هنا بعد')}</div>`;
+    return;
+  }
+  grid.innerHTML = list.map(c => `
+    <a class="sector" href="craft.html?c=${encodeURIComponent(c.id)}">
+      <span class="sec-img">
+        ${c.image
+          ? imgTag(c.image, c.nameAr, { set: c.imageSet, sizes: '(max-width:700px) 100vw, 380px' })
+          : '<span class="is-emoji">\u2726</span>'}
+      </span>
+      <span class="sec-bd">
+        <h3>${esc(c.nameAr)}</h3>
+        <p>${esc(c.leadAr || '')}</p>
+      </span>
+    </a>`).join('');
+}
+initCrafts().catch(e => console.error('[crafts]', e));
+</script>
+</body>
+</html>
