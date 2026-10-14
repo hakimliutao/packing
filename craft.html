@@ -59,26 +59,6 @@
 <script src="assets/pricing.js"></script>
 <script src="assets/site.js"></script>
 <script>
-/* 从后台填的链接里认出 YouTube 视频 id。
-   后台可能填整段链接（youtu.be/xxx、watch?v=xxx、embed/xxx、带 &t=34s 之类的参数），
-   也可能直接填 11 位 id —— 都能认。认不出就返回空，页面上那块直接不显示。 */
-function ytId(url) {
-  const s = (url || '').trim();
-  if (!s) return '';
-  if (/^[\w-]{11}$/.test(s)) return s;
-  const m = s.match(/(?:youtu\.be\/|v=|\/embed\/|\/shorts\/|\/v\/)([\w-]{11})/);
-  return m ? m[1] : '';
-}
-function ytInfo(url) {
-  const id = ytId(url);
-  if (!id) return null;
-  return {
-    id: id,
-    thumb: 'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg',
-    embed: 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0',
-  };
-}
-
 /* 工艺详情页。
    地址形如 craft.html?c=gold-foil —— c 就是后台那条工艺的 id。
    数据全从 site.crafts.items 里取，页面结构对每条工艺都一样，
@@ -168,33 +148,12 @@ async function initCraft() {
 
   /* ---------- 2.5 视频：后台填了链接才显示 ----------
      不填就整块隐藏，链接失效或填错也不会留一个破窗口。
-     这里不用 YouTube 的 iframe 直接嵌 —— iframe 一上来就加载，
-     一个 300KB 的播放器 + 第三方 cookie，为了一条可能没人点的视频不值。
-     做成「封面图 + 播放键」，点了才把 iframe 放进去。封面走 i.ytimg.com，
-     那是纯图片，不影响速度和隐私。 */
-  const vid = ytInfo(c.videoUrl);
-  if (vid) {
+     为什么不直接嵌 iframe：播放器 300KB + 第三方 cookie，
+     为一条可能没人点的视频不值当，还拖首屏。
+     做成「封面图 + 播放键」，点了才把 iframe 放进去（site.js 的 mountVideo）。
+     封面走 i.ytimg.com，纯图片，快且不涉及隐私。 */
+  if (mountVideo(document.getElementById('cf-video'), c.videoUrl, c.nameAr)) {
     document.getElementById('cf-video-sec').hidden = false;
-    document.getElementById('cf-video').innerHTML = `
-      <div class="cf-video" id="cf-video-box" role="button" tabindex="0"
-           style="background-image:url('${vid.thumb}')"
-           data-embed="${esc(vid.embed)}"
-           aria-label="${esc(ui.craftVideoPlayAr || 'شغّل الفيديو')}">
-        <span class="cf-video-play" aria-hidden="true"></span>
-      </div>`;
-    const box = document.getElementById('cf-video-box');
-    const play = () => {
-      box.innerHTML = `<iframe src="${esc(box.dataset.embed)}"
-        title="${esc(c.nameAr || '')}"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen loading="lazy"></iframe>`;
-      box.classList.add('cf-video-on');
-      box.removeAttribute('role');
-    };
-    box.addEventListener('click', play);
-    box.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(); }
-    });
   }
 
   /* ---------- 3. 这个工艺能用在哪些产品上（r27：真关联了） ----------

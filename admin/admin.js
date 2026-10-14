@@ -1355,9 +1355,13 @@ function renderSettings() {
   renderWaAdmin();
   renderFootAdmin();
 
-document.getElementById('s-hero').value = s.hero.titleAr.replace(/<[^>]+>/g, '');
+  document.getElementById('s-hero').value = s.hero.titleAr.replace(/<[^>]+>/g, '');
   const sl = document.getElementById('s-lead');
   if (sl) sl.value = s.hero.leadAr || '';
+  /* 工厂介绍视频：空着就不显示。老数据没这几个字段，退回空串 */
+  document.getElementById('s-video').value = s.videoUrl || '';
+  document.getElementById('s-video-title').value = s.videoTitleAr || '';
+  document.getElementById('s-video-sub').value = s.videoSubAr || '';
   document.getElementById('s-cta').value = s.cta.titleAr;
   document.getElementById('s-ctabody').value = s.cta.bodyAr;
 
@@ -1402,6 +1406,10 @@ function bindSettings() {
 
     DB.site.hero.titleAr = g('s-hero');
     DB.site.hero.leadAr = g('s-lead');
+    /* 工厂介绍视频：trim 后空串 = 前台不显示这一块 */
+    DB.site.videoUrl = g('s-video');
+    DB.site.videoTitleAr = g('s-video-title');
+    DB.site.videoSubAr = g('s-video-sub');
     DB.site.cta.titleAr = g('s-cta');
     DB.site.cta.bodyAr = g('s-ctabody');
     /* 颜色 */

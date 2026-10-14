@@ -153,6 +153,27 @@ async function initHome() {
       </div>`).join('');
   }
 
+  /* ---------- 工厂介绍视频（r29） ----------
+     后台「网站设置 → 工厂介绍视频」填一条链接才显示。
+     跟工艺页共用 site.js 的 mountVideo —— 同一套点击加载逻辑，
+     两边行为不会走偏。 */
+  const hv = document.getElementById('home-video-sec');
+  if (hv) {
+    if (mountVideo(document.getElementById('home-video'), site.videoUrl,
+                   site.videoTitleAr || '')) {
+      /* 标题/小字都是可选的：填空就只留视频，不留空标题占位 */
+      const vt = (site.videoTitleAr || '').trim();
+      const vs = (site.videoSubAr || '').trim();
+      const vtEl = document.getElementById('home-video-title');
+      const vsEl = document.getElementById('home-video-sub');
+      if (vtEl) { vtEl.textContent = vt; vtEl.hidden = !vt; }
+      if (vsEl) { vsEl.textContent = vs; vsEl.hidden = !vs; }
+      hv.hidden = false;
+    } else {
+      hv.hidden = true;
+    }
+  }
+
   /* FAQ —— 后台可改问答（site.faqs.items），也可用 tax.ui.faqHomeCountAr
      控制首页显示几条。
 

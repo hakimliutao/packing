@@ -336,6 +336,20 @@
       <label class="full">说明文字<textarea class="inp" id="s-lead" rows="3"></textarea></label>
     </div>
 
+    <h3 id="set-homevideo">工厂介绍视频</h3>
+    <p class="tip" style="margin-top:-6px">
+      在首页信任区下面放一段视频，给客户看看工厂和车间。填 YouTube 链接就行，
+      整段复制粘贴（<span dir="ltr">watch?v=…</span>、<span dir="ltr">youtu.be/…</span> 都认）。
+      <b>空着就不显示这一块</b>，不会留个空窗口。
+      视频不会自动加载播放器 —— 客户点了播放键才开始放，所以不影响页面打开速度。
+    </p>
+    <div class="fgrid">
+      <label class="full">视频链接
+        <input class="inp" id="s-video" dir="ltr" placeholder="https://www.youtube.com/watch?v=..."></label>
+      <label>视频区标题<input class="inp" id="s-video-title" placeholder="留空则只显示视频，不显示标题"></label>
+      <label>视频区小字<input class="inp" id="s-video-sub" placeholder="留空则不显示小字"></label>
+    </div>
+
     <h3 id="set-stats">首页那三个数字</h3>
     <p class="tip" style="margin-top:0">
       这些数字显示在首屏标题下面，比如「+250 目录里的产品」。

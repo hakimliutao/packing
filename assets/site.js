@@ -18,6 +18,72 @@ function esc(s) {
 }
 
 /* ==========================================================================
+   YouTube 链接识别（r29）
+   --------------------------------------------------------------------------
+   后台填链接的入口不止一处：工艺详情页（每条工艺一条）、
+   首页的公司介绍视频（一条）。两边的解析规则必须一致，
+   所以放这里共用，谁也别自己写一份正则。
+
+   认这几种写法，带 &t=34s 之类的参数都不影响：
+     youtube.com/watch?v=xxx  ·  youtu.be/xxx  ·  /embed/xxx
+     /shorts/xxx              ·  直接填 11 位 id
+   认不出（非 YouTube 链接、空值）→ 返回 '' → 调用方把那块藏起来。 */
+function ytId(url) {
+  const s = String(url == null ? '' : url).trim();
+  if (!s) return '';
+  if (/^[\w-]{11}$/.test(s)) return s;
+  const m = s.match(/(?:youtu\.be\/|v=|\/embed\/|\/shorts\/|\/v\/)([\w-]{11})/);
+  return m ? m[1] : '';
+}
+
+/* 顺手给全 { id, thumb, embed }。thumb 走 i.ytimg.com —— 纯图片，
+   不拉播放器也不塞第三方 cookie；embed 是点了才用的地址。 */
+function ytInfo(url) {
+  const id = ytId(url);
+  if (!id) return null;
+  return {
+    id: id,
+    thumb: 'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg',
+    embed: 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0',
+  };
+}
+window.ytId = ytId;
+window.ytInfo = ytInfo;
+
+/* 把视频块挂到容器里。容器要先存在（可以是 hidden 的 section）。
+   没有链接 / 链接认不出 → 不动 DOM，由调用方自己决定藏不藏。 */
+function mountVideo(host, videoUrl, title) {
+  if (!host) return false;
+  const v = ytInfo(videoUrl);
+  if (!v) return false;
+  host.innerHTML = `
+    <div class="yt-video" id="yt-video-box" role="button" tabindex="0"
+         style="background-image:url('${v.thumb}')"
+         data-embed="${esc(v.embed)}"
+         aria-label="${esc(title || '')}">
+      <span class="yt-video-play" aria-hidden="true"></span>
+    </div>`;
+  const box = host.querySelector('#yt-video-box');
+  const play = () => {
+    /* 点了才放 iframe —— 一开始就嵌的话，300KB 播放器加第三方 cookie
+       白拉一遍，还可能拖慢首屏。 */
+    box.innerHTML = `<iframe src="${esc(box.dataset.embed)}"
+      title="${esc(title || '')}"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen loading="lazy"></iframe>`;
+    box.classList.add('yt-video-on');
+    box.removeAttribute('role');
+    box.removeAttribute('tabindex');
+  };
+  box.addEventListener('click', play);
+  box.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(); }
+  });
+  return true;
+}
+window.mountVideo = mountVideo;
+
+/* ==========================================================================
    WhatsApp 多号码（r21）
    --------------------------------------------------------------------------
    原来全站只有一个号码（site.whatsapp.number），所有按钮都指向它。

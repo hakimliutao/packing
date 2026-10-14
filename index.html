@@ -59,6 +59,18 @@
   </div>
 </section>
 
+<!-- ② 工厂介绍视频 —— 后台填一条 YouTube 链接才显示（r29）。
+     位置放在信任区后面：客户刚看完「凭什么信你」，趁热看一段实拍最有效。
+     填错链接或空着都整块隐藏，不留破窗口。
+     做法跟工艺页一样：封面缩略图 + 播放键，点了才加载播放器。 -->
+<section class="band" id="home-video-sec" hidden>
+  <div class="wrap">
+    <h2 id="home-video-title" class="sec-title center"></h2>
+    <p id="home-video-sub" class="sec-sub center"></p>
+    <div id="home-video"></div>
+  </div>
+</section>
+
 <!-- ① 产品类型（横向滑动条）—— r26 收起来了：首页只留「工艺」和「行业&场景」两个入口。
      代码和数据都还在，把 page-home.js 里的 HOME_ENTRIES.cats 改成 true 就能恢复。 -->
 <section style="padding-block:44px" id="cats-sec" hidden>

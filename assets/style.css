@@ -1680,33 +1680,51 @@ footer{border-top:1px solid var(--line);padding:52px 0 40px;background:#fff}
 }
 .cf-more-list a:hover{border-color:var(--brand);color:var(--brand)}
 
-/* 工艺页的视频位。不是直接嵌 iframe，而是封面图 + 播放键，
-   点了才加载播放器 —— 见 craft.html 里的注释。 */
-.cf-video{
+/* ==========================================================================
+   YouTube 视频位（r29）—— 工艺页和首页共用
+   不是直接嵌 iframe，而是封面图 + 播放键，点了才加载播放器：
+   播放器 300KB + 第三方 cookie，一上来就拉纯属浪费，还拖首屏。
+   封面的缩略图走 i.ytimg.com（纯图片），逻辑在 site.js 的 mountVideo()。
+   ========================================================================== */
+.yt-video{
   position:relative;border-radius:20px;overflow:hidden;cursor:pointer;
   aspect-ratio:16/9;max-width:760px;margin:0 auto;
   background:#0d1b16 center/cover no-repeat;
   box-shadow:0 10px 30px rgba(13,27,22,.14)
 }
-.cf-video::after{
+.yt-video::after{
   content:'';position:absolute;inset:0;
   background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.34))
 }
-.cf-video-play{
+.yt-video-play{
   position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
   width:74px;height:74px;border-radius:50%;z-index:2;
   background:rgba(255,255,255,.94);
   box-shadow:0 6px 20px rgba(0,0,0,.28);transition:transform .18s
 }
-.cf-video-play::before{
+.yt-video-play::before{
   content:'';position:absolute;left:54%;top:50%;transform:translate(-50%,-50%);
   border-style:solid;border-width:13px 0 13px 21px;
   border-color:transparent transparent transparent #0e6b52
 }
-.cf-video:hover .cf-video-play{transform:translate(-50%,-50%) scale(1.08)}
-.cf-video-on{cursor:default;box-shadow:none}
-.cf-video-on::after{display:none}
-.cf-video iframe{width:100%;height:100%;border:0;display:block}
+.yt-video:hover .yt-video-play{transform:translate(-50%,-50%) scale(1.08)}
+.yt-video-on{cursor:default;box-shadow:none}
+.yt-video-on::after{display:none}
+.yt-video iframe{width:100%;height:100%;border:0;display:block}
+
+/* 首页那条公司/工厂介绍视频可以宽一点 —— 首页横向空间足，别浪费 */
+#home-video-sec .yt-video{max-width:880px}
+
+/* 标题下面那行小字，各板块通用 */
+.sec-sub{
+  max-width:640px;margin:-4px auto 22px;text-align:center;
+  font-size:15.5px;line-height:1.75;color:var(--ink-3)
+}
+
+@media(max-width:820px){
+  .yt-video-play{width:60px;height:60px}
+  .yt-video-play::before{border-width:11px 0 11px 18px}
+}
 
 .cf-empty{text-align:center;padding:60px 0}
 
