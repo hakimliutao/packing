@@ -154,6 +154,36 @@ export default async (req) => {
         ? oldSo[k] : (seedSo[k] || '')
     })
 
+    /* ===== r29 补： crafts（首页「印刷工艺」区）=====
+       线上这份 site blob 是 10 月初种子化的，那时候 crafts 还不存在，
+       items 是空数组 —— 首页工艺区因此显示「本分类暂无产品」，
+       产品表单里的「可用工艺」勾选列表也是空的。
+       合并规则跟 products 一个路子：
+         老的为空 → 种子的 6 条整套拿过来（图走 /assets/img/ 静态路径，
+                     烫金的视频占位链接一起带过去）
+         老的有数据 → 按 id 补缺失字段，后台传过的图、改过的文案不动 */
+    try {
+      const oldCraftItems = Array.isArray(old?.crafts?.items) ? old.crafts.items : []
+      const seedCraftItems = Array.isArray(seedSite.crafts?.items) ? seedSite.crafts.items : []
+      if (!oldCraftItems.length) {
+        merged.crafts = Object.assign({}, seedSite.crafts)
+      } else {
+        merged.crafts = Object.assign({}, old.crafts, {
+          items: oldCraftItems.map(c => {
+            const s = seedCraftItems.find(x => x.id === c.id) || {}
+            return Object.assign({}, s, c, {
+              image: keep(c.image, s.image),
+              videoUrl: keep(c.videoUrl, s.videoUrl),
+            })
+          }),
+        })
+      }
+      changed.crafts = (merged.crafts?.items?.length || 0) + ' 条工艺'
+    } catch (e) {
+      console.error('[migrate] crafts 合并失败:', e)
+      changed.crafts = 'FAIL: ' + e.message
+    }
+
     await writeBlob('site', merged)
     changed.site = Object.keys(merged).join(',')
   } catch (e) {
@@ -171,6 +201,17 @@ export default async (req) => {
         imageAr: keep(c.imageAr, s.imageAr),
       })
     })
+    /* r29 补：老清单里没有的种子分类补上。
+       线上只有 5 个分类，缺「الصناديق/纸盒」——首页分类条因此少一格，
+       归在 boxes 下的产品哪个分类都挂不上。 */
+    try {
+      (seedCats.categories || []).forEach(s => {
+        if (!cats.some(c => c.id === s.id)) cats.push(s)
+      })
+    } catch (e) {
+      console.error('[migrate] 分类补录失败:', e)
+    }
+
     const secs = (old?.sectors || seedCats.sectors).map(c => {
       const s = (seedCats.sectors || []).find(x => x.id === c.id) || {}
       return Object.assign({}, s, c, {
@@ -178,6 +219,15 @@ export default async (req) => {
         imageAr: keep(c.imageAr, s.imageAr),
       })
     })
+    /* r29 补：行业同理，种子有的补上 */
+    try {
+      (seedCats.sectors || []).forEach(s => {
+        if (!secs.some(c => c.id === s.id)) secs.push(s)
+      })
+    } catch (e) {
+      console.error('[migrate] 行业补录失败:', e)
+    }
+
     /* materials 是第三个筛选维度（材料）。
        老规矩：老数据有值就保留（后台传过的图、改过的名都不丢），
        只补缺失的字段。
@@ -228,8 +278,47 @@ export default async (req) => {
       }
       return merged
     })
+    /* r29 补一：老清单里没有的种子产品补上。
+       线上缺 lid-soup-container 和 napkin-custom-print 两个，
+       是 10 月初种子化之后才加进仓库的。 */
+    /* r29 补二：published 按种子对齐。
+       线上 9 个真实产品全是未发布态 —— 那是 10 月初种子数据还是草稿态时
+       留下的漂移（后台练手的 test/item/item-2 倒是都发布着，没人会这么
+       故意藏）。published 是个开关，后台一秒能改回去，所以按仓库正源
+       对齐；图片、文案、测试品一律不碰。 */
+    /* r29 补三：craftIds 预勾。
+       产品页的「可用工艺」来自 craftIds，早期数据没有 crafts 所以全是
+       空数组 —— 产品页工艺区是空的。给没勾过的产品勾上全部工艺
+       （纸包装这些工艺都做得上去），后台随时可以改。 */
+    try {
+      (seedProducts.products || []).forEach(s => {
+        if (!list.some(p => p.id === s.id)) list.push(Object.assign({}, s))
+      })
+      let pubFixed = 0
+      list.forEach(p => {
+        const s = (seedProducts.products || []).find(x => x.id === p.id)
+        if (s && typeof s.published === 'boolean' && p.published !== s.published) {
+          p.published = s.published
+          pubFixed++
+        }
+      })
+      let craftLinked = 0
+      const allCraftIds = (seedSite.crafts?.items || []).map(c => c.id)
+      list.forEach(p => {
+        if (!allCraftIds.length) return
+        if (Array.isArray(p.craftIds) && p.craftIds.length) return
+        p.craftIds = allCraftIds.slice()
+        craftLinked++
+      })
+      changed.products = list.length + ' 个（补录 + 发布态对齐 ' + pubFixed +
+        ' + 工艺预勾 ' + craftLinked + '）'
+    } catch (e) {
+      console.error('[migrate] 产品补录失败:', e)
+      changed.products = list.length + ' 个（补录失败：' + e.message + '）'
+    }
+
     await writeBlob('products', { products: list })
-    changed.products = list.length + ' 个'
+    /* 摘要句在上面 r29 补录块里已写，这里不重复 */
   } catch (e) {
     changed.products = 'FAIL: ' + e.message
   }
