@@ -5,42 +5,54 @@
       "nameAr": "الأكواب",
       "emoji": "☕",
       "sort": 1,
-      "descAr": "أكواب ورقية وبلاستيكية للقهوة والمشروبات الساخنة والباردة، بجميع المقاسات."
+      "descAr": "أكواب ورقية وبلاستيكية للقهوة والمشروبات الساخنة والباردة، بجميع المقاسات.",
+      "image": "/assets/img/sector-cups.webp",
+      "imageAr": ""
     },
     {
       "id": "bags",
       "nameAr": "الأكياس",
       "emoji": "🛍️",
       "sort": 2,
-      "descAr": "أكياس ورقية وغير منسوجة للتوصيل والتسوق، بحاملات متعددة وخيارات فاخرة."
+      "descAr": "أكياس ورقية وغير منسوجة للتوصيل والتسوق، بحاملات متعددة وخيارات فاخرة.",
+      "image": "/assets/img/sector-bags.webp",
+      "imageAr": ""
     },
     {
       "id": "boxes",
       "nameAr": "العلب والتغليف",
       "emoji": "🥡",
       "sort": 3,
-      "descAr": "علب ورقية وبلاستيكية للوجبات والحلويات والتوصيل، بشكلات ومقاسات متعددة."
+      "descAr": "علب ورقية وبلاستيكية للوجبات والحلويات والتوصيل، بشكلات ومقاسات متعددة.",
+      "image": "/assets/img/sector-boxes.webp",
+      "imageAr": ""
     },
     {
       "id": "labels",
       "nameAr": "الملصقات",
       "emoji": "🏷️",
       "sort": 4,
-      "descAr": "ملصقات مطبوعة، بمقاسات وأشكال مختلفة، تنتظم على العبوات والمنتجات."
+      "descAr": "ملصقات مطبوعة، بمقاسات وأشكال مختلفة، تنتظم على العبوات والمنتجات.",
+      "image": "/assets/img/sector-labels.webp",
+      "imageAr": ""
     },
     {
       "id": "materials",
       "nameAr": "مواد التغليف",
       "emoji": "🍴",
       "sort": 5,
-      "descAr": "أدوات مائدة ومناديل وحلول إمداد للترفيه."
+      "descAr": "أدوات مائدة ومناديل وحلول إمداد للترفيه.",
+      "image": "/assets/img/sector-materials.webp",
+      "imageAr": ""
     },
     {
       "id": "gifts",
       "nameAr": "الهدايا والترويج",
       "emoji": "🎁",
       "sort": 6,
-      "descAr": "علب هدايا وترويجية وأحزمة إعلانية للمناسبات والحملات."
+      "descAr": "علب هدايا وترويجية وأحزمة إعلانية للمناسبات والحملات.",
+      "image": "/assets/img/sector-gifts.webp",
+      "imageAr": ""
     }
   ],
   "sectors": [
@@ -49,42 +61,54 @@
       "nameAr": "المطاعم",
       "emoji": "🍽️",
       "sort": 1,
-      "descAr": "المطاعم وخدمات التوصيل"
+      "descAr": "المطاعم وخدمات التوصيل",
+      "image": "/assets/img/sector-restaurants.webp",
+      "imageAr": ""
     },
     {
       "id": "cafes",
       "nameAr": "المقاهي",
       "emoji": "☕",
       "sort": 2,
-      "descAr": "المقاهي ومحامّ القهوة"
+      "descAr": "المقاهي ومحامّ القهوة",
+      "image": "/assets/img/sector-cafes.webp",
+      "imageAr": ""
     },
     {
       "id": "bakery",
       "nameAr": "المخابز والحلويات",
       "emoji": "🥐",
       "sort": 3,
-      "descAr": "المخابز ومحلات الحلويات"
+      "descAr": "المخابز ومحلات الحلويات",
+      "image": "/assets/img/sector-bakery.webp",
+      "imageAr": ""
     },
     {
       "id": "stores",
       "nameAr": "المتاجر",
       "emoji": "🏪",
       "sort": 4,
-      "descAr": "المتاجر ومراكز التسوق"
+      "descAr": "المتاجر ومراكز التسوق",
+      "image": "/assets/img/sector-stores.webp",
+      "imageAr": ""
     },
     {
       "id": "beauty",
       "nameAr": "مستحضرات التجميل",
       "emoji": "💄",
       "sort": 5,
-      "descAr": "مستحضرات التجميل والعناية"
+      "descAr": "مستحضرات التجميل والعناية",
+      "image": "/assets/img/sector-beauty.webp",
+      "imageAr": ""
     },
     {
       "id": "events",
       "nameAr": "الفعاليات والمناسبات",
       "emoji": "🎉",
       "sort": 6,
-      "descAr": "الفعاليات والمناسبات والمعارض"
+      "descAr": "الفعاليات والمناسبات والمعارض",
+      "image": "/assets/img/sector-events.webp",
+      "imageAr": ""
     }
   ],
   "features": [
