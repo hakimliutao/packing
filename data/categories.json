@@ -121,14 +121,14 @@
       "key": "products"
     },
     {
+      "labelAr": "الطباعة والتشطيبات",
+      "href": "crafts.html",
+      "key": "crafts"
+    },
+    {
       "labelAr": "القطاعات",
       "href": "sectors.html",
       "key": "sectors"
-    },
-    {
-      "labelAr": "من نحن",
-      "href": "about.html",
-      "key": "about"
     },
     {
       "labelAr": "تواصل معنا",

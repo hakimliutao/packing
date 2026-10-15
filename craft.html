@@ -27,6 +27,11 @@
   <div class="wrap"><div id="cf-spec"></div></div>
 </section>
 
+<!-- r31：价格阶梯。工艺也能报参考价，客户比价心里有数 -->
+<section style="padding-top:14px" id="cf-price-sec" hidden>
+  <div class="wrap"><div id="cf-price"></div></div>
+</section>
+
 <section style="padding-top:10px" id="cf-video-sec" hidden>
   <div class="wrap"><div id="cf-video"></div></div>
 </section>
@@ -151,6 +156,14 @@ async function initCraft() {
             <span>${esc(v)}</span>
           </div>`).join('')}
       </div>`;
+  }
+
+  /* ---------- 2.2 价格阶梯：跟产品详情同一套 priceTable ----------
+     后台给工艺填了价格就显示，没填就整块隐藏。 */
+  const craftPrice = window.priceTable ? priceTable(c, {}) : '';
+  if (craftPrice) {
+    document.getElementById('cf-price-sec').hidden = false;
+    document.getElementById('cf-price').innerHTML = craftPrice;
   }
 
   /* ---------- 2.5 视频：后台填了链接才显示 ----------

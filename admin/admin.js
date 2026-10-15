@@ -839,22 +839,32 @@ function renderBanners() {
           <label>小标题<input class="inp" data-k="subAr" value="${esc(b.subAr || '')}" placeholder="选填"></label>
         </div>
         <label>图片链接<input class="inp" data-k="image" value="${esc(b.image || '')}" placeholder="图片必填"></label>
-        <label class="full">点击后跳到哪<input class="inp" data-k="linkTo" value="${esc(b.linkTo || '')}" placeholder="选填"></label>
         <label class="full">链接类型
           <select class="inp" data-k="linkType">
             ${BNR_LINK_TYPES.map(t => `<option value="${t.v}"${(b.linkType || 'none') === t.v ? ' selected' : ''}>${t.ar}</option>`).join('')}
           </select>
         </label>
-        ${b.linkType && b.linkType !== 'none' ? `
-        <p class="hint" style="margin:0">
-          ${b.linkType === 'category'
-            ? '填阿拉伯语分类名，跟「产品分类」里写的完全一致，比如：الأكواب'
-            : b.linkType === 'product'
-              ? '填产品 ID。在产品页网址里 product.html?id= 后面那一串就是'
-              : b.linkType === 'wa'
-                ? 'WhatsApp 号码用国际格式，不带 + 不带空格，比如：966500000000'
-                : '链接要写完整，比如：https://example.com/page'}
-        </p>` : ''}
+        ${b.linkType === 'category' ? `
+        <label class="full">跳到哪个分类 / 行业
+          <select class="inp" data-k="linkTo">
+            <option value="">（点了不跳转）</option>
+            <optgroup label="产品分类">
+              ${(DB.tax.categories || []).map(c => `<option value="${esc(c.id)}"${b.linkTo === c.id ? ' selected' : ''}>${esc(c.emoji || '')} ${esc(c.nameAr)}</option>`).join('')}
+            </optgroup>
+            <optgroup label="使用行业">
+              ${(DB.tax.sectors || []).map(s => `<option value="${esc(s.id)}"${b.linkTo === s.id ? ' selected' : ''}>${esc(s.nameAr)}</option>`).join('')}
+            </optgroup>
+          </select>
+        </label>` : b.linkType === 'product' ? `
+        <label class="full">跳到哪个产品
+          <select class="inp" data-k="linkTo">
+            <option value="">（点了不跳转）</option>
+            ${DB.products.filter(p => p.published !== false).map(p => `<option value="${esc(p.id)}"${b.linkTo === p.id ? ' selected' : ''}>${esc(p.nameAr)}</option>`).join('')}
+          </select>
+        </label>` : b.linkType === 'none' ? '' : `
+        <label class="full">${b.linkType === 'wa' ? 'WhatsApp 号码' : '链接地址'}
+          <input class="inp" data-k="linkTo" value="${esc(b.linkTo || '')}" dir="ltr" placeholder="${b.linkType === 'wa' ? '966500000000（国际格式，不带加号）' : 'https://example.com/page'}">
+        </label>`}
       </div>
       <div class="bnr-acts">
         <label class="file"><input type="file" accept="image/*"><span>上传图片</span></label>
@@ -929,9 +939,17 @@ function bindBanners() {
   });
 
   /* select 不发 input 事件，只发 change。不单独处理的话，
-     「链接类型」选了等于没选，存下去永远是默认的 none。 */
+     「链接类型」选了等于没选，存下去永远是默认的 none。
+     r31：「跳到哪」的下拉也是 select，同样走 change 写值。 */
   host.addEventListener('change', e => {
     const k = e.target.dataset.k;
+    if (k === 'linkTo') {
+      const card = e.target.closest('.bnr-card');
+      if (!card) return;
+      const i = +card.dataset.i;
+      if (list()[i]) list()[i].linkTo = e.target.value;
+      return;
+    }
     if (k !== 'linkType') return;
     const card = e.target.closest('.bnr-card');
     if (!card) return;
@@ -1409,6 +1427,13 @@ function bindSettings() {
     DB.site.hero.titleAr = g('s-hero');
     /* 板块上下间距：夹在 16-140 之间，非数字或越界就回默认 46 */
     DB.site.secPad = Math.min(140, Math.max(16, parseInt(g('s-secpad'), 10) || 46));
+    /* 工艺价格：把「数量|单价」文本转成 priceTiers 数组 */
+    (DB.site.crafts && DB.site.crafts.items || []).forEach(it => {
+      if (typeof it.priceTiersRaw !== 'string') return;
+      const tiers = rawToTiers(it.priceTiersRaw);
+      if (tiers.length) it.priceTiers = tiers;
+      delete it.priceTiersRaw;
+    });
     DB.site.hero.leadAr = g('s-lead');
     /* 工厂介绍视频：trim 后空串 = 前台不显示这一块 */
     DB.site.videoUrl = g('s-video');
@@ -1795,6 +1820,30 @@ const CRAFT_GROUPS = [
   { v: 'special', ar: '特殊' },
 ];
 
+/* r31：工艺价格阶梯 —— 后台填「数量|单价」一行一档，保存时转成数组。
+   tiersToRaw 是反向（数组 → 文本），rawToTiers 是正向。
+   最后一档的 to 留 null（无上限），前面各档的上限由下一档的 from 推出来。 */
+function tiersToRaw(tiers) {
+  return (tiers || []).map(t => t.from + '|' + t.price).join('\n');
+}
+function rawToTiers(raw) {
+  const rows = String(raw || '').split(/\r?\n/).map(s => s.trim()).filter(Boolean);
+  const got = [];
+  for (const r of rows) {
+    const parts = r.split(/[|｜]/);
+    const from = parseFloat(parts[0]);
+    const price = parseFloat(parts[1]);
+    if (!isFinite(from) || !isFinite(price) || from <= 0 || price <= 0) continue;
+    got.push({ from: from, to: null, price: price });
+  }
+  /* 排个序再串上下限：5000|0.1 在前，则它的 to = 下一档 from - 1 */
+  got.sort((a, b) => a.from - b.from);
+  got.forEach((t, i) => {
+    t.to = i < got.length - 1 ? got[i + 1].from - 1 : null;
+  });
+  return got;
+}
+
 function renderCrafts() {
   blocksInit();
   const b = DB.site.crafts;
@@ -1841,6 +1890,8 @@ function renderCrafts() {
             </div>
           </label>
           <label>限制<input data-k="limitsAr" value="${esc(c.limitsAr || '')}" placeholder="例如 深色纸要先打白底"></label>
+          <label class="full">价格阶梯<span class="hint">一行一档：<b dir="ltr">数量|单价</b>（迪拉姆）。例如 <b dir="ltr">10000|0.09</b>。最后一档自动设为无上限；留空则前台不显示价格</span>
+            <textarea data-k="priceTiersRaw" rows="3" dir="ltr" placeholder="10000|0.09&#10;50000|0.07">${esc(tiersToRaw(c.priceTiers))}</textarea></label>
         </div>
       </div>
     </div>`).join('');

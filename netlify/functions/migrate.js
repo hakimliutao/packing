@@ -83,6 +83,21 @@ export default async (req) => {
     }))
     merged.dataVersion = seedSite.dataVersion
 
+    /* r31：横幅图压缩映射。
+       后台传的原图动辄 1MB 起步（第一张 1.5MB 的 PNG），首屏要等半天
+       才出图，看起来像没加载。站里存了同名压缩版，按 blob key 对号替换。
+       对不上的照旧用后台那张 —— 不冒险换别人的图。 */
+    const BANNER_SHRUNK = {
+      'img/muwgbu0x-160c1g.png': '/assets/img/banner-1.webp',
+      'img/mv5d85p5-jd7o6f-904.png': '/assets/img/banner-2.webp',
+      'img/mv8rfrmr-9vaxyw-1600.png': '/assets/img/banner-3.webp',
+    }
+    merged.hero.banners = (merged.hero?.banners || []).map(b => {
+      const key = String(b.image || '').split('k=')[1] || ''
+      if (key && BANNER_SHRUNK[key]) return Object.assign({}, b, { image: BANNER_SHRUNK[key] })
+      return b
+    })
+
     /* ---- WhatsApp：老数据只有单号 number + defaultMessageAr ----
        r21 起前台读的是 nums 数组 + map（哪个位置用哪个号）。
        不迁的话老站迁上来之后，六个位置的 WhatsApp 按钮会全空。
@@ -259,6 +274,24 @@ export default async (req) => {
        改版后新加的文案（新板块标题之类）就补不进去，
        前台读到 undefined，标题会是一片空白。 */
     out.ui = Object.assign({}, seedCats.ui || {}, old?.ui || {})
+    /* r31：导航里加工艺入口、去掉「من نحن」。
+       nav 是数组，老值优先会把它整体留着，所以这里按 key 增删 ——
+       顶部导航和汉堡菜单共用这一份数组，改一处两处都生效。 */
+    try {
+      const nav = Array.isArray(out.nav) ? out.nav.slice() : []
+      if (!nav.some(n => n.key === 'crafts')) {
+        const at = nav.findIndex(n => n.key === 'products')
+        nav.splice(at >= 0 ? at + 1 : nav.length, 0, {
+          labelAr: 'الطباعة والتشطيبات', href: 'crafts.html', key: 'crafts',
+        })
+      }
+      const ai = nav.findIndex(n => n.key === 'about')
+      if (ai >= 0) nav.splice(ai, 1)
+      out.nav = nav
+      changed.nav = nav.map(n => n.labelAr).join(' / ')
+    } catch (e) {
+      console.error('[migrate] 导航处理失败:', e)
+    }
     await writeBlob('categories', out)
     changed.categories = cats.length + ' 分类 / ' + secs.length + ' 行业 / ' + mats.length + ' خامة'
     changed.ui = Object.keys(out.ui).length + ' 条文案'
@@ -320,6 +353,29 @@ export default async (req) => {
     } catch (e) {
       console.error('[migrate] 产品补录失败:', e)
       changed.products = list.length + ' 个（补录失败：' + e.message + '）'
+    }
+
+    /* r31：删除种子里点名要删的旧产品。
+       大哥说后台那批老产品都是当初占位的，可以删。
+       删除清单放在种子的 removedIds 里 —— 只删点名的，不按「种子没有
+       就全删」来清空，否则他以后在后台新加的产品会被下次迁移误删。 */
+    try {
+      const kill = new Set(Array.isArray(seedProducts.removedIds) ? seedProducts.removedIds : [])
+      if (kill.size) {
+        const before = list.length
+        const kept = list.filter(p => !kill.has(p.id))
+        if (kept.length) {
+          list.length = 0
+          list.push(...kept)
+        }
+        const dropped = before - list.length
+        if (dropped) {
+          changed.products += '，移除 ' + dropped + ' 个旧产品'
+          console.log('[migrate] 移除旧产品:', dropped)
+        }
+      }
+    } catch (e) {
+      console.error('[migrate] 旧产品移除失败:', e)
     }
 
     await writeBlob('products', { products: list })
