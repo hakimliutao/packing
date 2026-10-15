@@ -1356,6 +1356,8 @@ function renderSettings() {
   renderFootAdmin();
 
   document.getElementById('s-hero').value = s.hero.titleAr.replace(/<[^>]+>/g, '');
+  const sp = document.getElementById('s-secpad');
+  if (sp) sp.value = Number(s.secPad) > 0 ? Number(s.secPad) : 46;
   const sl = document.getElementById('s-lead');
   if (sl) sl.value = s.hero.leadAr || '';
   /* 工厂介绍视频：空着就不显示。老数据没这几个字段，退回空串 */
@@ -1405,6 +1407,8 @@ function bindSettings() {
     if (sc2) DB.tax.ui.homeSceneEnabledAr = sc2.checked ? '1' : '0';
 
     DB.site.hero.titleAr = g('s-hero');
+    /* 板块上下间距：夹在 16-140 之间，非数字或越界就回默认 46 */
+    DB.site.secPad = Math.min(140, Math.max(16, parseInt(g('s-secpad'), 10) || 46));
     DB.site.hero.leadAr = g('s-lead');
     /* 工厂介绍视频：trim 后空串 = 前台不显示这一块 */
     DB.site.videoUrl = g('s-video');

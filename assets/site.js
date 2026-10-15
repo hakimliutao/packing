@@ -363,6 +363,11 @@ async function bindCurrency() {
 function renderHeader(active) {
   const { site, tax } = CTX;
   const ui = tax?.ui || {};
+  /* r30：板块上下间距 —— 后台「网站设置」可调，写进 CSS 变量，
+     三处 section padding 都读它，默认 46 */
+  if (Number(site?.secPad) > 0) {
+    document.documentElement.style.setProperty('--sec-pad', Number(site.secPad) + 'px');
+  }
   const nav = (tax?.nav || []).map(n =>
     `<a href="${n.href}" class="${n.key === active ? 'on' : ''}">${esc(n.labelAr)}</a>`
   ).join('');

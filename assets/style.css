@@ -259,9 +259,10 @@ html[dir="rtl"] .drw-item:hover{transform:translateX(3px)}
    搜索栏是重叠的（-10px），根本不留空。
    现在压到 46px，相邻留 92px，靠分割线和底色差把区块分开 ——
    比留大片空白紧凑，也不至于糊成一片。 */
-section{padding:46px 0}
+/* r30：板块上下间距可调（后台「网站设置」改 secPad，默认 46）*/
+section{padding:var(--sec-pad,46px) 0}
 /* 有底色交替的板块，上下再各收一点，让色块之间贴得更紧 */
-section.alt-sec{padding:40px 0}
+section.alt-sec{padding:var(--sec-pad,46px) 0}
 /* r24：标题居中了，标题下面的说明文字也要跟着居中，
    否则大标题居中、小字贴左边，看着更别扭。 */
 .sec-head{max-width:760px;margin-inline:auto;text-align:center;margin-bottom:30px}
@@ -868,7 +869,7 @@ footer{border-top:1px solid var(--line);padding:52px 0 40px;background:#fff}
   .rail{gap:11px;padding-bottom:12px}
   .rail-nav{display:none}
 
-  section{padding:52px 0}
+  section{padding:var(--sec-pad,46px) 0}
   .sec-head{margin-bottom:28px}
   h2{font-size:25px}
   .hero-stats{gap:20px;flex-wrap:wrap;margin-top:34px;padding-top:22px}
