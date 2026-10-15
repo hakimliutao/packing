@@ -564,6 +564,15 @@ function socialLinks() {
    注意：slim 必须严格比 true。全站有 4 处 list.map(productCard) 这种写法，
    map 会把第三个参数 array 一起塞进来，数组是 truthy，
    只写 if (slim) 会让推荐区、收藏页、相关推荐、全部产品列表全被误伤成精简卡。 */
+/* r33：产品卡用 520px 缩略图。
+   列表页一次要渲染几十张卡，主图 1400px 在手机上又慢又费流量（120 个产品
+   的主图加起来 9MB，缩略图只有 1.9MB）。缩略图 = 主图同名加 -sm 后缀，
+   只对我们自己的静态图生效 —— 后台上传的图走 /api/img/，原样不动。 */
+function thumbSrc(u) {
+  return (u && u.indexOf('/assets/img/') === 0 && /\.webp$/.test(u))
+    ? u.replace(/\.webp$/, '-sm.webp') : u;
+}
+
 function productCard(p, freshFirst, slim) {
   const slimCard = (slim === true);
   const c = catOf(p.categoryId);
@@ -586,7 +595,7 @@ function productCard(p, freshFirst, slim) {
   <article class="pcard" data-id="${esc(p.id)}">
     <a class="pcover" href="${href}" data-id="${esc(p.id)}" aria-label="${esc(p.nameAr)}"></a>
     <div class="pimg">
-      ${img ? imgTag(img, p.nameAr, { set: imgSetOf(p, 0), sizes: '(max-width:620px) 45vw, 300px' })
+      ${img ? imgTag(thumbSrc(img), p.nameAr, { set: imgSetOf(p, 0), sizes: '(max-width:620px) 45vw, 300px' })
             : `<span class="shape">${esc(c?.emoji || '\u{1F4E6}')}</span>`}
       ${/* 角标谁优先，看这个产品出现在哪：
           推荐区里 featured 产品显示「مميز」；

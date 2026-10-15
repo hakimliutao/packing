@@ -5142,6 +5142,6300 @@
         "craft-full-wrap",
         "craft-spot-uv"
       ]
+    },
+    {
+      "id": "5-oz-custom-recyclable-ice-cream-yogurt-cups",
+      "nameAr": "أكواب معاد تدويره مثلجات كريم يوغورت 5 أونصة",
+      "nameZh": "5 Oz Custom Recyclable Ice Cream Yogurt ",
+      "categoryId": "cups",
+      "sectorIds": [
+        "cafes",
+        "restaurants"
+      ],
+      "shortAr": "أكواب معاد تدويره مثلجات كريم يوغورت 5 أونصة للاستخدامات الساخنة والباردة.",
+      "descAr": "أكواب معاد تدويره مثلجات كريم يوغورت 5 أونصة بجدران متينة تتحمل الحرارة، والطباعة عليه ثابتة لا تبهت مع الاستخدام المتكرر. متوفر بمقاسات وأغطية تناسب محلك، وقابل للطباعة بشعارك على كامل الجسم.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "8 أونصة",
+          "12 أونصة",
+          "16 أونصة",
+          "20 أونصة"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "شفاف",
+          "مطبوع بالكامل",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "قهوة ساخنة",
+          "مشروبات باردة",
+          "عصائر",
+          "مطاعم"
+        ]
+      },
+      "images": [
+        "/assets/img/product-5-oz-custom-recyclable-ice-cream-yogurt-cups.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 100,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.286
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.211
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.136
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "pet"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-spot-uv",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "8-oz-custom-recyclable-ice-cream-yogurt-cups",
+      "nameAr": "أكواب معاد تدويره مثلجات كريم يوغورت 8 أونصة",
+      "nameZh": "8 Oz Custom Recyclable Ice Cream Yogurt ",
+      "categoryId": "cups",
+      "sectorIds": [
+        "cafes",
+        "restaurants"
+      ],
+      "shortAr": "أكواب معاد تدويره مثلجات كريم يوغورت 8 أونصة يحافظ على ثبات المشروب من أول رشفة.",
+      "descAr": "أكواب معاد تدويره مثلجات كريم يوغورت 8 أونصة مصنوع بعناية ليحفظ شكل المشروب ومذاقه حتى آخر نقطة، بقاعدة تستقيم على أي سطح، وطباعته لا تتأثر بالحرارة أو الرطوبة.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "8 أونصة",
+          "12 أونصة",
+          "16 أونصة",
+          "20 أونصة"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "شفاف",
+          "مطبوع بالكامل",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "قهوة ساخنة",
+          "مشروبات باردة",
+          "عصائر",
+          "مطاعم"
+        ]
+      },
+      "images": [
+        "/assets/img/product-8-oz-custom-recyclable-ice-cream-yogurt-cups.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 101,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.312
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.231
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.149
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "pet"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-spot-uv",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "3-oz-custom-recyclable-ice-cream-yogurt-cups",
+      "nameAr": "أكواب معاد تدويره مثلجات كريم يوغورت 3 أونصة",
+      "nameZh": "3 Oz Custom Recyclable Ice Cream Yogurt ",
+      "categoryId": "cups",
+      "sectorIds": [
+        "cafes",
+        "restaurants"
+      ],
+      "shortAr": "أكواب معاد تدويره مثلجات كريم يوغورت 3 أونصة بمقاس يناسب كل استخدام.",
+      "descAr": "أكواب معاد تدويره مثلجات كريم يوغورت 3 أونصة يجمع بين متانة الاستخدام اليومي ومظهر يليق بعلامتك على الطاولة، ويحفظ الحرارة أو البرودة حسب احتياجات المشروب.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "8 أونصة",
+          "12 أونصة",
+          "16 أونصة",
+          "20 أونصة"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "شفاف",
+          "مطبوع بالكامل",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "قهوة ساخنة",
+          "مشروبات باردة",
+          "عصائر",
+          "مطاعم"
+        ]
+      },
+      "images": [
+        "/assets/img/product-3-oz-custom-recyclable-ice-cream-yogurt-cups.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 102,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.339
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.25
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.162
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "pet"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-spot-uv",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "12-oz-custom-recyclable-paper-food-container",
+      "nameAr": "وعاء معاد تدويره ورقي غذائي 12 أونصة",
+      "nameZh": "12 Oz Custom Recyclable Paper Food Conta",
+      "categoryId": "cups",
+      "sectorIds": [
+        "cafes",
+        "restaurants"
+      ],
+      "shortAr": "وعاء معاد تدويره ورقي غذائي 12 أونصة للاستخدامات الساخنة والباردة.",
+      "descAr": "وعاء معاد تدويره ورقي غذائي 12 أونصة بجدران متينة تتحمل الحرارة، والطباعة عليه ثابتة لا تبهت مع الاستخدام المتكرر. متوفر بمقاسات وأغطية تناسب محلك، وقابل للطباعة بشعارك على كامل الجسم.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "8 أونصة",
+          "12 أونصة",
+          "16 أونصة",
+          "20 أونصة"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "شفاف",
+          "مطبوع بالكامل",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "قهوة ساخنة",
+          "مشروبات باردة",
+          "عصائر",
+          "مطاعم"
+        ]
+      },
+      "images": [
+        "/assets/img/product-12-oz-custom-recyclable-paper-food-container.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 103,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.366
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.27
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.174
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "pet"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-spot-uv",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "16-oz-custom-recyclable-paper-food-container",
+      "nameAr": "وعاء معاد تدويره ورقي غذائي 16 أونصة",
+      "nameZh": "16 Oz Custom Recyclable Paper Food Conta",
+      "categoryId": "cups",
+      "sectorIds": [
+        "cafes",
+        "restaurants"
+      ],
+      "shortAr": "وعاء معاد تدويره ورقي غذائي 16 أونصة يحافظ على ثبات المشروب من أول رشفة.",
+      "descAr": "وعاء معاد تدويره ورقي غذائي 16 أونصة مصنوع بعناية ليحفظ شكل المشروب ومذاقه حتى آخر نقطة، بقاعدة تستقيم على أي سطح، وطباعته لا تتأثر بالحرارة أو الرطوبة.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "8 أونصة",
+          "12 أونصة",
+          "16 أونصة",
+          "20 أونصة"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "شفاف",
+          "مطبوع بالكامل",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "قهوة ساخنة",
+          "مشروبات باردة",
+          "عصائر",
+          "مطاعم"
+        ]
+      },
+      "images": [
+        "/assets/img/product-16-oz-custom-recyclable-paper-food-container.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 104,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.393
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.29
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.187
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "pet"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-spot-uv",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "12-oz-custom-disposable-plastic-cups",
+      "nameAr": "أكواب للاستخدام مرة واحدة بلاستيك 12 أونصة",
+      "nameZh": "12 Oz Custom Disposable Plastic Cups",
+      "categoryId": "cups",
+      "sectorIds": [
+        "cafes",
+        "restaurants"
+      ],
+      "shortAr": "أكواب للاستخدام مرة واحدة بلاستيك 12 أونصة بمقاس يناسب كل استخدام.",
+      "descAr": "أكواب للاستخدام مرة واحدة بلاستيك 12 أونصة يجمع بين متانة الاستخدام اليومي ومظهر يليق بعلامتك على الطاولة، ويحفظ الحرارة أو البرودة حسب احتياجات المشروب.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "8 أونصة",
+          "12 أونصة",
+          "16 أونصة",
+          "20 أونصة"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "شفاف",
+          "مطبوع بالكامل",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "قهوة ساخنة",
+          "مشروبات باردة",
+          "عصائر",
+          "مطاعم"
+        ]
+      },
+      "images": [
+        "/assets/img/product-12-oz-custom-disposable-plastic-cups.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 105,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.286
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.211
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.136
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "pet"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-spot-uv",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "12-oz-custom-recyclable-round-bottom-plastic-cups",
+      "nameAr": "أكواب معاد تدويره قاعدة دائرية بالقاعدة بلاستيك 12 أونصة",
+      "nameZh": "12 Oz Custom Recyclable Round Bottom Pla",
+      "categoryId": "cups",
+      "sectorIds": [
+        "cafes",
+        "restaurants"
+      ],
+      "shortAr": "أكواب معاد تدويره قاعدة دائرية بالقاعدة بلاستيك 12 أونصة للاستخدامات الساخنة والباردة.",
+      "descAr": "أكواب معاد تدويره قاعدة دائرية بالقاعدة بلاستيك 12 أونصة بجدران متينة تتحمل الحرارة، والطباعة عليه ثابتة لا تبهت مع الاستخدام المتكرر. متوفر بمقاسات وأغطية تناسب محلك، وقابل للطباعة بشعارك على كامل الجسم.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "8 أونصة",
+          "12 أونصة",
+          "16 أونصة",
+          "20 أونصة"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "شفاف",
+          "مطبوع بالكامل",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "قهوة ساخنة",
+          "مشروبات باردة",
+          "عصائر",
+          "مطاعم"
+        ]
+      },
+      "images": [
+        "/assets/img/product-12-oz-custom-recyclable-round-bottom-plastic-cups.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 106,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.312
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.231
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.149
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "pet"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-spot-uv",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "16-oz-custom-disposable-plastic-cups",
+      "nameAr": "أكواب للاستخدام مرة واحدة بلاستيك 16 أونصة",
+      "nameZh": "16 Oz Custom Disposable Plastic Cups",
+      "categoryId": "cups",
+      "sectorIds": [
+        "cafes",
+        "restaurants"
+      ],
+      "shortAr": "أكواب للاستخدام مرة واحدة بلاستيك 16 أونصة يحافظ على ثبات المشروب من أول رشفة.",
+      "descAr": "أكواب للاستخدام مرة واحدة بلاستيك 16 أونصة مصنوع بعناية ليحفظ شكل المشروب ومذاقه حتى آخر نقطة، بقاعدة تستقيم على أي سطح، وطباعته لا تتأثر بالحرارة أو الرطوبة.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "8 أونصة",
+          "12 أونصة",
+          "16 أونصة",
+          "20 أونصة"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "شفاف",
+          "مطبوع بالكامل",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "قهوة ساخنة",
+          "مشروبات باردة",
+          "عصائر",
+          "مطاعم"
+        ]
+      },
+      "images": [
+        "/assets/img/product-16-oz-custom-disposable-plastic-cups.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 107,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.339
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.25
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.162
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "pet"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-spot-uv",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "16-oz-custom-recyclable-round-bottom-plastic-cups",
+      "nameAr": "أكواب معاد تدويره قاعدة دائرية بالقاعدة بلاستيك 16 أونصة",
+      "nameZh": "16 Oz Custom Recyclable Round Bottom Pla",
+      "categoryId": "cups",
+      "sectorIds": [
+        "cafes",
+        "restaurants"
+      ],
+      "shortAr": "أكواب معاد تدويره قاعدة دائرية بالقاعدة بلاستيك 16 أونصة بمقاس يناسب كل استخدام.",
+      "descAr": "أكواب معاد تدويره قاعدة دائرية بالقاعدة بلاستيك 16 أونصة يجمع بين متانة الاستخدام اليومي ومظهر يليق بعلامتك على الطاولة، ويحفظ الحرارة أو البرودة حسب احتياجات المشروب.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "8 أونصة",
+          "12 أونصة",
+          "16 أونصة",
+          "20 أونصة"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "شفاف",
+          "مطبوع بالكامل",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "قهوة ساخنة",
+          "مشروبات باردة",
+          "عصائر",
+          "مطاعم"
+        ]
+      },
+      "images": [
+        "/assets/img/product-16-oz-custom-recyclable-round-bottom-plastic-cups.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 108,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.366
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.27
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.174
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "pet"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-spot-uv",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "custom-recyclable-paper-cups-12-oz",
+      "nameAr": "أكواب معاد تدويره ورقي 12 أونصة",
+      "nameZh": "Custom Recyclable Paper Cups 12 Oz",
+      "categoryId": "cups",
+      "sectorIds": [
+        "cafes",
+        "restaurants"
+      ],
+      "shortAr": "أكواب معاد تدويره ورقي 12 أونصة للاستخدامات الساخنة والباردة.",
+      "descAr": "أكواب معاد تدويره ورقي 12 أونصة بجدران متينة تتحمل الحرارة، والطباعة عليه ثابتة لا تبهت مع الاستخدام المتكرر. متوفر بمقاسات وأغطية تناسب محلك، وقابل للطباعة بشعارك على كامل الجسم.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "8 أونصة",
+          "12 أونصة",
+          "16 أونصة",
+          "20 أونصة"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "شفاف",
+          "مطبوع بالكامل",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "قهوة ساخنة",
+          "مشروبات باردة",
+          "عصائر",
+          "مطاعم"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-recyclable-paper-cups-12-oz.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 109,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.393
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.29
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.187
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "pet"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-spot-uv",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "2-oz-custom-paper-cups",
+      "nameAr": "أكواب ورقي 2 أونصة",
+      "nameZh": "2 Oz Custom Paper Cups",
+      "categoryId": "cups",
+      "sectorIds": [
+        "cafes",
+        "restaurants"
+      ],
+      "shortAr": "أكواب ورقي 2 أونصة يحافظ على ثبات المشروب من أول رشفة.",
+      "descAr": "أكواب ورقي 2 أونصة مصنوع بعناية ليحفظ شكل المشروب ومذاقه حتى آخر نقطة، بقاعدة تستقيم على أي سطح، وطباعته لا تتأثر بالحرارة أو الرطوبة.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "8 أونصة",
+          "12 أونصة",
+          "16 أونصة",
+          "20 أونصة"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "شفاف",
+          "مطبوع بالكامل",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "قهوة ساخنة",
+          "مشروبات باردة",
+          "عصائر",
+          "مطاعم"
+        ]
+      },
+      "images": [
+        "/assets/img/product-2-oz-custom-paper-cups.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 110,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.286
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.211
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.136
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "pet"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-spot-uv",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "custom-premium-gift-bags",
+      "nameAr": "أكياس فاخر هدية",
+      "nameZh": "Custom Premium Gift Bags",
+      "categoryId": "bags",
+      "sectorIds": [
+        "stores",
+        "restaurants"
+      ],
+      "shortAr": "أكياس فاخر هدية يُطوى ويُحمل بسهولة.",
+      "descAr": "أكياس فاخر هدية بقاعدة مسندة تتحمل الأوزان، ولا يتمزق ولا ينزلق عند الحمل المتكرر. يُطبع بشعارك على الواجهة أو الجانبين، ومتوفر بعدة مقاسات تناسب محلك.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "كبير جداً"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "متاجر",
+          "طلبات خارجية",
+          "هدايا",
+          "توصيل"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-premium-gift-bags.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 100,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.803
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.593
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.383
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "kraft",
+        "food-paper"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "custom-ribbon-handle-gift-bag",
+      "nameAr": "كيس بشريط بمقبض هدية",
+      "nameZh": "Custom Ribbon Handle Gift Bag",
+      "categoryId": "bags",
+      "sectorIds": [
+        "stores",
+        "restaurants"
+      ],
+      "shortAr": "كيس بشريط بمقبض هدية متين ويليق بعلامتك.",
+      "descAr": "كيس بشريط بمقبض هدية مصنوع من ورق متين الحواف مقصوصة بدقة، يحافظ على شكله أثناء النقل والحمل. قابل للطباعة بألوان علامتك أو بالفويل الذهبي.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "كبير جداً"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "متاجر",
+          "طلبات خارجية",
+          "هدايا",
+          "توصيل"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-ribbon-handle-gift-bag.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 101,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.879
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.649
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.418
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "kraft",
+        "food-paper"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "foil-printed-paper-bags-2",
+      "nameAr": "أكياس مطبوع ورقي",
+      "nameZh": "Foil Printed Paper Bags 2",
+      "categoryId": "bags",
+      "sectorIds": [
+        "stores",
+        "restaurants"
+      ],
+      "shortAr": "أكياس مطبوع ورقي للاستخدام اليومي في المتجر.",
+      "descAr": "أكياس مطبوع ورقي خفيف الوزن وسهل الاستخدام، يمنح تجربة فتح أفضل من الأكياس التقليدية. يناسب المتاجر والمعارض والطلبات اليومية، ويقبل الطباعة الكاملة بشعارك.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "كبير جداً"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "متاجر",
+          "طلبات خارجية",
+          "هدايا",
+          "توصيل"
+        ]
+      },
+      "images": [
+        "/assets/img/product-foil-printed-paper-bags-2.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 102,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.954
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.704
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.455
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "kraft",
+        "food-paper"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "custom-brown-kraft-paper-bags",
+      "nameAr": "أكياس كرافت ورقي",
+      "nameZh": "Custom Brown Kraft Paper Bags",
+      "categoryId": "bags",
+      "sectorIds": [
+        "stores",
+        "restaurants"
+      ],
+      "shortAr": "أكياس كرافت ورقي يُطوى ويُحمل بسهولة.",
+      "descAr": "أكياس كرافت ورقي بقاعدة مسندة تتحمل الأوزان، ولا يتمزق ولا ينزلق عند الحمل المتكرر. يُطبع بشعارك على الواجهة أو الجانبين، ومتوفر بعدة مقاسات تناسب محلك.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "كبير جداً"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "متاجر",
+          "طلبات خارجية",
+          "هدايا",
+          "توصيل"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-brown-kraft-paper-bags.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 103,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 1.03
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.76
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.49
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "kraft",
+        "food-paper"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "custom-mesh-nylon-tote-bag",
+      "nameAr": "كيس كيس تسوق",
+      "nameZh": "Custom Mesh Nylon Tote Bag",
+      "categoryId": "bags",
+      "sectorIds": [
+        "stores",
+        "restaurants"
+      ],
+      "shortAr": "كيس كيس تسوق متين ويليق بعلامتك.",
+      "descAr": "كيس كيس تسوق مصنوع من ورق متين الحواف مقصوصة بدقة، يحافظ على شكله أثناء النقل والحمل. قابل للطباعة بألوان علامتك أو بالفويل الذهبي.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "كبير جداً"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "متاجر",
+          "طلبات خارجية",
+          "هدايا",
+          "توصيل"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-mesh-nylon-tote-bag.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 104,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 1.106
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.816
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.526
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "kraft",
+        "food-paper"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "custom-contrast-handle-cotton-tote-bags",
+      "nameAr": "أكياس بمقبض قطني كيس تسوق",
+      "nameZh": "Custom Contrast Handle Cotton Tote Bags",
+      "categoryId": "bags",
+      "sectorIds": [
+        "stores",
+        "restaurants"
+      ],
+      "shortAr": "أكياس بمقبض قطني كيس تسوق للاستخدام اليومي في المتجر.",
+      "descAr": "أكياس بمقبض قطني كيس تسوق خفيف الوزن وسهل الاستخدام، يمنح تجربة فتح أفضل من الأكياس التقليدية. يناسب المتاجر والمعارض والطلبات اليومية، ويقبل الطباعة الكاملة بشعارك.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "كبير جداً"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "متاجر",
+          "طلبات خارجية",
+          "هدايا",
+          "توصيل"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-contrast-handle-cotton-tote-bags.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 105,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.803
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.593
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.383
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "kraft",
+        "food-paper"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "custom-tote-bags",
+      "nameAr": "أكياس كيس تسوق",
+      "nameZh": "Custom Tote Bags",
+      "categoryId": "bags",
+      "sectorIds": [
+        "stores",
+        "restaurants"
+      ],
+      "shortAr": "أكياس كيس تسوق يُطوى ويُحمل بسهولة.",
+      "descAr": "أكياس كيس تسوق بقاعدة مسندة تتحمل الأوزان، ولا يتمزق ولا ينزلق عند الحمل المتكرر. يُطبع بشعارك على الواجهة أو الجانبين، ومتوفر بعدة مقاسات تناسب محلك.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "كبير جداً"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "متاجر",
+          "طلبات خارجية",
+          "هدايا",
+          "توصيل"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-tote-bags.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 106,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.879
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.649
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.418
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "kraft",
+        "food-paper"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "custom-canvas-tote-bags-with-bottom",
+      "nameAr": "أكياس قماش كيس تسوق بالقاعدة",
+      "nameZh": "Custom Canvas Tote Bags With Bottom",
+      "categoryId": "bags",
+      "sectorIds": [
+        "stores",
+        "restaurants"
+      ],
+      "shortAr": "أكياس قماش كيس تسوق بالقاعدة متين ويليق بعلامتك.",
+      "descAr": "أكياس قماش كيس تسوق بالقاعدة مصنوع من ورق متين الحواف مقصوصة بدقة، يحافظ على شكله أثناء النقل والحمل. قابل للطباعة بألوان علامتك أو بالفويل الذهبي.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "كبير جداً"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "متاجر",
+          "طلبات خارجية",
+          "هدايا",
+          "توصيل"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-canvas-tote-bags-with-bottom.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 107,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.954
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.704
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.455
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "kraft",
+        "food-paper"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "non-woven-shopping-tote-bag",
+      "nameAr": "كيس منسوج تسوق كيس تسوق",
+      "nameZh": "Non Woven Shopping Tote Bag",
+      "categoryId": "bags",
+      "sectorIds": [
+        "stores",
+        "restaurants"
+      ],
+      "shortAr": "كيس منسوج تسوق كيس تسوق للاستخدام اليومي في المتجر.",
+      "descAr": "كيس منسوج تسوق كيس تسوق خفيف الوزن وسهل الاستخدام، يمنح تجربة فتح أفضل من الأكياس التقليدية. يناسب المتاجر والمعارض والطلبات اليومية، ويقبل الطباعة الكاملة بشعارك.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "كبير جداً"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "متاجر",
+          "طلبات خارجية",
+          "هدايا",
+          "توصيل"
+        ]
+      },
+      "images": [
+        "/assets/img/product-non-woven-shopping-tote-bag.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 108,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 1.03
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.76
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.49
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "kraft",
+        "food-paper"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "custom-reusable-grocery-tote-bags",
+      "nameAr": "أكياس قابل لإعادة الاستخدام بقالة كيس تسوق",
+      "nameZh": "Custom Reusable Grocery Tote Bags",
+      "categoryId": "bags",
+      "sectorIds": [
+        "stores",
+        "restaurants"
+      ],
+      "shortAr": "أكياس قابل لإعادة الاستخدام بقالة كيس تسوق يُطوى ويُحمل بسهولة.",
+      "descAr": "أكياس قابل لإعادة الاستخدام بقالة كيس تسوق بقاعدة مسندة تتحمل الأوزان، ولا يتمزق ولا ينزلق عند الحمل المتكرر. يُطبع بشعارك على الواجهة أو الجانبين، ومتوفر بعدة مقاسات تناسب محلك.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "كبير جداً"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "متاجر",
+          "طلبات خارجية",
+          "هدايا",
+          "توصيل"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-reusable-grocery-tote-bags.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 109,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 1.106
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.816
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.526
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "kraft",
+        "food-paper"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "custom-french-fry-boxes",
+      "nameAr": "علب بطاطا مقلية مقلية",
+      "nameZh": "Custom French Fry Boxes",
+      "categoryId": "boxes",
+      "sectorIds": [
+        "restaurants",
+        "bakery"
+      ],
+      "shortAr": "علب بطاطا مقلية مقلية يحمي محتواه في النقل.",
+      "descAr": "علب بطاطا مقلية مقلية بهيكل صلب يحافظ على شكل المنتج من المطبخ إلى يد العميل، بجدران تقاوم الرطوبة والدهون. يُطبع بالكامل بشعارك على الواجهة والجوانب.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "حجم خاص"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "مطاعم",
+          "طلبات خارجية",
+          "مخبوزات",
+          "توصيل"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-french-fry-boxes.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 100,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.857
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.632
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.408
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-spot-uv"
+      ]
+    },
+    {
+      "id": "custom-burger-boxes",
+      "nameAr": "علب برغر",
+      "nameZh": "Custom Burger Boxes",
+      "categoryId": "boxes",
+      "sectorIds": [
+        "restaurants",
+        "bakery"
+      ],
+      "shortAr": "علب برغر يجعل التقديم أفضل.",
+      "descAr": "علب برغر يجمع بين المتانة ومظهر مرتب: يُفتح بسهولة ويبقى الطعام طازجاً حتى آخر لقمة. مثالي للتوصيل والتقديم في المناسبات.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "حجم خاص"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "مطاعم",
+          "طلبات خارجية",
+          "مخبوزات",
+          "توصيل"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-burger-boxes.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 101,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.937
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.692
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.446
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-spot-uv"
+      ]
+    },
+    {
+      "id": "custom-paper-food-trays",
+      "nameAr": "ورقي غذائي",
+      "nameZh": "Custom Paper Food Trays",
+      "categoryId": "boxes",
+      "sectorIds": [
+        "restaurants",
+        "bakery"
+      ],
+      "shortAr": "ورقي غذائي يُبرز المنتج عند الفتح.",
+      "descAr": "ورقي غذائي يمنح العميل لحظة ترتيب عند الفتح بدل مجرد علبة عادية. يُطبع حسب أسلوب علامتك ليصنع انطباعاً من أول نظرة.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "حجم خاص"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "مطاعم",
+          "طلبات خارجية",
+          "مخبوزات",
+          "توصيل"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-paper-food-trays.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 102,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 1.018
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.751
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.485
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-spot-uv"
+      ]
+    },
+    {
+      "id": "custom-popcorn-boxes",
+      "nameAr": "علب فشار",
+      "nameZh": "Custom Popcorn Boxes",
+      "categoryId": "boxes",
+      "sectorIds": [
+        "restaurants",
+        "bakery"
+      ],
+      "shortAr": "علب فشار يحمي محتواه في النقل.",
+      "descAr": "علب فشار بهيكل صلب يحافظ على شكل المنتج من المطبخ إلى يد العميل، بجدران تقاوم الرطوبة والدهون. يُطبع بالكامل بشعارك على الواجهة والجوانب.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "حجم خاص"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "مطاعم",
+          "طلبات خارجية",
+          "مخبوزات",
+          "توصيل"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-popcorn-boxes.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 103,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 1.099
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.811
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.523
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-spot-uv"
+      ]
+    },
+    {
+      "id": "custom-fried-chicken-box",
+      "nameAr": "علبة",
+      "nameZh": "Custom Fried Chicken Box",
+      "categoryId": "boxes",
+      "sectorIds": [
+        "restaurants",
+        "bakery"
+      ],
+      "shortAr": "علبة يجعل التقديم أفضل.",
+      "descAr": "علبة يجمع بين المتانة ومظهر مرتب: يُفتح بسهولة ويبقى الطعام طازجاً حتى آخر لقمة. مثالي للتوصيل والتقديم في المناسبات.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "حجم خاص"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "مطاعم",
+          "طلبات خارجية",
+          "مخبوزات",
+          "توصيل"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-fried-chicken-box.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 104,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 1.179
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.87
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.562
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-spot-uv"
+      ]
+    },
+    {
+      "id": "custom-cake-boxes-2",
+      "nameAr": "علب كيك",
+      "nameZh": "Custom Cake Boxes 2",
+      "categoryId": "boxes",
+      "sectorIds": [
+        "restaurants",
+        "bakery"
+      ],
+      "shortAr": "علب كيك يُبرز المنتج عند الفتح.",
+      "descAr": "علب كيك يمنح العميل لحظة ترتيب عند الفتح بدل مجرد علبة عادية. يُطبع حسب أسلوب علامتك ليصنع انطباعاً من أول نظرة.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "حجم خاص"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "مطاعم",
+          "طلبات خارجية",
+          "مخبوزات",
+          "توصيل"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-cake-boxes-2.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 105,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.857
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.632
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.408
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-spot-uv"
+      ]
+    },
+    {
+      "id": "custom-folded-takeout-container",
+      "nameAr": "وعاء",
+      "nameZh": "Custom Folded Takeout Container",
+      "categoryId": "boxes",
+      "sectorIds": [
+        "restaurants",
+        "bakery"
+      ],
+      "shortAr": "وعاء يحمي محتواه في النقل.",
+      "descAr": "وعاء بهيكل صلب يحافظ على شكل المنتج من المطبخ إلى يد العميل، بجدران تقاوم الرطوبة والدهون. يُطبع بالكامل بشعارك على الواجهة والجوانب.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "حجم خاص"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "مطاعم",
+          "طلبات خارجية",
+          "مخبوزات",
+          "توصيل"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-folded-takeout-container.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 106,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.937
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.692
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.446
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-spot-uv"
+      ]
+    },
+    {
+      "id": "custom-take-out-boxes-with-handles",
+      "nameAr": "علب بمقبض",
+      "nameZh": "Custom Take Out Boxes With Handles",
+      "categoryId": "boxes",
+      "sectorIds": [
+        "restaurants",
+        "bakery"
+      ],
+      "shortAr": "علب بمقبض يجعل التقديم أفضل.",
+      "descAr": "علب بمقبض يجمع بين المتانة ومظهر مرتب: يُفتح بسهولة ويبقى الطعام طازجاً حتى آخر لقمة. مثالي للتوصيل والتقديم في المناسبات.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "حجم خاص"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "مطاعم",
+          "طلبات خارجية",
+          "مخبوزات",
+          "توصيل"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-take-out-boxes-with-handles.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 107,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 1.018
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.751
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.485
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-spot-uv"
+      ]
+    },
+    {
+      "id": "custom-soap-boxes",
+      "nameAr": "علب صابون",
+      "nameZh": "Custom Soap Boxes",
+      "categoryId": "boxes",
+      "sectorIds": [
+        "restaurants",
+        "bakery"
+      ],
+      "shortAr": "علب صابون يُبرز المنتج عند الفتح.",
+      "descAr": "علب صابون يمنح العميل لحظة ترتيب عند الفتح بدل مجرد علبة عادية. يُطبع حسب أسلوب علامتك ليصنع انطباعاً من أول نظرة.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "حجم خاص"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "مطاعم",
+          "طلبات خارجية",
+          "مخبوزات",
+          "توصيل"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-soap-boxes.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 108,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 1.099
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.811
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.523
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-spot-uv"
+      ]
+    },
+    {
+      "id": "custom-pizza-boxes",
+      "nameAr": "علب بيتزا",
+      "nameZh": "Custom Pizza Boxes",
+      "categoryId": "boxes",
+      "sectorIds": [
+        "restaurants",
+        "bakery"
+      ],
+      "shortAr": "علب بيتزا يحمي محتواه في النقل.",
+      "descAr": "علب بيتزا بهيكل صلب يحافظ على شكل المنتج من المطبخ إلى يد العميل، بجدران تقاوم الرطوبة والدهون. يُطبع بالكامل بشعارك على الواجهة والجوانب.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "حجم خاص"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "مطاعم",
+          "طلبات خارجية",
+          "مخبوزات",
+          "توصيل"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-pizza-boxes.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 109,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 1.179
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.87
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.562
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-spot-uv"
+      ]
+    },
+    {
+      "id": "custom-grease-resistant-paper",
+      "nameAr": "ورقي",
+      "nameZh": "Custom Grease Resistant Paper",
+      "categoryId": "boxes",
+      "sectorIds": [
+        "restaurants",
+        "bakery"
+      ],
+      "shortAr": "ورقي يجعل التقديم أفضل.",
+      "descAr": "ورقي يجمع بين المتانة ومظهر مرتب: يُفتح بسهولة ويبقى الطعام طازجاً حتى آخر لقمة. مثالي للتوصيل والتقديم في المناسبات.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "حجم خاص"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "ألوان مخصصة"
+        ],
+        "usesAr": [
+          "مطاعم",
+          "طلبات خارجية",
+          "مخبوزات",
+          "توصيل"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-grease-resistant-paper.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 110,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.857
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.632
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.408
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-spot-uv"
+      ]
+    },
+    {
+      "id": "die-cut-vinyl-stickers",
+      "nameAr": "موجه باللكي فينيل",
+      "nameZh": "Die Cut Vinyl Stickers",
+      "categoryId": "labels",
+      "sectorIds": [
+        "stores",
+        "beauty"
+      ],
+      "shortAr": "موجه باللكي فينيل يلتصق بثبات ولا يترك أثرا.",
+      "descAr": "موجه باللكي فينيل بطبقة لاصقة قوية تلتصق بالأسطح المنحنية والمسطحة دون أن تتجعّد، وتقاوم الماء والزيت. متوفر بمقاسات وأشكال متعددة وقابل للطباعة بألوانك.",
+      "specs": {
+        "materialAr": "ورق أو فينيل",
+        "sizesAr": [
+          "3 سم",
+          "5 سم",
+          "8 سم",
+          "مقاس مخصص"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "شفاف",
+          "ملون",
+          "معدني"
+        ],
+        "usesAr": [
+          "ملصقات منتجات",
+          "زجاجات",
+          "أكواب",
+          "معارض"
+        ]
+      },
+      "images": [
+        "/assets/img/product-die-cut-vinyl-stickers.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 100,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.179
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.132
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.085
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "pet",
+        "food-paper"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-spot-uv",
+        "craft-gold-foil"
+      ]
+    },
+    {
+      "id": "circle-stickers-3",
+      "nameAr": "دائري",
+      "nameZh": "Circle Stickers 3",
+      "categoryId": "labels",
+      "sectorIds": [
+        "stores",
+        "beauty"
+      ],
+      "shortAr": "دائري يبرز منتجك على الرف.",
+      "descAr": "دائري يمنح عبوتك مظهرا احترافيا على الرف ويجعل علامتك الملفتة للعين. يُطبع بألوانك أو بصورتك على كامل المساحة.",
+      "specs": {
+        "materialAr": "ورق أو فينيل",
+        "sizesAr": [
+          "3 سم",
+          "5 سم",
+          "8 سم",
+          "مقاس مخصص"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "شفاف",
+          "ملون",
+          "معدني"
+        ],
+        "usesAr": [
+          "ملصقات منتجات",
+          "زجاجات",
+          "أكواب",
+          "معارض"
+        ]
+      },
+      "images": [
+        "/assets/img/product-circle-stickers-3.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 101,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.195
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.144
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.093
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "pet",
+        "food-paper"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-spot-uv",
+        "craft-gold-foil"
+      ]
+    },
+    {
+      "id": "transfer-sticker",
+      "nameAr": "ملصق نقل حراري",
+      "nameZh": "Transfer Sticker",
+      "categoryId": "labels",
+      "sectorIds": [
+        "stores",
+        "beauty"
+      ],
+      "shortAr": "ملصق نقل حراري سهل التركيب والتجديد.",
+      "descAr": "ملصق نقل حراري لا يحتاج خبرة لتركيبه، فيجده اللصق في ثوانٍ ويترك سطحا نظيفا عند التغيير. الخيار العملي للمتاجر التي تجدد عروضها باستمرار.",
+      "specs": {
+        "materialAr": "ورق أو فينيل",
+        "sizesAr": [
+          "3 سم",
+          "5 سم",
+          "8 سم",
+          "مقاس مخصص"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "شفاف",
+          "ملون",
+          "معدني"
+        ],
+        "usesAr": [
+          "ملصقات منتجات",
+          "زجاجات",
+          "أكواب",
+          "معارض"
+        ]
+      },
+      "images": [
+        "/assets/img/product-transfer-sticker.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 102,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.212
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.157
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.101
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "pet",
+        "food-paper"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-spot-uv",
+        "craft-gold-foil"
+      ]
+    },
+    {
+      "id": "custom-metalic-foil-transfer-stickers",
+      "nameAr": "نقل حراري",
+      "nameZh": "Custom Metalic Foil Transfer Stickers",
+      "categoryId": "labels",
+      "sectorIds": [
+        "stores",
+        "beauty"
+      ],
+      "shortAr": "نقل حراري يلتصق بثبات ولا يترك أثرا.",
+      "descAr": "نقل حراري بطبقة لاصقة قوية تلتصق بالأسطح المنحنية والمسطحة دون أن تتجعّد، وتقاوم الماء والزيت. متوفر بمقاسات وأشكال متعددة وقابل للطباعة بألوانك.",
+      "specs": {
+        "materialAr": "ورق أو فينيل",
+        "sizesAr": [
+          "3 سم",
+          "5 سم",
+          "8 سم",
+          "مقاس مخصص"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "شفاف",
+          "ملون",
+          "معدني"
+        ],
+        "usesAr": [
+          "ملصقات منتجات",
+          "زجاجات",
+          "أكواب",
+          "معارض"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-metalic-foil-transfer-stickers.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 103,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.229
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.169
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.109
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "pet",
+        "food-paper"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-spot-uv",
+        "craft-gold-foil"
+      ]
+    },
+    {
+      "id": "custom-uv-dtf-lettering-transfers",
+      "nameAr": "نقل بالأشعة",
+      "nameZh": "Custom Uv Dtf Lettering Transfers",
+      "categoryId": "labels",
+      "sectorIds": [
+        "stores",
+        "beauty"
+      ],
+      "shortAr": "نقل بالأشعة يبرز منتجك على الرف.",
+      "descAr": "نقل بالأشعة يمنح عبوتك مظهرا احترافيا على الرف ويجعل علامتك الملفتة للعين. يُطبع بألوانك أو بصورتك على كامل المساحة.",
+      "specs": {
+        "materialAr": "ورق أو فينيل",
+        "sizesAr": [
+          "3 سم",
+          "5 سم",
+          "8 سم",
+          "مقاس مخصص"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "شفاف",
+          "ملون",
+          "معدني"
+        ],
+        "usesAr": [
+          "ملصقات منتجات",
+          "زجاجات",
+          "أكواب",
+          "معارض"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-uv-dtf-lettering-transfers.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 104,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.246
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.181
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.117
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "pet",
+        "food-paper"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-spot-uv",
+        "craft-gold-foil"
+      ]
+    },
+    {
+      "id": "custom-sticker-sheets",
+      "nameAr": "ملصق صفحات",
+      "nameZh": "Custom Sticker Sheets",
+      "categoryId": "labels",
+      "sectorIds": [
+        "stores",
+        "beauty"
+      ],
+      "shortAr": "ملصق صفحات سهل التركيب والتجديد.",
+      "descAr": "ملصق صفحات لا يحتاج خبرة لتركيبه، فيجده اللصق في ثوانٍ ويترك سطحا نظيفا عند التغيير. الخيار العملي للمتاجر التي تجدد عروضها باستمرار.",
+      "specs": {
+        "materialAr": "ورق أو فينيل",
+        "sizesAr": [
+          "3 سم",
+          "5 سم",
+          "8 سم",
+          "مقاس مخصص"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "شفاف",
+          "ملون",
+          "معدني"
+        ],
+        "usesAr": [
+          "ملصقات منتجات",
+          "زجاجات",
+          "أكواب",
+          "معارض"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-sticker-sheets.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 105,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.179
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.132
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.085
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "pet",
+        "food-paper"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-spot-uv",
+        "craft-gold-foil"
+      ]
+    },
+    {
+      "id": "custom-waterproof-stickers",
+      "nameAr": "مقاوم للماء",
+      "nameZh": "Custom Waterproof Stickers",
+      "categoryId": "labels",
+      "sectorIds": [
+        "stores",
+        "beauty"
+      ],
+      "shortAr": "مقاوم للماء يلتصق بثبات ولا يترك أثرا.",
+      "descAr": "مقاوم للماء بطبقة لاصقة قوية تلتصق بالأسطح المنحنية والمسطحة دون أن تتجعّد، وتقاوم الماء والزيت. متوفر بمقاسات وأشكال متعددة وقابل للطباعة بألوانك.",
+      "specs": {
+        "materialAr": "ورق أو فينيل",
+        "sizesAr": [
+          "3 سم",
+          "5 سم",
+          "8 سم",
+          "مقاس مخصص"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "شفاف",
+          "ملون",
+          "معدني"
+        ],
+        "usesAr": [
+          "ملصقات منتجات",
+          "زجاجات",
+          "أكواب",
+          "معارض"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-waterproof-stickers.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 106,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.195
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.144
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.093
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "pet",
+        "food-paper"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-spot-uv",
+        "craft-gold-foil"
+      ]
+    },
+    {
+      "id": "clear-stickers-324",
+      "nameAr": "شفاف",
+      "nameZh": "Clear Stickers 324",
+      "categoryId": "labels",
+      "sectorIds": [
+        "stores",
+        "beauty"
+      ],
+      "shortAr": "شفاف يبرز منتجك على الرف.",
+      "descAr": "شفاف يمنح عبوتك مظهرا احترافيا على الرف ويجعل علامتك الملفتة للعين. يُطبع بألوانك أو بصورتك على كامل المساحة.",
+      "specs": {
+        "materialAr": "ورق أو فينيل",
+        "sizesAr": [
+          "3 سم",
+          "5 سم",
+          "8 سم",
+          "مقاس مخصص"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "شفاف",
+          "ملون",
+          "معدني"
+        ],
+        "usesAr": [
+          "ملصقات منتجات",
+          "زجاجات",
+          "أكواب",
+          "معارض"
+        ]
+      },
+      "images": [
+        "/assets/img/product-clear-stickers-324.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 107,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.212
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.157
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.101
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "pet",
+        "food-paper"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-spot-uv",
+        "craft-gold-foil"
+      ]
+    },
+    {
+      "id": "custom-car-decals-stickers",
+      "nameAr": "سيارة ملصقات سيارات",
+      "nameZh": "Custom Car Decals Stickers",
+      "categoryId": "labels",
+      "sectorIds": [
+        "stores",
+        "beauty"
+      ],
+      "shortAr": "سيارة ملصقات سيارات سهل التركيب والتجديد.",
+      "descAr": "سيارة ملصقات سيارات لا يحتاج خبرة لتركيبه، فيجده اللصق في ثوانٍ ويترك سطحا نظيفا عند التغيير. الخيار العملي للمتاجر التي تجدد عروضها باستمرار.",
+      "specs": {
+        "materialAr": "ورق أو فينيل",
+        "sizesAr": [
+          "3 سم",
+          "5 سم",
+          "8 سم",
+          "مقاس مخصص"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "شفاف",
+          "ملون",
+          "معدني"
+        ],
+        "usesAr": [
+          "ملصقات منتجات",
+          "زجاجات",
+          "أكواب",
+          "معارض"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-car-decals-stickers.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 108,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.229
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.169
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.109
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "pet",
+        "food-paper"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-spot-uv",
+        "craft-gold-foil"
+      ]
+    },
+    {
+      "id": "roll-label",
+      "nameAr": "بكرة بطاقة",
+      "nameZh": "Roll Label",
+      "categoryId": "labels",
+      "sectorIds": [
+        "stores",
+        "beauty"
+      ],
+      "shortAr": "بكرة بطاقة يلتصق بثبات ولا يترك أثرا.",
+      "descAr": "بكرة بطاقة بطبقة لاصقة قوية تلتصق بالأسطح المنحنية والمسطحة دون أن تتجعّد، وتقاوم الماء والزيت. متوفر بمقاسات وأشكال متعددة وقابل للطباعة بألوانك.",
+      "specs": {
+        "materialAr": "ورق أو فينيل",
+        "sizesAr": [
+          "3 سم",
+          "5 سم",
+          "8 سم",
+          "مقاس مخصص"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "شفاف",
+          "ملون",
+          "معدني"
+        ],
+        "usesAr": [
+          "ملصقات منتجات",
+          "زجاجات",
+          "أكواب",
+          "معارض"
+        ]
+      },
+      "images": [
+        "/assets/img/product-roll-label.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 109,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.246
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.181
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.117
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "pet",
+        "food-paper"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-spot-uv",
+        "craft-gold-foil"
+      ]
+    },
+    {
+      "id": "circle-roll-label",
+      "nameAr": "بكرة بطاقة دائري",
+      "nameZh": "Circle Roll Label",
+      "categoryId": "labels",
+      "sectorIds": [
+        "stores",
+        "beauty"
+      ],
+      "shortAr": "بكرة بطاقة دائري يبرز منتجك على الرف.",
+      "descAr": "بكرة بطاقة دائري يمنح عبوتك مظهرا احترافيا على الرف ويجعل علامتك الملفتة للعين. يُطبع بألوانك أو بصورتك على كامل المساحة.",
+      "specs": {
+        "materialAr": "ورق أو فينيل",
+        "sizesAr": [
+          "3 سم",
+          "5 سم",
+          "8 سم",
+          "مقاس مخصص"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "شفاف",
+          "ملون",
+          "معدني"
+        ],
+        "usesAr": [
+          "ملصقات منتجات",
+          "زجاجات",
+          "أكواب",
+          "معارض"
+        ]
+      },
+      "images": [
+        "/assets/img/product-circle-roll-label.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 110,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.179
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.132
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.085
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "pet",
+        "food-paper"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-spot-uv",
+        "craft-gold-foil"
+      ]
+    },
+    {
+      "id": "custom-deli-paper",
+      "nameAr": "ورق تغليف ورقي",
+      "nameZh": "Custom Deli Paper",
+      "categoryId": "materials",
+      "sectorIds": [
+        "bakery",
+        "restaurants"
+      ],
+      "shortAr": "ورق تغليف ورقي يرفع قيمة كل طاولة.",
+      "descAr": "ورق تغليف ورقي يضيف لمسة عملية وأنيقة إلى كل عبوة تخرج من محلك، ويُستخدم مرة واحدة ويمكن إعادة استخدامه. قابل للطباعة بشعارك، متوفر بمقاسات كبيرة تُقص حسب الحاجة.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "ملف كامل"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "شفاف"
+        ],
+        "usesAr": [
+          "مخابز",
+          "مطاعم",
+          "متاجر",
+          "مناسبات"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-deli-paper.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 100,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.25
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.184
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.119
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft",
+        "pp"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "custom-deli-paper-for-bakery-shop",
+      "nameAr": "ورق تغليف ورقي",
+      "nameZh": "Custom Deli Paper For Bakery Shop",
+      "categoryId": "materials",
+      "sectorIds": [
+        "bakery",
+        "restaurants"
+      ],
+      "shortAr": "ورق تغليف ورقي يستحق مكانه على الطاولة.",
+      "descAr": "ورق تغليف ورقي يحوّل التغليف من عبوة عادية إلى تجربة: الخامة اللمسية والصور البصرية تصنع الفرق في نظر العميل. متوفر بألوان وأحجام تنسق مع هوية علامتك.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "ملف كامل"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "شفاف"
+        ],
+        "usesAr": [
+          "مخابز",
+          "مطاعم",
+          "متاجر",
+          "مناسبات"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-deli-paper-for-bakery-shop.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 101,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.273
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.202
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.13
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft",
+        "pp"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "custom-airlaid-napkins",
+      "nameAr": "مناديل",
+      "nameZh": "Custom Airlaid Napkins",
+      "categoryId": "materials",
+      "sectorIds": [
+        "bakery",
+        "restaurants"
+      ],
+      "shortAr": "مناديل يجد مكانه في كل طلب.",
+      "descAr": "مناديل خامة تعبئة عملية تكمل ما في الكيس أو العلبة وتضيف حماية للمحتوى في النقل. الاستدامة والطباعة تصنع الفرق.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "ملف كامل"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "شفاف"
+        ],
+        "usesAr": [
+          "مخابز",
+          "مطاعم",
+          "متاجر",
+          "مناسبات"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-airlaid-napkins.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 102,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.297
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.219
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.141
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft",
+        "pp"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "custom-napkin",
+      "nameAr": "منديل",
+      "nameZh": "Custom Napkin",
+      "categoryId": "materials",
+      "sectorIds": [
+        "bakery",
+        "restaurants"
+      ],
+      "shortAr": "منديل يرفع قيمة كل طاولة.",
+      "descAr": "منديل يضيف لمسة عملية وأنيقة إلى كل عبوة تخرج من محلك، ويُستخدم مرة واحدة ويمكن إعادة استخدامه. قابل للطباعة بشعارك، متوفر بمقاسات كبيرة تُقص حسب الحاجة.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "ملف كامل"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "شفاف"
+        ],
+        "usesAr": [
+          "مخابز",
+          "مطاعم",
+          "متاجر",
+          "مناسبات"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-napkin.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 103,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.32
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.237
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.153
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft",
+        "pp"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "custom-gold-foil-napkins",
+      "nameAr": "مناديل ذهبي",
+      "nameZh": "Custom Gold Foil Napkins",
+      "categoryId": "materials",
+      "sectorIds": [
+        "bakery",
+        "restaurants"
+      ],
+      "shortAr": "مناديل ذهبي يستحق مكانه على الطاولة.",
+      "descAr": "مناديل ذهبي يحوّل التغليف من عبوة عادية إلى تجربة: الخامة اللمسية والصور البصرية تصنع الفرق في نظر العميل. متوفر بألوان وأحجام تنسق مع هوية علامتك.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "ملف كامل"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "شفاف"
+        ],
+        "usesAr": [
+          "مخابز",
+          "مطاعم",
+          "متاجر",
+          "مناسبات"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-gold-foil-napkins.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 104,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.344
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.254
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.164
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft",
+        "pp"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "custom-foil-stamped-color-napkins",
+      "nameAr": "مناديل ملون",
+      "nameZh": "Custom Foil Stamped Color Napkins",
+      "categoryId": "materials",
+      "sectorIds": [
+        "bakery",
+        "restaurants"
+      ],
+      "shortAr": "مناديل ملون يجد مكانه في كل طلب.",
+      "descAr": "مناديل ملون خامة تعبئة عملية تكمل ما في الكيس أو العلبة وتضيف حماية للمحتوى في النقل. الاستدامة والطباعة تصنع الفرق.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "ملف كامل"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "شفاف"
+        ],
+        "usesAr": [
+          "مخابز",
+          "مطاعم",
+          "متاجر",
+          "مناسبات"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-foil-stamped-color-napkins.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 105,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.25
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.184
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.119
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft",
+        "pp"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "custom-self-adhesive-packaging-tape",
+      "nameAr": "شريط لاصق",
+      "nameZh": "Custom Self Adhesive Packaging Tape",
+      "categoryId": "materials",
+      "sectorIds": [
+        "bakery",
+        "restaurants"
+      ],
+      "shortAr": "شريط لاصق يرفع قيمة كل طاولة.",
+      "descAr": "شريط لاصق يضيف لمسة عملية وأنيقة إلى كل عبوة تخرج من محلك، ويُستخدم مرة واحدة ويمكن إعادة استخدامه. قابل للطباعة بشعارك، متوفر بمقاسات كبيرة تُقص حسب الحاجة.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "ملف كامل"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "شفاف"
+        ],
+        "usesAr": [
+          "مخابز",
+          "مطاعم",
+          "متاجر",
+          "مناسبات"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-self-adhesive-packaging-tape.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 106,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.273
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.202
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.13
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft",
+        "pp"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "custom-tissue-paper",
+      "nameAr": "ورق تغليف ورقي",
+      "nameZh": "Custom Tissue Paper",
+      "categoryId": "materials",
+      "sectorIds": [
+        "bakery",
+        "restaurants"
+      ],
+      "shortAr": "ورق تغليف ورقي يستحق مكانه على الطاولة.",
+      "descAr": "ورق تغليف ورقي يحوّل التغليف من عبوة عادية إلى تجربة: الخامة اللمسية والصور البصرية تصنع الفرق في نظر العميل. متوفر بألوان وأحجام تنسق مع هوية علامتك.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "ملف كامل"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "شفاف"
+        ],
+        "usesAr": [
+          "مخابز",
+          "مطاعم",
+          "متاجر",
+          "مناسبات"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-tissue-paper.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 107,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.297
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.219
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.141
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft",
+        "pp"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "custom-packaging-sleeves",
+      "nameAr": "أغلفة",
+      "nameZh": "Custom Packaging Sleeves",
+      "categoryId": "materials",
+      "sectorIds": [
+        "bakery",
+        "restaurants"
+      ],
+      "shortAr": "أغلفة يجد مكانه في كل طلب.",
+      "descAr": "أغلفة خامة تعبئة عملية تكمل ما في الكيس أو العلبة وتضيف حماية للمحتوى في النقل. الاستدامة والطباعة تصنع الفرق.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "ملف كامل"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "شفاف"
+        ],
+        "usesAr": [
+          "مخابز",
+          "مطاعم",
+          "متاجر",
+          "مناسبات"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-packaging-sleeves.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 108,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.32
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.237
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.153
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft",
+        "pp"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "bag-toppers-header-cards",
+      "nameAr": "كيس بطاقات بطاقة علوية",
+      "nameZh": "Bag Toppers Header Cards",
+      "categoryId": "materials",
+      "sectorIds": [
+        "bakery",
+        "restaurants"
+      ],
+      "shortAr": "كيس بطاقات بطاقة علوية يرفع قيمة كل طاولة.",
+      "descAr": "كيس بطاقات بطاقة علوية يضيف لمسة عملية وأنيقة إلى كل عبوة تخرج من محلك، ويُستخدم مرة واحدة ويمكن إعادة استخدامه. قابل للطباعة بشعارك، متوفر بمقاسات كبيرة تُقص حسب الحاجة.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "ملف كامل"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "شفاف"
+        ],
+        "usesAr": [
+          "مخابز",
+          "مطاعم",
+          "متاجر",
+          "مناسبات"
+        ]
+      },
+      "images": [
+        "/assets/img/product-bag-toppers-header-cards.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 109,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.344
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.254
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.164
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft",
+        "pp"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "custom-poly-mailers",
+      "nameAr": "بولي أكياس شحن",
+      "nameZh": "Custom Poly Mailers",
+      "categoryId": "materials",
+      "sectorIds": [
+        "bakery",
+        "restaurants"
+      ],
+      "shortAr": "بولي أكياس شحن يستحق مكانه على الطاولة.",
+      "descAr": "بولي أكياس شحن يحوّل التغليف من عبوة عادية إلى تجربة: الخامة اللمسية والصور البصرية تصنع الفرق في نظر العميل. متوفر بألوان وأحجام تنسق مع هوية علامتك.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير",
+          "ملف كامل"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "كرافت",
+          "مطبوع",
+          "شفاف"
+        ],
+        "usesAr": [
+          "مخابز",
+          "مطاعم",
+          "متاجر",
+          "مناسبات"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-poly-mailers.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 110,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 0.25
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.184
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.119
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft",
+        "pp"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-white-ink"
+      ]
+    },
+    {
+      "id": "custom-flat-menus",
+      "nameAr": "مسطح",
+      "nameZh": "Custom Flat Menus",
+      "categoryId": "gifts",
+      "sectorIds": [
+        "stores",
+        "events"
+      ],
+      "shortAr": "مسطح هدية تُذكر ولا تُرمى.",
+      "descAr": "مسطح بمادة تدوم وتبقى على المكتب أو في المنزل، تحمل شعارك في كل مرة تُستخدم. هدية عملية تصلح للمعارض والمناسبات وهدايا نهاية السنة.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "مطبوع",
+          "ألوان مخصصة",
+          "معدني"
+        ],
+        "usesAr": [
+          "هدايا مؤسسية",
+          "معارض",
+          "مناسبات",
+          "ترويج"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-flat-menus.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 100,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 1.25
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.922
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.595
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-emboss"
+      ]
+    },
+    {
+      "id": "custom-die-cut-business-card",
+      "nameAr": "بطاقة موجه باللكي",
+      "nameZh": "Custom Die Cut Business Card",
+      "categoryId": "gifts",
+      "sectorIds": [
+        "stores",
+        "events"
+      ],
+      "shortAr": "بطاقة موجه باللكي يحوّل العلامة إلى شيء ملموس.",
+      "descAr": "بطاقة موجه باللكي يمنح المتلقي شيئا حقيقيا يربطه بعلامتك، بدل رسالة تنسي بعد يوم. تفاصيل الخامة والتشطيب تحكي عن جودة علامتك قبل أن يحكي عنها الشعار.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "مطبوع",
+          "ألوان مخصصة",
+          "معدني"
+        ],
+        "usesAr": [
+          "هدايا مؤسسية",
+          "معارض",
+          "مناسبات",
+          "ترويج"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-die-cut-business-card.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 101,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 1.367
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 1.009
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.651
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-emboss"
+      ]
+    },
+    {
+      "id": "custom-post-card",
+      "nameAr": "بطاقة",
+      "nameZh": "Custom Post Card",
+      "categoryId": "gifts",
+      "sectorIds": [
+        "stores",
+        "events"
+      ],
+      "shortAr": "بطاقة يصلح لكل مناسبة.",
+      "descAr": "بطاقة قابل للتخصيص بالكامل مع شعارك وألوان علامتك، ويُغلف بتغليف يليق بالمناسبة. اختيار آمن للهدايا المؤسسية والمعارض والحملات الترويجية.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "مطبوع",
+          "ألوان مخصصة",
+          "معدني"
+        ],
+        "usesAr": [
+          "هدايا مؤسسية",
+          "معارض",
+          "مناسبات",
+          "ترويج"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-post-card.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 102,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 1.485
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 1.096
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.707
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-emboss"
+      ]
+    },
+    {
+      "id": "custom-vinyl-posters",
+      "nameAr": "فينيل",
+      "nameZh": "Custom Vinyl Posters",
+      "categoryId": "gifts",
+      "sectorIds": [
+        "stores",
+        "events"
+      ],
+      "shortAr": "فينيل هدية تُذكر ولا تُرمى.",
+      "descAr": "فينيل بمادة تدوم وتبقى على المكتب أو في المنزل، تحمل شعارك في كل مرة تُستخدم. هدية عملية تصلح للمعارض والمناسبات وهدايا نهاية السنة.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "مطبوع",
+          "ألوان مخصصة",
+          "معدني"
+        ],
+        "usesAr": [
+          "هدايا مؤسسية",
+          "معارض",
+          "مناسبات",
+          "ترويج"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-vinyl-posters.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 103,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 1.602
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 1.183
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.763
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-emboss"
+      ]
+    },
+    {
+      "id": "custom-wooden-puzzle",
+      "nameAr": "لغز",
+      "nameZh": "Custom Wooden Puzzle",
+      "categoryId": "gifts",
+      "sectorIds": [
+        "stores",
+        "events"
+      ],
+      "shortAr": "لغز يحوّل العلامة إلى شيء ملموس.",
+      "descAr": "لغز يمنح المتلقي شيئا حقيقيا يربطه بعلامتك، بدل رسالة تنسي بعد يوم. تفاصيل الخامة والتشطيب تحكي عن جودة علامتك قبل أن يحكي عنها الشعار.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "مطبوع",
+          "ألوان مخصصة",
+          "معدني"
+        ],
+        "usesAr": [
+          "هدايا مؤسسية",
+          "معارض",
+          "مناسبات",
+          "ترويج"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-wooden-puzzle.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 104,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 1.72
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 1.269
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.819
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-emboss"
+      ]
+    },
+    {
+      "id": "custom-softcover-spiral-weekly-planner",
+      "nameAr": "مفكرة",
+      "nameZh": "Custom Softcover Spiral Weekly Planner",
+      "categoryId": "gifts",
+      "sectorIds": [
+        "stores",
+        "events"
+      ],
+      "shortAr": "مفكرة يصلح لكل مناسبة.",
+      "descAr": "مفكرة قابل للتخصيص بالكامل مع شعارك وألوان علامتك، ويُغلف بتغليف يليق بالمناسبة. اختيار آمن للهدايا المؤسسية والمعارض والحملات الترويجية.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "مطبوع",
+          "ألوان مخصصة",
+          "معدني"
+        ],
+        "usesAr": [
+          "هدايا مؤسسية",
+          "معارض",
+          "مناسبات",
+          "ترويج"
+        ]
+      },
+      "images": [
+        "/assets/img/product-custom-softcover-spiral-weekly-planner.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 105,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 1.25
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.922
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.595
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-emboss"
+      ]
+    },
+    {
+      "id": "layflat-photo-book",
+      "nameAr": "كتاب",
+      "nameZh": "Layflat Photo Book",
+      "categoryId": "gifts",
+      "sectorIds": [
+        "stores",
+        "events"
+      ],
+      "shortAr": "كتاب هدية تُذكر ولا تُرمى.",
+      "descAr": "كتاب بمادة تدوم وتبقى على المكتب أو في المنزل، تحمل شعارك في كل مرة تُستخدم. هدية عملية تصلح للمعارض والمناسبات وهدايا نهاية السنة.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "مطبوع",
+          "ألوان مخصصة",
+          "معدني"
+        ],
+        "usesAr": [
+          "هدايا مؤسسية",
+          "معارض",
+          "مناسبات",
+          "ترويج"
+        ]
+      },
+      "images": [
+        "/assets/img/product-layflat-photo-book.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 106,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 1.367
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 1.009
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.651
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-emboss"
+      ]
+    },
+    {
+      "id": "perfect-binding-photo-book",
+      "nameAr": "كتاب",
+      "nameZh": "Perfect Binding Photo Book",
+      "categoryId": "gifts",
+      "sectorIds": [
+        "stores",
+        "events"
+      ],
+      "shortAr": "كتاب يحوّل العلامة إلى شيء ملموس.",
+      "descAr": "كتاب يمنح المتلقي شيئا حقيقيا يربطه بعلامتك، بدل رسالة تنسي بعد يوم. تفاصيل الخامة والتشطيب تحكي عن جودة علامتك قبل أن يحكي عنها الشعار.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "مطبوع",
+          "ألوان مخصصة",
+          "معدني"
+        ],
+        "usesAr": [
+          "هدايا مؤسسية",
+          "معارض",
+          "مناسبات",
+          "ترويج"
+        ]
+      },
+      "images": [
+        "/assets/img/product-perfect-binding-photo-book.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 107,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 1.485
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 1.096
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.707
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-emboss"
+      ]
+    },
+    {
+      "id": "retractable-banners",
+      "nameAr": "لافتات",
+      "nameZh": "Retractable Banners",
+      "categoryId": "gifts",
+      "sectorIds": [
+        "stores",
+        "events"
+      ],
+      "shortAr": "لافتات هدية تُذكر ولا تُرمى.",
+      "descAr": "لافتات بمادة تدوم وتبقى على المكتب أو في المنزل، تحمل شعارك في كل مرة تُستخدم. هدية عملية تصلح للمعارض والمناسبات وهدايا نهاية السنة.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "مطبوع",
+          "ألوان مخصصة",
+          "معدني"
+        ],
+        "usesAr": [
+          "هدايا مؤسسية",
+          "معارض",
+          "مناسبات",
+          "ترويج"
+        ]
+      },
+      "images": [
+        "/assets/img/product-retractable-banners.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 100,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 1.25
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 0.922
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.595
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-emboss"
+      ]
+    },
+    {
+      "id": "adjustable-x-banner-stands",
+      "nameAr": "لافتة",
+      "nameZh": "Adjustable X Banner Stands",
+      "categoryId": "gifts",
+      "sectorIds": [
+        "stores",
+        "events"
+      ],
+      "shortAr": "لافتة يحوّل العلامة إلى شيء ملموس.",
+      "descAr": "لافتة يمنح المتلقي شيئا حقيقيا يربطه بعلامتك، بدل رسالة تنسي بعد يوم. تفاصيل الخامة والتشطيب تحكي عن جودة علامتك قبل أن يحكي عنها الشعار.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "مطبوع",
+          "ألوان مخصصة",
+          "معدني"
+        ],
+        "usesAr": [
+          "هدايا مؤسسية",
+          "معارض",
+          "مناسبات",
+          "ترويج"
+        ]
+      },
+      "images": [
+        "/assets/img/product-adjustable-x-banner-stands.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 101,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 1.367
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 1.009
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.651
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-emboss"
+      ]
+    },
+    {
+      "id": "tabletop-retractable-banners",
+      "nameAr": "لافتات",
+      "nameZh": "Tabletop Retractable Banners",
+      "categoryId": "gifts",
+      "sectorIds": [
+        "stores",
+        "events"
+      ],
+      "shortAr": "لافتات يصلح لكل مناسبة.",
+      "descAr": "لافتات قابل للتخصيص بالكامل مع شعارك وألوان علامتك، ويُغلف بتغليف يليق بالمناسبة. اختيار آمن للهدايا المؤسسية والمعارض والحملات الترويجية.",
+      "specs": {
+        "materialAr": "ورق غذائي",
+        "sizesAr": [
+          "صغير",
+          "متوسط",
+          "كبير"
+        ],
+        "colorsAr": [
+          "أبيض",
+          "مطبوع",
+          "ألوان مخصصة",
+          "معدني"
+        ],
+        "usesAr": [
+          "هدايا مؤسسية",
+          "معارض",
+          "مناسبات",
+          "ترويج"
+        ]
+      },
+      "images": [
+        "/assets/img/product-tabletop-retractable-banners.webp",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imageLabelsAr": [
+        "الصورة الرئيسية",
+        "الوجه الأمامي",
+        "الوجه الخلفي",
+        "تفاصيل الخامة",
+        "المقاسات",
+        "منظر الاستخدام"
+      ],
+      "featured": false,
+      "published": true,
+      "sort": 102,
+      "addedAt": "2026-10-15",
+      "priceTiers": [
+        {
+          "from": 100,
+          "to": 499,
+          "price": 1.485
+        },
+        {
+          "from": 500,
+          "to": 1999,
+          "price": 1.096
+        },
+        {
+          "from": 2000,
+          "to": null,
+          "price": 0.707
+        }
+      ],
+      "custom": {
+        "materialsAr": [
+          "ورق غذائي",
+          "كرافت",
+          "ورق معاد تدويره"
+        ],
+        "printAr": [
+          "طبعة واحدة",
+          "طبعة كاملة",
+          "فويل ذهبي"
+        ],
+        "extrasAr": [
+          "غلاف خارجي",
+          "لفافة فردية",
+          "تصميم مخصص"
+        ],
+        "leadTimeAr": "10 – 18 يوم"
+      },
+      "materialIds": [
+        "food-paper",
+        "kraft"
+      ],
+      "craftIds": [
+        "craft-full-wrap",
+        "craft-gold-foil",
+        "craft-emboss"
+      ]
     }
   ],
   "removedIds": [
