@@ -128,10 +128,17 @@ async function initCraft() {
     </div>`;
 
   /* ---------- 2. 参数：客户下单前必问的四条。有一条就显示一块 ---------- */
+  /* 可用材质：新数据是 materialsIds（勾选材料表），老数据是 materialsAr 文本。
+     两种都有就拼一起，前后台下勾选、老手打文本都不白填。 */
+  const matNames = (c.materialsIds || []).map(id => {
+    const m = (tax.materials || []).find(x => x.id === id);
+    return m ? m.nameAr : '';
+  }).filter(Boolean);
+  const matText = [matNames.join(' / '), c.materialsAr].filter(t => (t || '').trim()).join(' / ');
   const specs = [
     [ui.specMoqAr || 'الحد الأدنى للطلب', c.moqAr],
     [ui.specLeadAr || 'مدة التنفيذ', c.leadTimeAr],
-    [ui.specMatAr || 'المواد المتاحة', c.materialsAr],
+    [ui.specMatAr || 'المواد المتاحة', matText],
     [ui.specLimitAr || 'ملاحظات', c.limitsAr],
   ].filter(x => (x[1] || '').trim());
   if (specs.length) {

@@ -324,7 +324,11 @@
         "sort": 1,
         "published": true,
         "nameZh": "烫金",
-        "videoUrl": "https://www.youtube.com/watch?v=TgmnVUMKzoQ&t=34s"
+        "videoUrl": "https://www.youtube.com/watch?v=TgmnVUMKzoQ&t=34s",
+        "materialsIds": [
+          "food-paper",
+          "kraft"
+        ]
       },
       {
         "id": "craft-emboss",
@@ -341,7 +345,10 @@
         "limitsAr": "يحتاج قالباً نحاسياً (ذكر وأنثى) لكل نقش. عمق البروز يُعاير بدقة حتى لا يرقّق الطبقة البلاستيكية الداخلية — نمرّ كل عيّنة باختبار ماء ساخن 30 دقيقة. أقل عرض للخط 0.5 مم، والارتفاع 0.3-2.0 مم.",
         "sort": 2,
         "published": true,
-        "nameZh": "激凸（起鼓）"
+        "nameZh": "激凸（起鼓）",
+        "materialsIds": [
+          "food-paper"
+        ]
       },
       {
         "id": "craft-spot-uv",
@@ -358,7 +365,11 @@
         "limitsAr": "يظهر التأثير تحت الضوء المباشر — الشعار اللامع يتباين مع الخلفية المطفية. لا يغطي الكوب بالكامل، والمنطقة اللامعة تُحدَّد في ملف التصميم.",
         "sort": 3,
         "published": true,
-        "nameZh": "局部 UV"
+        "nameZh": "局部 UV",
+        "materialsIds": [
+          "food-paper",
+          "kraft"
+        ]
       },
       {
         "id": "craft-full-wrap",
@@ -375,7 +386,11 @@
         "limitsAr": "التصميم يلتف 360° حول الكوب، فيجب ضبط الرسم عند وصلة الكوب وترك هامش أمان. المنطقة الفعالة تُحدَّد بقالب القص لكل مقاس.",
         "sort": 4,
         "published": true,
-        "nameZh": "全包印刷"
+        "nameZh": "全包印刷",
+        "materialsIds": [
+          "food-paper",
+          "kraft"
+        ]
       },
       {
         "id": "craft-white-ink",
@@ -392,7 +407,11 @@
         "limitsAr": "الطبقة البيضاء تُطبع أولاً تحت ألوان الطباعة الرباعية. في ملف التصميم يجب أن تكون طبقة منفصلة مخصّصة للون الأبيض، مضبوطة لتُطبع تحت الألوان مباشرة، مع تصغيرها قليلاً عن حدود الرسم. وعلى الورق المعدني يحجب الأبيض اللمعة — نستخدمه فقط في المناطق المُراد ظهورها بلون صلب.",
         "sort": 5,
         "published": true,
-        "nameZh": "白墨打底"
+        "nameZh": "白墨打底",
+        "materialsIds": [
+          "kraft",
+          "food-paper"
+        ]
       },
       {
         "id": "craft-holographic",
@@ -409,7 +428,10 @@
         "limitsAr": "التدرّج القزحي طبيعي وعشوائي — لا توجد كوبان متطابقان تماماً. يُفضّل وضع الشعار في الثلث الأعلى أو الأوسط وترك الجزء السفلي للتدرّج، وإلا سيختفي التأثير.",
         "sort": 6,
         "published": true,
-        "nameZh": "镭射"
+        "nameZh": "镭射",
+        "materialsIds": [
+          "foil"
+        ]
       }
     ]
   },

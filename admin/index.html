@@ -116,6 +116,21 @@
     </div>
     <div class="row-actions" style="margin-top:14px">
       <button id="add-sector" class="btn">+ 添加行业</button>
+
+    <h3 id="set-crafts">工艺</h3>
+    <p class="tip" style="margin-top:0">
+      这是首页的第一个选择入口。加一个前台就显示一个，只上架一个就只显示一个。
+      图片建议 <b dir="ltr">1200 × 1200</b> 正方形、白底，前台会自动裁成一样大。
+    </p>
+    <div class="fgrid" style="margin-bottom:12px">
+      <label>区块上方的小标题<input class="inp" id="cf-kicker"></label>
+      <label>区块标题<input class="inp" id="cf-title"></label>
+      <label class="full">区块说明<textarea class="inp" id="cf-lead" rows="2"></textarea></label>
+    </div>
+    <div id="craft-list" style="display:flex;flex-direction:column;gap:12px"></div>
+    <div class="row-actions" style="margin-top:12px">
+      <button type="button" class="btn" id="craft-add">+ 添加工艺</button>
+    </div>
     </div>
 
     <h3 style="margin-top:44px" id="set-mats">原材料（纸、PET、PP…）</h3>
@@ -145,7 +160,10 @@
     </div>
 
     <div class="row-actions" style="margin-top:22px">
-      <button id="save-tax" class="btn primary">保存修改</button>
+      <div class="savebar">
+        <button id="save-tax" class="btn primary">保存修改</button>
+        <span class="hint">改完点这里，不自动保存</span>
+      </div>
     </div>
   </section>
 
@@ -156,6 +174,7 @@
       <div class="row-actions">
         <button id="imp-tpl" class="btn">下载 Excel 模板</button>
         <button id="imp-export" class="btn">导出当前产品</button>
+      <button id="export-all" class="btn">下载数据备份（JSON）</button>
       </div>
     </div>
 
@@ -394,20 +413,6 @@
          图片建议 1600x1200 (4:3)，logo 建议正方形 400x400。
          ====================== -->
 
-    <h3 id="set-crafts">工艺</h3>
-    <p class="tip" style="margin-top:0">
-      这是首页的第一个选择入口。加一个前台就显示一个，只上架一个就只显示一个。
-      图片建议 <b dir="ltr">1200 × 1200</b> 正方形、白底，前台会自动裁成一样大。
-    </p>
-    <div class="fgrid" style="margin-bottom:12px">
-      <label>区块上方的小标题<input class="inp" id="cf-kicker"></label>
-      <label>区块标题<input class="inp" id="cf-title"></label>
-      <label class="full">区块说明<textarea class="inp" id="cf-lead" rows="2"></textarea></label>
-    </div>
-    <div id="craft-list" style="display:flex;flex-direction:column;gap:12px"></div>
-    <div class="row-actions" style="margin-top:12px">
-      <button type="button" class="btn" id="craft-add">+ 添加工艺</button>
-    </div>
 
     <h3 id="set-certs">认证资质</h3>
     <p class="tip" style="margin-top:0">
@@ -509,8 +514,10 @@
     </div>
 
     <div class="row-actions" style="margin-top:24px">
-      <button id="save-site" class="btn primary">保存设置</button>
-      <button id="export-all" class="btn">下载数据备份（JSON）</button>
+      <div class="savebar">
+        <button id="save-site" class="btn primary">保存设置</button>
+        <span class="hint">改完点这里，不自动保存</span>
+      </div>
     </div>
 
     <h3 style="margin-top:44px;color:#a3402f">危险操作区</h3>

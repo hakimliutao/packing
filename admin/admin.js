@@ -1804,7 +1804,8 @@ function renderCrafts() {
     <div class="blk-card" data-i="${i}">
       <div class="blk-head">
         <b>${i + 1}</b>
-        <input data-k="nameAr" value="${esc(c.nameAr || '')}" placeholder="工艺名（阿语，前台卡片上显示这个）">
+        <span class="nm-lbl">阿语名</span>
+        <input data-k="nameAr" value="${esc(c.nameAr || '')}" placeholder="工艺名（前台卡片上显示这个）">
         <input class="w60" data-k="sort" value="${c.sort || i + 1}" title="排序">
         <label class="ck" style="margin:0"><input type="checkbox" data-k="published"${c.published === false ? '' : ' checked'}> 上架</label>
         <button class="mini danger" data-delcraft="${i}">删除</button>
@@ -1829,13 +1830,31 @@ function renderCrafts() {
             <input data-k="videoUrl" value="${esc(c.videoUrl || '')}" dir="ltr" placeholder="https://www.youtube.com/watch?v=..."></label>
           <label>起订量<input data-k="moqAr" value="${esc(c.moqAr || '')}" placeholder="例如 10,000 个"></label>
           <label>工期<input data-k="leadTimeAr" value="${esc(c.leadTimeAr || '')}" placeholder="例如 15-20 天"></label>
-          <label>可用材质<input data-k="materialsAr" value="${esc(c.materialsAr || '')}" placeholder="例如 白卡 / 牛皮纸"></label>
+          <label class="full">可用材质<span class="hint">勾选，来自「原材料」表 — 那边加一个这里就多一个可勾的</span>
+            <div class="checks" data-craftmats>
+              ${(DB.tax.materials || []).map(m =>
+                `<label class="ck"><input type="checkbox" value="${esc(m.id)}" ${(c.materialsIds || []).includes(m.id) ? 'checked' : ''}> ${esc(m.emoji || '')} ${esc(m.nameAr)}</label>`).join('')}
+            </div>
+          </label>
           <label>限制<input data-k="limitsAr" value="${esc(c.limitsAr || '')}" placeholder="例如 深色纸要先打白底"></label>
         </div>
       </div>
     </div>`).join('');
   /* innerHTML 重建过了，补一次图片上传绑定（跟其它块一样） */
-  bindImgCells(document.getElementById('p-settings'));
+  bindImgCells(document.getElementById('p-cats'));
+  /* 工艺卡片的「可用材质」是多选组，bindArr 只管单个 input —— 手动收 */
+  const matHost = g('craft-list');
+  if (matHost && !matHost.dataset.matBound) {
+    matHost.dataset.matBound = '1';
+    matHost.addEventListener('change', e => {
+      if (!e.target.closest('[data-craftmats]')) return;
+      const host = e.target.closest('[data-i]');
+      if (!host) return;
+      const item = DB.site.crafts.items[num(host.dataset.i)];
+      if (!item) return;
+      item.materialsIds = [...host.querySelectorAll('[data-craftmats] input:checked')].map(x => x.value);
+    });
+  }
 }
 
 /* ---------- ① 认证资质 ---------- */

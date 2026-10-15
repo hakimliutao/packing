@@ -161,22 +161,27 @@ export default async (req) => {
        合并规则跟 products 一个路子：
          老的为空 → 种子的 6 条整套拿过来（图走 /assets/img/ 静态路径，
                      烫金的视频占位链接一起带过去）
-         老的有数据 → 按 id 补缺失字段，后台传过的图、改过的文案不动 */
+         老的有数据 → 按 id 补缺失字段，后台传过的图、改过的文案不动；
+                     种子里有、老清单里没有的也追加（10 月 15 日实测：
+                     老的只有 2 条后台测试工艺时，种子 6 条全被挡在门外，
+                     首页工艺区还是只剩那 2 条） */
     try {
       const oldCraftItems = Array.isArray(old?.crafts?.items) ? old.crafts.items : []
       const seedCraftItems = Array.isArray(seedSite.crafts?.items) ? seedSite.crafts.items : []
       if (!oldCraftItems.length) {
         merged.crafts = Object.assign({}, seedSite.crafts)
       } else {
-        merged.crafts = Object.assign({}, old.crafts, {
-          items: oldCraftItems.map(c => {
-            const s = seedCraftItems.find(x => x.id === c.id) || {}
-            return Object.assign({}, s, c, {
-              image: keep(c.image, s.image),
-              videoUrl: keep(c.videoUrl, s.videoUrl),
-            })
-          }),
+        const mergedItems = oldCraftItems.map(c => {
+          const s = seedCraftItems.find(x => x.id === c.id) || {}
+          return Object.assign({}, s, c, {
+            image: keep(c.image, s.image),
+            videoUrl: keep(c.videoUrl, s.videoUrl),
+          })
         })
+        seedCraftItems.forEach(s => {
+          if (!mergedItems.some(c => c.id === s.id)) mergedItems.push(Object.assign({}, s))
+        })
+        merged.crafts = Object.assign({}, old.crafts, { items: mergedItems })
       }
       changed.crafts = (merged.crafts?.items?.length || 0) + ' 条工艺'
     } catch (e) {
